@@ -12,10 +12,13 @@ mapfile -t homelands < <(cut -d, -f5 stats.csv | sort | uniq)
 
 IFS=,
 for faction in ${factions[@]}; do
+	[[ ! -d $faction ]] && mkdir $faction
 	for class in ${classes[@]}; do
+		[[ ! -d $faction/$class ]] && mkdir $faction/$class
 		for sex in ${sexes[@]}; do
+			[[ ! -d $faction/$class/$sex ]] && mkdir $faction/$class/$sex
 			for homeland in ${homelands[@]}; do
-				grep "$faction,$class,$sex,$homeland" stats.csv > "$faction-$class-$sex-$homeland.csv" || rm "$faction-$class-$sex-$homeland.csv"
+				grep "$faction,$class,$sex,$homeland" stats.csv > "$faction/$class/$sex/$homeland.csv" || rm "$faction/$class/$sex/$homeland.csv"
 			done
 		done
 	done
