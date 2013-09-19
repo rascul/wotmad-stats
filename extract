@@ -15,7 +15,7 @@ for faction in ${factions[@]}; do
 	for class in ${classes[@]}; do
 		for sex in ${sexes[@]}; do
 			for homeland in ${homelands[@]}; do
-				grep "$faction,$class,$sex,$homeland" $STATFILE > "$faction-$class-$sex-$homeland.csv" || rm "$faction-$class-$sex-$homeland.csv"
+				grep "$faction,$class,$sex,$homeland" stats.csv > "$faction-$class-$sex-$homeland.csv" || rm "$faction-$class-$sex-$homeland.csv"
 			done
 		done
 	done
