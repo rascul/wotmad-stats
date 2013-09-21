@@ -3,9 +3,12 @@
 # 2013-09-19 14:33:16,Human,Hunter,Male,Saldaea,16,14,12,15,18
 
 # download the latest stats
-wget -O stats.csv http://wotmad.herokuapp.com/stats/export/ || exit 1
-header=$(head -1 stats.csv)
-sed -i 1d stats.csv
+wget -O stats.orig.csv http://wotmad.herokuapp.com/stats/export/ || exit 1
+header=$(head -1 stats.orig.csv)
+sed 1d stats.orig.csv > temp.csv
+python statsum.py temp.csv > stats.csv
+rm temp.csv
+
 
 # figure out what's there
 mapfile -t factions < <(cut -d, -f2 stats.csv | sort | uniq)
