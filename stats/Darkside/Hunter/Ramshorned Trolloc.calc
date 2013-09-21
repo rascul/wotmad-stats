@@ -1,0 +1,4 @@
+Calculation,Strength,Intelligence,Willpower,Dexterity,Constitution,Sum
+minimum,11,3,5,10,12,65
+maximum,19,11,13,18,19,77
+average,16.15,8.1,10.16,15.15,17.08,66.63

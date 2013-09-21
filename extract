@@ -30,10 +30,10 @@ for faction in ${factions[@]}; do
 	grep ",$faction," db.csv >> "$STATDIR/$faction.db"
 	if [[ $? -eq 0 ]]; then
 		echo "$header" >> "$STATDIR/$faction.csv"
-		python3 calc.py "$STATDIR/$faction.db" > "$STATDIR/$faction.csv"
-		python3 statsum.py "$STATDIR/$faction.db" >> "$STATDIR/$faction.csv"
+		python3 statsum.py "$STATDIR/$faction.db" > "$STATDIR/$faction.csv"
+		python3 calc.py "$STATDIR/$faction.db" > "$STATDIR/$faction.calc"
 		rm "$STATDIR/$faction.db"
-		echo "Extracted '$STATDIR/$faction.csv'"
+		echo "Extracted '$STATDIR/$faction'"
 	else
 		rm "$STATDIR/$faction.db"
 	fi
@@ -44,10 +44,10 @@ for faction in ${factions[@]}; do
 		grep ",$faction,$class," db.csv >> "$STATDIR/$faction/$class.db"
 		if [[ $? -eq 0 ]]; then
 			echo "$header" >> "$STATDIR/$faction/$class.csv"
-			python3 calc.py "$STATDIR/$faction/$class.db" > "$STATDIR/$faction/$class.csv"
 			python3 statsum.py "$STATDIR/$faction/$class.db" >> "$STATDIR/$faction/$class.csv"
+			python3 calc.py "$STATDIR/$faction/$class.db" > "$STATDIR/$faction/$class.calc"
 			rm "$STATDIR/$faction/$class.db"
-			echo "Extracted '$STATDIR/$faction/$class.csv'"
+			echo "Extracted '$STATDIR/$faction/$class'"
 		else
 			rm "$STATDIR/$faction/$class.db"
 		fi
@@ -56,10 +56,10 @@ for faction in ${factions[@]}; do
 			grep ",$faction,$class,\(Male\|Female\),$homeland," db.csv >> "$STATDIR/$faction/$class/$homeland.db"
 			if [[ $? -eq 0 ]]; then
 				echo "$header" >> "$STATDIR/$faction/$class/$homeland.csv"
-				python3 calc.py "$STATDIR/$faction/$class/$homeland.db" > "$STATDIR/$faction/$class/$homeland.csv"
 				python3 statsum.py "$STATDIR/$faction/$class/$homeland.db" >> "$STATDIR/$faction/$class/$homeland.csv"
+				python3 calc.py "$STATDIR/$faction/$class/$homeland.db" > "$STATDIR/$faction/$class/$homeland.calc"
 				rm "$STATDIR/$faction/$class/$homeland.db"
-				echo "Extracted '$STATDIR/$faction/$class/$homeland.csv'"
+				echo "Extracted '$STATDIR/$faction/$class/$homeland'"
 				
 			else
 				rm "$STATDIR/$faction/$class/$homeland.db"

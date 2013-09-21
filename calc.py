@@ -95,7 +95,7 @@ for line in fileinput.input():
 	
 	count += 1
 
-print("Submitted,Faction,Class,Sex,Homeland,Strength,Intelligence,Willpower,Dexterity,Constitution,Sum")
-print(",,,,min,{},{},{},{},{},{}".format(min_str, min_int, min_wil, min_dex, min_con, min_sum))
-print(",,,,max,{},{},{},{},{},{}".format(max_str, max_int, max_wil, max_dex, max_con, max_sum))
-print(",,,,average,{},{},{},{},{},{}".format(round(total_str / count, 2), round(total_int / count, 2), round(total_wil / count, 2), round(total_dex / count, 2), round(total_con / count, 2), round(total_sum / count, 2)))
+print("Calculation,Strength,Intelligence,Willpower,Dexterity,Constitution,Sum")
+print("minimum,{},{},{},{},{},{}".format(min_str, min_int, min_wil, min_dex, min_con, min_sum))
+print("maximum,{},{},{},{},{},{}".format(max_str, max_int, max_wil, max_dex, max_con, max_sum))
+print("average,{},{},{},{},{},{}".format(round(total_str / count, 2), round(total_int / count, 2), round(total_wil / count, 2), round(total_dex / count, 2), round(total_con / count, 2), round(total_sum / count, 2)))
