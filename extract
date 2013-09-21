@@ -1,34 +1,76 @@
 #!/bin/bash
 
+STATDIR="stats"
+
 # 2013-09-19 14:33:16,Human,Hunter,Male,Saldaea,16,14,12,15,18
 
 # download the latest stats
-wget -O stats.orig.csv http://wotmad.herokuapp.com/stats/export/ || exit 1
-#header="$(head -1 stats.orig.csv),Sum"
+wget -O db.csv http://wotmad.herokuapp.com/stats/export/ || exit 1
+#header="$(head -1 db.csv)"
 header="Submitted,Faction,Class,Sex,Homeland,Strength,Intelligence,Willpower,Dexterity,Constitution,Sum"
-sed 1d stats.orig.csv > temp.csv
-python statsum.py temp.csv > stats.csv
-rm temp.csv
-
+sed -i 1d db.csv
 
 # figure out what's there
-mapfile -t factions < <(cut -d, -f2 stats.csv | sort | uniq)
-mapfile -t classes < <(cut -d, -f3 stats.csv | sort | uniq)
-mapfile -t homelands < <(cut -d, -f5 stats.csv | sort | uniq)
+mapfile -t factions < <(cut -d, -f2 db.csv | sort | uniq)
+mapfile -t classes < <(cut -d, -f3 db.csv | sort | uniq)
+mapfile -t homelands < <(cut -d, -f5 db.csv | sort | uniq)
+
+if [[ -d "$STATDIR" ]]; then
+	echo "Removing existing stat directory '$STATDIR'"
+	rm -r "$STATDIR"
+fi
+echo "Creating stat directory '$STATDIR'"
+mkdir "$STATDIR"
 
 # separate by faction/class/homeland
 IFS=,
 for faction in ${factions[@]}; do
-	[[ ! -d $faction ]] && mkdir $faction
+	[[ ! -d "$STATDIR/$faction" ]] && mkdir "$STATDIR/$faction"
+	
+	grep ",$faction," db.csv >> "$STATDIR/$faction.db"
+	if [[ $? -eq 0 ]]; then
+		echo "$header" >> "$STATDIR/$faction.csv"
+		python3 calc.py "$STATDIR/$faction.db" > "$STATDIR/$faction.csv"
+		python3 statsum.py "$STATDIR/$faction.db" >> "$STATDIR/$faction.csv"
+		rm "$STATDIR/$faction.db"
+		echo "Extracted '$STATDIR/$faction.csv'"
+	else
+		rm "$STATDIR/$faction.db"
+	fi
+	
 	for class in ${classes[@]}; do
-		[[ ! -d $faction/$class ]] && mkdir $faction/$class
+		[[ ! -d "$STATDIR/$faction/$class" ]] && mkdir "$STATDIR/$faction/$class"
+		
+		grep ",$faction,$class," db.csv >> "$STATDIR/$faction/$class.db"
+		if [[ $? -eq 0 ]]; then
+			echo "$header" >> "$STATDIR/$faction/$class.csv"
+			python3 calc.py "$STATDIR/$faction/$class.db" > "$STATDIR/$faction/$class.csv"
+			python3 statsum.py "$STATDIR/$faction/$class.db" >> "$STATDIR/$faction/$class.csv"
+			rm "$STATDIR/$faction/$class.db"
+			echo "Extracted '$STATDIR/$faction/$class.csv'"
+		else
+			rm "$STATDIR/$faction/$class.db"
+		fi
+		
 		for homeland in ${homelands[@]}; do
-			echo "$header" > "$faction/$class/$homeland.csv"
-			# male/female stats are supposedly the same nowadays
-			grep ",$faction,$class,\(Male\|Female\),$homeland," stats.csv >> "$faction/$class/$homeland.csv" || rm "$faction/$class/$homeland.csv"
+			grep ",$faction,$class,\(Male\|Female\),$homeland," db.csv >> "$STATDIR/$faction/$class/$homeland.db"
+			if [[ $? -eq 0 ]]; then
+				echo "$header" >> "$STATDIR/$faction/$class/$homeland.csv"
+				python3 calc.py "$STATDIR/$faction/$class/$homeland.db" > "$STATDIR/$faction/$class/$homeland.csv"
+				python3 statsum.py "$STATDIR/$faction/$class/$homeland.db" >> "$STATDIR/$faction/$class/$homeland.csv"
+				rm "$STATDIR/$faction/$class/$homeland.db"
+				echo "Extracted '$STATDIR/$faction/$class/$homeland.csv'"
+				
+			else
+				rm "$STATDIR/$faction/$class/$homeland.db"
+			fi
 		done
 	done
 done
 
-
+echo "$header" >> "$STATDIR/stats.csv"
+python3 calc.py "db.csv" > "$STATDIR/stats.csv"
+python3 statsum.py "db.csv" >> "$STATDIR/stats.csv"
+rm "db.csv"
+echo "Extracted '$STATDIR/stats.csv"
 
