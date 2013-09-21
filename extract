@@ -31,7 +31,7 @@ for faction in ${factions[@]}; do
 	if [[ $? -eq 0 ]]; then
 		echo "$header" >> "$STATDIR/$faction.csv"
 		python3 statsum.py "$STATDIR/$faction.db" > "$STATDIR/$faction.csv"
-		python3 calc.py "$STATDIR/$faction.db" > "$STATDIR/$faction.calc"
+		#python3 calc.py "$STATDIR/$faction.db" > "$STATDIR/$faction.calc"
 		rm "$STATDIR/$faction.db"
 		echo "Extracted '$STATDIR/$faction'"
 	else
@@ -45,7 +45,7 @@ for faction in ${factions[@]}; do
 		if [[ $? -eq 0 ]]; then
 			echo "$header" >> "$STATDIR/$faction/$class.csv"
 			python3 statsum.py "$STATDIR/$faction/$class.db" >> "$STATDIR/$faction/$class.csv"
-			python3 calc.py "$STATDIR/$faction/$class.db" > "$STATDIR/$faction/$class.calc"
+			#python3 calc.py "$STATDIR/$faction/$class.db" > "$STATDIR/$faction/$class.calc"
 			rm "$STATDIR/$faction/$class.db"
 			echo "Extracted '$STATDIR/$faction/$class'"
 		else
@@ -57,7 +57,7 @@ for faction in ${factions[@]}; do
 			if [[ $? -eq 0 ]]; then
 				echo "$header" >> "$STATDIR/$faction/$class/$homeland.csv"
 				python3 statsum.py "$STATDIR/$faction/$class/$homeland.db" >> "$STATDIR/$faction/$class/$homeland.csv"
-				python3 calc.py "$STATDIR/$faction/$class/$homeland.db" > "$STATDIR/$faction/$class/$homeland.calc"
+				#python3 calc.py "$STATDIR/$faction/$class/$homeland.db" > "$STATDIR/$faction/$class/$homeland.calc"
 				rm "$STATDIR/$faction/$class/$homeland.db"
 				echo "Extracted '$STATDIR/$faction/$class/$homeland'"
 				
@@ -69,7 +69,7 @@ for faction in ${factions[@]}; do
 done
 
 echo "$header" >> "$STATDIR/stats.csv"
-python3 calc.py "db.csv" > "$STATDIR/stats.csv"
+#python3 calc.py "db.csv" > "$STATDIR/stats.csv"
 python3 statsum.py "db.csv" >> "$STATDIR/stats.csv"
 rm "db.csv"
 echo "Extracted '$STATDIR/stats.csv"
