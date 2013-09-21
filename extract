@@ -4,7 +4,7 @@
 
 # download the latest stats
 wget -O stats.orig.csv http://wotmad.herokuapp.com/stats/export/ || exit 1
-header=$(head -1 stats.orig.csv)
+header="$(head -1 stats.orig.csv),Sum"
 sed 1d stats.orig.csv > temp.csv
 python statsum.py temp.csv > stats.csv
 rm temp.csv
