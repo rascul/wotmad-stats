@@ -30,7 +30,6 @@ fi
 echo "Creating html directory '$HTMLDIR'"
 mkdir "$HTMLDIR"
 
-rm "$STATDIR/index.html"
 
 # separate by faction/class/homeland
 IFS=,
@@ -53,16 +52,19 @@ for faction in ${factions[@]}; do
 		[[ ! -d "$STATDIR/$faction/$class" ]] && mkdir "$STATDIR/$faction/$class"
 		[[ ! -d "$HTMLDIR/$faction/$class" ]] && mkdir "$HTMLDIR/$faction/$class"
 		
-		#grep ",$faction,$class," db.csv >> "$STATDIR/$faction/$class.db"
-		#if [[ $? -eq 0 ]]; then
-		#	echo "$header" >> "$STATDIR/$faction/$class.csv"
-		#	python3 statsum.py "$STATDIR/$faction/$class.db" >> "$STATDIR/$faction/$class.csv"
+		grep ",$faction,$class," db.csv >> "$STATDIR/$faction/$class.db"
+		if [[ $? -eq 0 ]]; then
+			echo "$header" >> "$STATDIR/$faction/$class.csv"
+			python3 statsum.py "$STATDIR/$faction/$class.db" >> "$STATDIR/$faction/$class.csv"
 		#	#python3 calc.py "$STATDIR/$faction/$class.db" > "$STATDIR/$faction/$class.calc"
-		#	rm "$STATDIR/$faction/$class.db"
-		#	echo "Extracted '$STATDIR/$faction/$class'"
-		#else
-		#	rm "$STATDIR/$faction/$class.db"
-		#fi
+			rm "$STATDIR/$faction/$class.db"
+			./genpage "$STATDIR/$faction/$class" > "$HTMLDIR/$faction/$class.csv"
+			numstats=$(wc -l "$STATDIR/$faction/$class.csv")
+			echo "<p><a href=\"http://rascul.github.io/wotmad-stats/stats/$faction/$class.html\">$faction/$class ($numstats)</a></p>" >> $HTMLDIR/index.html
+			echo "Extracted '$STATDIR/$faction/$class'"
+		else
+			rm "$STATDIR/$faction/$class.db"
+		fi
 		
 		for homeland in ${homelands[@]}; do
 			grep ",$faction,$class,\(Male\|Female\),$homeland," db.csv >> "$STATDIR/$faction/$class/$homeland.db"
@@ -72,7 +74,8 @@ for faction in ${factions[@]}; do
 				#python3 calc.py "$STATDIR/$faction/$class/$homeland.db" > "$STATDIR/$faction/$class/$homeland.calc"
 				rm "$STATDIR/$faction/$class/$homeland.db"
 				./genpage "$STATDIR/$faction/$class/$homeland" > "$HTMLDIR/$faction/$class/$homeland.html"
-				echo "<p><a href=\"http://rascul.github.io/wotmad-stats/stats/$faction/$class/$homeland.html\">$faction/$class/$homeland</a></p>" >> $HTMLDIR/index.html
+				numstats=$(wc -l "$STATDIR/$faction/$class/$homeland.csv")
+				echo "<p><a href=\"http://rascul.github.io/wotmad-stats/stats/$faction/$class/$homeland.html\">$faction/$class/$homeland ($numstats)</a></p>" >> $HTMLDIR/index.html
 				echo "Extracted '$STATDIR/$faction/$class/$homeland'"
 				
 			else
