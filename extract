@@ -1,6 +1,7 @@
 #!/bin/bash
 
 STATDIR="stats"
+HTMLDIR="../stats-pages/stats"
 
 # 2013-09-19 14:33:16,Human,Hunter,Male,Saldaea,16,14,12,15,18
 
@@ -22,35 +23,46 @@ fi
 echo "Creating stat directory '$STATDIR'"
 mkdir "$STATDIR"
 
+if [[ -d "$HTMLDIR" ]]; then
+	echo "Removing existing html directory '$HTMLDIR'"
+	rm -r "$HTMLDIR"
+fi
+echo "Creating html directory '$HTMLDIR'"
+mkdir "$HTMLDIR"
+
+rm "$STATDIR/index.html"
+
 # separate by faction/class/homeland
 IFS=,
 for faction in ${factions[@]}; do
 	[[ ! -d "$STATDIR/$faction" ]] && mkdir "$STATDIR/$faction"
+	[[ ! -d "$HTMLDIR/$faction" ]] && mkdir "$HTMLDIR/$faction"
 	
-	grep ",$faction," db.csv >> "$STATDIR/$faction.db"
-	if [[ $? -eq 0 ]]; then
-		echo "$header" >> "$STATDIR/$faction.csv"
-		python3 statsum.py "$STATDIR/$faction.db" > "$STATDIR/$faction.csv"
-		#python3 calc.py "$STATDIR/$faction.db" > "$STATDIR/$faction.calc"
-		rm "$STATDIR/$faction.db"
-		echo "Extracted '$STATDIR/$faction'"
-	else
-		rm "$STATDIR/$faction.db"
-	fi
+	#grep ",$faction," db.csv >> "$STATDIR/$faction.db"
+	#if [[ $? -eq 0 ]]; then
+	#	echo "$header" >> "$STATDIR/$faction.csv"
+	#	python3 statsum.py "$STATDIR/$faction.db" > "$STATDIR/$faction.csv"
+	#	#python3 calc.py "$STATDIR/$faction.db" > "$STATDIR/$faction.calc"
+	#	rm "$STATDIR/$faction.db"
+	#	echo "Extracted '$STATDIR/$faction'"
+	#else
+	#	rm "$STATDIR/$faction.db"
+	#fi
 	
 	for class in ${classes[@]}; do
 		[[ ! -d "$STATDIR/$faction/$class" ]] && mkdir "$STATDIR/$faction/$class"
+		[[ ! -d "$HTMLDIR/$faction/$class" ]] && mkdir "$HTMLDIR/$faction/$class"
 		
-		grep ",$faction,$class," db.csv >> "$STATDIR/$faction/$class.db"
-		if [[ $? -eq 0 ]]; then
-			echo "$header" >> "$STATDIR/$faction/$class.csv"
-			python3 statsum.py "$STATDIR/$faction/$class.db" >> "$STATDIR/$faction/$class.csv"
-			#python3 calc.py "$STATDIR/$faction/$class.db" > "$STATDIR/$faction/$class.calc"
-			rm "$STATDIR/$faction/$class.db"
-			echo "Extracted '$STATDIR/$faction/$class'"
-		else
-			rm "$STATDIR/$faction/$class.db"
-		fi
+		#grep ",$faction,$class," db.csv >> "$STATDIR/$faction/$class.db"
+		#if [[ $? -eq 0 ]]; then
+		#	echo "$header" >> "$STATDIR/$faction/$class.csv"
+		#	python3 statsum.py "$STATDIR/$faction/$class.db" >> "$STATDIR/$faction/$class.csv"
+		#	#python3 calc.py "$STATDIR/$faction/$class.db" > "$STATDIR/$faction/$class.calc"
+		#	rm "$STATDIR/$faction/$class.db"
+		#	echo "Extracted '$STATDIR/$faction/$class'"
+		#else
+		#	rm "$STATDIR/$faction/$class.db"
+		#fi
 		
 		for homeland in ${homelands[@]}; do
 			grep ",$faction,$class,\(Male\|Female\),$homeland," db.csv >> "$STATDIR/$faction/$class/$homeland.db"
@@ -59,6 +71,8 @@ for faction in ${factions[@]}; do
 				python3 statsum.py "$STATDIR/$faction/$class/$homeland.db" >> "$STATDIR/$faction/$class/$homeland.csv"
 				#python3 calc.py "$STATDIR/$faction/$class/$homeland.db" > "$STATDIR/$faction/$class/$homeland.calc"
 				rm "$STATDIR/$faction/$class/$homeland.db"
+				./genpage "$STATDIR/$faction/$class/$homeland" > "$HTMLDIR/$faction/$class/$homeland.html"
+				echo "<p><a href=\"http://rascul.github.io/wotmad-stats/stats/$faction/$class/$homeland.html\">$faction/$class/$homeland</a></p>" >> $HTMLDIR/index.html
 				echo "Extracted '$STATDIR/$faction/$class/$homeland'"
 				
 			else
@@ -68,9 +82,9 @@ for faction in ${factions[@]}; do
 	done
 done
 
-echo "$header" >> "$STATDIR/stats.csv"
+#echo "$header" >> "$STATDIR/stats.csv"
 #python3 calc.py "db.csv" > "$STATDIR/stats.csv"
-python3 statsum.py "db.csv" >> "$STATDIR/stats.csv"
-rm "db.csv"
-echo "Extracted '$STATDIR/stats.csv"
+#python3 statsum.py "db.csv" >> "$STATDIR/stats.csv"
+#rm "db.csv"
+#echo "Extracted '$STATDIR/stats.csv"
 

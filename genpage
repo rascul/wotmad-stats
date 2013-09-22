@@ -1,0 +1,49 @@
+#!/bin/bash
+
+cat << EOF
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>
+      $1
+    </title>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load('visualization', '1', {packages: ['table', 'corechart']});
+    </script>
+    <script type="text/javascript">
+
+
+    
+    function drawVisualization() {
+      // Create and populate the data table.
+      var data = google.visualization.arrayToDataTable([
+EOF
+
+while IFS= read -r line; do
+	echo "['${line//,/','}'],"
+done < "$1.csv"
+
+cat << EOF
+      ]);      
+   
+      // Create and draw the visualization.
+      visualization = new google.visualization.Table(document.getElementById('table'));
+      visualization.draw(data, {showRowNumber: true});
+    }
+
+    
+
+    google.setOnLoadCallback(drawVisualization);
+    google.setOnLoadCallback(drawChart);
+    </script>
+    <style>
+    td { align: center; }
+    </style>
+  </head>
+  <body style="font-family: Arial;border: 0 none;">
+    <div id="table"></div>
+  </body>
+</html>
+EOF
