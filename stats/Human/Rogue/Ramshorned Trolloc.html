@@ -1,56 +1,46 @@
-<html>
-<head>
-<title>stats/Human/Rogue/Ramshorned Trolloc</title>
-<script type="text/javascript" src="../../../gs_sortable.js"></script>
-<script type="text/javascript">
-<!--
-var TSort_Data = new Array ('stats_table', 'd', 's', 's', 's', 's', 'i', 'i', 'i', 'i', 'i', 'i');
-tsRegister();
-// -->
-</script> 
-</head>
-<body>
-<h1>stats/Human/Rogue/Ramshorned Trolloc</h1>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>
+      stats/Human/Rogue/Ramshorned Trolloc
+    </title>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load('visualization', '1', {packages: ['table', 'corechart']});
+    </script>
+    <script type="text/javascript">
 
-<table>
-<thead>
-	<th></th>
-	<th>Str</th>
-	<th>Int</th>
-	<th>Wil</th>
-	<th>Dex</th>
-	<th>Con</th>
-	<th>Sum</th>
-</thead>
 
-<tr><td align="center">minimum</td><td align="center">12</td><td align="center">11</td><td align="center">13</td><td align="center">14</td><td align="center">10</td><td align="center">70</td></tr>
-<tr><td align="center">maximum</td><td align="center">16</td><td align="center">18</td><td align="center">17</td><td align="center">18</td><td align="center">17</td><td align="center">76</td></tr>
-<tr><td align="center">average</td><td align="center">13.7</td><td align="center">15.3</td><td align="center">15.2</td><td align="center">16.5</td><td align="center">11.8</td><td align="center">72.5</td></tr>
-</table>
-<p>
-<table id="stats_table">
-<thead>
-<tr>
-	<th>Submitted</th>
-	<th>Faction</th>
-	<th>Class</th>
-	<th>Sex</th>
-	<th>Homeland</th>
-	<th>Str</th>
-	<th>Int</th>
-	<th>Wilr</th>
-	<th>Dex</th>
-	<th>Con</th>
-	<th>Sum</th>
-</tr>
-</thead>
-<tr><td align="center">2012-10-01 02:32:16</td><td align="center">Human</td><td align="center">Rogue</td><td align="center">Male</td><td align="center">Ramshorned Trolloc</td><td align="center">15</td><td align="center">5</td><td align="center">11</td><td align="center">17</td><td align="center">17</td><td align="center">65</td></tr>
-<tr><td align="center">2012-10-01 02:29:21</td><td align="center">Human</td><td align="center">Rogue</td><td align="center">Male</td><td align="center">Ramshorned Trolloc</td><td align="center">14</td><td align="center">9</td><td align="center">10</td><td align="center">16</td><td align="center">17</td><td align="center">66</td></tr>
-<tr><td align="center">2012-10-01 02:26:42</td><td align="center">Human</td><td align="center">Rogue</td><td align="center">Male</td><td align="center">Ramshorned Trolloc</td><td align="center">15</td><td align="center">7</td><td align="center">11</td><td align="center">15</td><td align="center">17</td><td align="center">65</td></tr>
-<tr><td align="center">2012-10-01 02:24:22</td><td align="center">Human</td><td align="center">Rogue</td><td align="center">Male</td><td align="center">Ramshorned Trolloc</td><td align="center">17</td><td align="center">10</td><td align="center">11</td><td align="center">18</td><td align="center">15</td><td align="center">71</td></tr>
-<tr><td align="center">2012-10-01 02:20:08</td><td align="center">Human</td><td align="center">Rogue</td><td align="center">Male</td><td align="center">Ramshorned Trolloc</td><td align="center">14</td><td align="center">8</td><td align="center">10</td><td align="center">18</td><td align="center">17</td><td align="center">67</td></tr>
-<tr><td align="center">2012-10-01 02:17:27</td><td align="center">Human</td><td align="center">Rogue</td><td align="center">Male</td><td align="center">Ramshorned Trolloc</td><td align="center">15</td><td align="center">8</td><td align="center">11</td><td align="center">16</td><td align="center">17</td><td align="center">67</td></tr>
-<tr><td align="center">2012-10-01 02:15:31</td><td align="center">Human</td><td align="center">Rogue</td><td align="center">Male</td><td align="center">Ramshorned Trolloc</td><td align="center">12</td><td align="center">9</td><td align="center">12</td><td align="center">17</td><td align="center">15</td><td align="center">65</td></tr>
-</table>
-</body>
+    
+    function drawVisualization() {
+      // Create and populate the data table.
+      var data = google.visualization.arrayToDataTable([
+['Submitted','Faction','Class','Sex','Homeland','Strength','Intelligence','Willpower','Dexterity','Constitution','Sum'],
+['2012-10-01 02:32:16','Human','Rogue','Male','Ramshorned Trolloc','15','5','11','17','17','65'],
+['2012-10-01 02:29:21','Human','Rogue','Male','Ramshorned Trolloc','14','9','10','16','17','66'],
+['2012-10-01 02:26:42','Human','Rogue','Male','Ramshorned Trolloc','15','7','11','15','17','65'],
+['2012-10-01 02:24:22','Human','Rogue','Male','Ramshorned Trolloc','17','10','11','18','15','71'],
+['2012-10-01 02:20:08','Human','Rogue','Male','Ramshorned Trolloc','14','8','10','18','17','67'],
+['2012-10-01 02:17:27','Human','Rogue','Male','Ramshorned Trolloc','15','8','11','16','17','67'],
+['2012-10-01 02:15:31','Human','Rogue','Male','Ramshorned Trolloc','12','9','12','17','15','65'],
+      ]);      
+   
+      // Create and draw the visualization.
+      visualization = new google.visualization.Table(document.getElementById('table'));
+      visualization.draw(data, {showRowNumber: true});
+    }
+
+    
+
+    google.setOnLoadCallback(drawVisualization);
+    google.setOnLoadCallback(drawChart);
+    </script>
+    <style>
+    td { align: center; }
+    </style>
+  </head>
+  <body style="font-family: Arial;border: 0 none;">
+    <div id="table"></div>
+  </body>
 </html>

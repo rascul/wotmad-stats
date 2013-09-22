@@ -1,56 +1,46 @@
-<html>
-<head>
-<title>stats/Darkside/Warrior/Beaked</title>
-<script type="text/javascript" src="../../../gs_sortable.js"></script>
-<script type="text/javascript">
-<!--
-var TSort_Data = new Array ('stats_table', 'd', 's', 's', 's', 's', 'i', 'i', 'i', 'i', 'i', 'i');
-tsRegister();
-// -->
-</script> 
-</head>
-<body>
-<h1>stats/Darkside/Warrior/Beaked</h1>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>
+      stats/Darkside/Warrior/Beaked
+    </title>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load('visualization', '1', {packages: ['table', 'corechart']});
+    </script>
+    <script type="text/javascript">
 
-<table>
-<thead>
-	<th></th>
-	<th>Str</th>
-	<th>Int</th>
-	<th>Wil</th>
-	<th>Dex</th>
-	<th>Con</th>
-	<th>Sum</th>
-</thead>
 
-<tr><td align="center">minimum</td><td align="center">12</td><td align="center">11</td><td align="center">13</td><td align="center">14</td><td align="center">10</td><td align="center">70</td></tr>
-<tr><td align="center">maximum</td><td align="center">16</td><td align="center">18</td><td align="center">17</td><td align="center">18</td><td align="center">17</td><td align="center">76</td></tr>
-<tr><td align="center">average</td><td align="center">13.7</td><td align="center">15.3</td><td align="center">15.2</td><td align="center">16.5</td><td align="center">11.8</td><td align="center">72.5</td></tr>
-</table>
-<p>
-<table id="stats_table">
-<thead>
-<tr>
-	<th>Submitted</th>
-	<th>Faction</th>
-	<th>Class</th>
-	<th>Sex</th>
-	<th>Homeland</th>
-	<th>Str</th>
-	<th>Int</th>
-	<th>Wilr</th>
-	<th>Dex</th>
-	<th>Con</th>
-	<th>Sum</th>
-</tr>
-</thead>
-<tr><td align="center">2012-09-03 17:03:07</td><td align="center">Darkside</td><td align="center">Warrior</td><td align="center">Male</td><td align="center">Beaked</td><td align="center">17</td><td align="center">12</td><td align="center">7</td><td align="center">13</td><td align="center">16</td><td align="center">65</td></tr>
-<tr><td align="center">2012-09-03 17:02:33</td><td align="center">Darkside</td><td align="center">Warrior</td><td align="center">Male</td><td align="center">Beaked</td><td align="center">14</td><td align="center">13</td><td align="center">7</td><td align="center">15</td><td align="center">16</td><td align="center">65</td></tr>
-<tr><td align="center">2012-09-03 17:02:08</td><td align="center">Darkside</td><td align="center">Warrior</td><td align="center">Male</td><td align="center">Beaked</td><td align="center">14</td><td align="center">14</td><td align="center">8</td><td align="center">15</td><td align="center">14</td><td align="center">65</td></tr>
-<tr><td align="center">2012-09-03 17:01:25</td><td align="center">Darkside</td><td align="center">Warrior</td><td align="center">Male</td><td align="center">Beaked</td><td align="center">17</td><td align="center">11</td><td align="center">9</td><td align="center">12</td><td align="center">18</td><td align="center">67</td></tr>
-<tr><td align="center">2012-08-27 23:38:54</td><td align="center">Darkside</td><td align="center">Warrior</td><td align="center">Female</td><td align="center">Beaked</td><td align="center">18</td><td align="center">9</td><td align="center">8</td><td align="center">15</td><td align="center">19</td><td align="center">69</td></tr>
-<tr><td align="center">2012-08-27 23:38:27</td><td align="center">Darkside</td><td align="center">Warrior</td><td align="center">Female</td><td align="center">Beaked</td><td align="center">18</td><td align="center">11</td><td align="center">7</td><td align="center">12</td><td align="center">18</td><td align="center">66</td></tr>
-<tr><td align="center">2012-08-27 23:37:32</td><td align="center">Darkside</td><td align="center">Warrior</td><td align="center">Female</td><td align="center">Beaked</td><td align="center">19</td><td align="center">9</td><td align="center">9</td><td align="center">14</td><td align="center">17</td><td align="center">68</td></tr>
-</table>
-</body>
+    
+    function drawVisualization() {
+      // Create and populate the data table.
+      var data = google.visualization.arrayToDataTable([
+['Submitted','Faction','Class','Sex','Homeland','Strength','Intelligence','Willpower','Dexterity','Constitution','Sum'],
+['2012-09-03 17:03:07','Darkside','Warrior','Male','Beaked','17','12','7','13','16','65'],
+['2012-09-03 17:02:33','Darkside','Warrior','Male','Beaked','14','13','7','15','16','65'],
+['2012-09-03 17:02:08','Darkside','Warrior','Male','Beaked','14','14','8','15','14','65'],
+['2012-09-03 17:01:25','Darkside','Warrior','Male','Beaked','17','11','9','12','18','67'],
+['2012-08-27 23:38:54','Darkside','Warrior','Female','Beaked','18','9','8','15','19','69'],
+['2012-08-27 23:38:27','Darkside','Warrior','Female','Beaked','18','11','7','12','18','66'],
+['2012-08-27 23:37:32','Darkside','Warrior','Female','Beaked','19','9','9','14','17','68'],
+      ]);      
+   
+      // Create and draw the visualization.
+      visualization = new google.visualization.Table(document.getElementById('table'));
+      visualization.draw(data, {showRowNumber: true});
+    }
+
+    
+
+    google.setOnLoadCallback(drawVisualization);
+    google.setOnLoadCallback(drawChart);
+    </script>
+    <style>
+    td { align: center; }
+    </style>
+  </head>
+  <body style="font-family: Arial;border: 0 none;">
+    <div id="table"></div>
+  </body>
 </html>
