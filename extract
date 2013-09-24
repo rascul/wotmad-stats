@@ -165,7 +165,7 @@ td { text-align: center; }
 echo "[html] index\n";
 if (file_exists("$html_dir/index.html"))
 	unlink("$html_dir/index.html");
-$handle = fopen("$html_dir/index.html", "a");
+$handle = fopen("$html_dir/../index.html", "a");
 $html = "
 <html>
 <head>
