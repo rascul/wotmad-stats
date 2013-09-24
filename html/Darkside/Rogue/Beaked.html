@@ -1,0 +1,50 @@
+
+<html><head><title>Darkside/Rogue/Beaked</title>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">google.load('visualization', '1', {packages: ['table', 'corechart']});</script>
+<script type="text/javascript">
+function drawStatsTable() {
+// Create and populate the data table.
+var data = google.visualization.arrayToDataTable([
+['Submitted','Faction','Class','Sex','Homeland','Strength','Intelligence','Willpower','Dexterity','Constitution','Sum'],
+['2012-09-03 17:38:18','Darkside','Rogue','Male','Beaked','15','12','6','19','15','67'],
+['2012-09-03 17:32:46','Darkside','Rogue','Male','Beaked','13','12','11','17','17','70'],
+['2012-09-03 17:23:30','Darkside','Rogue','Male','Beaked','14','14','7','19','17','71'],
+['2012-09-03 17:17:26','Darkside','Rogue','Male','Beaked','16','8','8','16','18','66'],
+['2012-09-03 17:13:37','Darkside','Rogue','Male','Beaked','15','14','4','18','18','69'],
+
+
+]);      
+// Create and draw the visualization.
+visualization = new google.visualization.Table(document.getElementById('stat_table'));
+visualization.draw(data, {showRowNumber: true});
+}
+function drawCalcsTable() {
+// Create and populate the data table.
+var data = google.visualization.arrayToDataTable([
+['','Strength','Intelligence','Willpower','Dexterity','Constitution','Sum'],
+['Minimum','13','8','4','16','15','66'],
+['Maximum','16','14','11','19','18','71'],
+['Average','14.6','12','7.2','17.8','17','68.6']
+]);
+// Create and draw the visualization.
+visualization = new google.visualization.Table(document.getElementById('calcs_table'));
+visualization.draw(data, null);
+}
+google.setOnLoadCallback(drawStatsTable);
+google.setOnLoadCallback(drawCalcsTable);
+google.setOnLoadCallback(drawChart);
+</script>
+<style>
+td { text-align: center; }
+</style>
+</head>
+<body style="font-family: Arial;border: 0 none;">
+<h1>Darkside/Rogue/Beaked</h1>
+<p><a href="https://github.com/rascul/wotmad-stats/tree/master/csv/Darkside/Rogue/Beaked.csv">csv data</a></p>
+<p>Out of 5 stats:</p>
+<div id="calcs_table"></div>
+<br><br>
+<div id="stat_table"></div>
+</body>
+</html>

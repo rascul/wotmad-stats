@@ -1,0 +1,52 @@
+
+<html><head><title>Darkside/Warrior/Beaked</title>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">google.load('visualization', '1', {packages: ['table', 'corechart']});</script>
+<script type="text/javascript">
+function drawStatsTable() {
+// Create and populate the data table.
+var data = google.visualization.arrayToDataTable([
+['Submitted','Faction','Class','Sex','Homeland','Strength','Intelligence','Willpower','Dexterity','Constitution','Sum'],
+['2012-09-03 17:03:07','Darkside','Warrior','Male','Beaked','17','12','7','13','16','65'],
+['2012-09-03 17:02:33','Darkside','Warrior','Male','Beaked','14','13','7','15','16','65'],
+['2012-09-03 17:02:08','Darkside','Warrior','Male','Beaked','14','14','8','15','14','65'],
+['2012-09-03 17:01:25','Darkside','Warrior','Male','Beaked','17','11','9','12','18','67'],
+['2012-08-27 23:38:54','Darkside','Warrior','Female','Beaked','18','9','8','15','19','69'],
+['2012-08-27 23:38:27','Darkside','Warrior','Female','Beaked','18','11','7','12','18','66'],
+['2012-08-27 23:37:32','Darkside','Warrior','Female','Beaked','19','9','9','14','17','68'],
+
+
+]);      
+// Create and draw the visualization.
+visualization = new google.visualization.Table(document.getElementById('stat_table'));
+visualization.draw(data, {showRowNumber: true});
+}
+function drawCalcsTable() {
+// Create and populate the data table.
+var data = google.visualization.arrayToDataTable([
+['','Strength','Intelligence','Willpower','Dexterity','Constitution','Sum'],
+['Minimum','14','9','7','12','14','65'],
+['Maximum','19','14','9','15','19','69'],
+['Average','16.7','11.3','7.9','13.7','16.9','66.4']
+]);
+// Create and draw the visualization.
+visualization = new google.visualization.Table(document.getElementById('calcs_table'));
+visualization.draw(data, null);
+}
+google.setOnLoadCallback(drawStatsTable);
+google.setOnLoadCallback(drawCalcsTable);
+google.setOnLoadCallback(drawChart);
+</script>
+<style>
+td { text-align: center; }
+</style>
+</head>
+<body style="font-family: Arial;border: 0 none;">
+<h1>Darkside/Warrior/Beaked</h1>
+<p><a href="https://github.com/rascul/wotmad-stats/tree/master/csv/Darkside/Warrior/Beaked.csv">csv data</a></p>
+<p>Out of 7 stats:</p>
+<div id="calcs_table"></div>
+<br><br>
+<div id="stat_table"></div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+
+<html><head><title>Darkside/Warrior/Illian</title>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">google.load('visualization', '1', {packages: ['table', 'corechart']});</script>
+<script type="text/javascript">
+function drawStatsTable() {
+// Create and populate the data table.
+var data = google.visualization.arrayToDataTable([
+['Submitted','Faction','Class','Sex','Homeland','Strength','Intelligence','Willpower','Dexterity','Constitution','Sum'],
+['2013-05-19 21:22:51','Darkside','Warrior','Male','Illian','11','18','16','14','11','70'],
+['2013-05-19 21:17:26','Darkside','Warrior','Male','Illian','11','17','18','18','13','77'],
+['2013-05-19 21:12:17','Darkside','Warrior','Male','Illian','12','19','19','16','10','76'],
+['2013-05-19 21:05:40','Darkside','Warrior','Male','Illian','11','19','17','14','11','72'],
+['2013-05-08 03:44:07','Darkside','Warrior','Male','Illian','14','19','14','13','11','71'],
+
+
+]);      
+// Create and draw the visualization.
+visualization = new google.visualization.Table(document.getElementById('stat_table'));
+visualization.draw(data, {showRowNumber: true});
+}
+function drawCalcsTable() {
+// Create and populate the data table.
+var data = google.visualization.arrayToDataTable([
+['','Strength','Intelligence','Willpower','Dexterity','Constitution','Sum'],
+['Minimum','11','17','14','13','10','70'],
+['Maximum','14','19','19','18','13','77'],
+['Average','11.8','18.4','16.8','15','11.2','73.2']
+]);
+// Create and draw the visualization.
+visualization = new google.visualization.Table(document.getElementById('calcs_table'));
+visualization.draw(data, null);
+}
+google.setOnLoadCallback(drawStatsTable);
+google.setOnLoadCallback(drawCalcsTable);
+google.setOnLoadCallback(drawChart);
+</script>
+<style>
+td { text-align: center; }
+</style>
+</head>
+<body style="font-family: Arial;border: 0 none;">
+<h1>Darkside/Warrior/Illian</h1>
+<p><a href="https://github.com/rascul/wotmad-stats/tree/master/csv/Darkside/Warrior/Illian.csv">csv data</a></p>
+<p>Out of 5 stats:</p>
+<div id="calcs_table"></div>
+<br><br>
+<div id="stat_table"></div>
+</body>
+</html>

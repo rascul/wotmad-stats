@@ -1,0 +1,46 @@
+
+<html><head><title>Human/Channeler/borderlands</title>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">google.load('visualization', '1', {packages: ['table', 'corechart']});</script>
+<script type="text/javascript">
+function drawStatsTable() {
+// Create and populate the data table.
+var data = google.visualization.arrayToDataTable([
+['Submitted','Faction','Class','Sex','Homeland','Strength','Intelligence','Willpower','Dexterity','Constitution','Sum'],
+['2013-06-16 22:31:04','Human','Channeler','Female','borderlands','14','14','15','16','12','71'],
+
+
+]);      
+// Create and draw the visualization.
+visualization = new google.visualization.Table(document.getElementById('stat_table'));
+visualization.draw(data, {showRowNumber: true});
+}
+function drawCalcsTable() {
+// Create and populate the data table.
+var data = google.visualization.arrayToDataTable([
+['','Strength','Intelligence','Willpower','Dexterity','Constitution','Sum'],
+['Minimum','14','14','15','16','12','71'],
+['Maximum','14','14','15','16','12','71'],
+['Average','14','14','15','16','12','71']
+]);
+// Create and draw the visualization.
+visualization = new google.visualization.Table(document.getElementById('calcs_table'));
+visualization.draw(data, null);
+}
+google.setOnLoadCallback(drawStatsTable);
+google.setOnLoadCallback(drawCalcsTable);
+google.setOnLoadCallback(drawChart);
+</script>
+<style>
+td { text-align: center; }
+</style>
+</head>
+<body style="font-family: Arial;border: 0 none;">
+<h1>Human/Channeler/borderlands</h1>
+<p><a href="https://github.com/rascul/wotmad-stats/tree/master/csv/Human/Channeler/borderlands.csv">csv data</a></p>
+<p>Out of 1 stats:</p>
+<div id="calcs_table"></div>
+<br><br>
+<div id="stat_table"></div>
+</body>
+</html>

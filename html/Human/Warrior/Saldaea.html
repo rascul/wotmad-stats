@@ -1,0 +1,51 @@
+
+<html><head><title>Human/Warrior/Saldaea</title>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">google.load('visualization', '1', {packages: ['table', 'corechart']});</script>
+<script type="text/javascript">
+function drawStatsTable() {
+// Create and populate the data table.
+var data = google.visualization.arrayToDataTable([
+['Submitted','Faction','Class','Sex','Homeland','Strength','Intelligence','Willpower','Dexterity','Constitution','Sum'],
+['2013-02-19 20:49:45','Human','Warrior','Male','Saldaea','16','14','15','17','14','76'],
+['2013-02-19 20:46:47','Human','Warrior','Male','Saldaea','14','9','14','19','15','71'],
+['2013-02-19 20:43:47','Human','Warrior','Male','Saldaea','18','14','12','15','14','73'],
+['2013-02-19 20:41:13','Human','Warrior','Male','Saldaea','18','13','13','16','15','75'],
+['2013-02-19 20:38:39','Human','Warrior','Male','Saldaea','18','15','12','15','14','74'],
+['2013-02-19 20:36:22','Human','Warrior','Male','Saldaea','16','13','15','14','15','73'],
+
+
+]);      
+// Create and draw the visualization.
+visualization = new google.visualization.Table(document.getElementById('stat_table'));
+visualization.draw(data, {showRowNumber: true});
+}
+function drawCalcsTable() {
+// Create and populate the data table.
+var data = google.visualization.arrayToDataTable([
+['','Strength','Intelligence','Willpower','Dexterity','Constitution','Sum'],
+['Minimum','14','9','12','14','14','71'],
+['Maximum','18','15','15','19','15','76'],
+['Average','16.7','13','13.5','16','14.5','73.7']
+]);
+// Create and draw the visualization.
+visualization = new google.visualization.Table(document.getElementById('calcs_table'));
+visualization.draw(data, null);
+}
+google.setOnLoadCallback(drawStatsTable);
+google.setOnLoadCallback(drawCalcsTable);
+google.setOnLoadCallback(drawChart);
+</script>
+<style>
+td { text-align: center; }
+</style>
+</head>
+<body style="font-family: Arial;border: 0 none;">
+<h1>Human/Warrior/Saldaea</h1>
+<p><a href="https://github.com/rascul/wotmad-stats/tree/master/csv/Human/Warrior/Saldaea.csv">csv data</a></p>
+<p>Out of 6 stats:</p>
+<div id="calcs_table"></div>
+<br><br>
+<div id="stat_table"></div>
+</body>
+</html>

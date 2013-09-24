@@ -1,0 +1,76 @@
+
+<html><head><title>Human/Warrior/Kandor</title>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">google.load('visualization', '1', {packages: ['table', 'corechart']});</script>
+<script type="text/javascript">
+function drawStatsTable() {
+// Create and populate the data table.
+var data = google.visualization.arrayToDataTable([
+['Submitted','Faction','Class','Sex','Homeland','Strength','Intelligence','Willpower','Dexterity','Constitution','Sum'],
+['2013-09-19 17:44:34','Human','Warrior','Male','Kandor','19','14','9','16','19','77'],
+['2013-09-19 17:44:34','Human','Warrior','Male','Kandor','18','12','12','14','15','71'],
+['2013-09-19 17:44:33','Human','Warrior','Male','Kandor','18','12','11','14','17','72'],
+['2013-09-19 17:44:32','Human','Warrior','Male','Kandor','17','12','10','15','17','71'],
+['2013-09-19 17:44:32','Human','Warrior','Male','Kandor','18','13','11','12','17','71'],
+['2013-09-19 17:44:31','Human','Warrior','Male','Kandor','18','12','10','14','19','73'],
+['2013-09-19 17:44:31','Human','Warrior','Male','Kandor','19','12','12','14','17','74'],
+['2013-09-19 17:44:31','Human','Warrior','Male','Kandor','19','14','11','13','14','71'],
+['2013-09-19 17:44:30','Human','Warrior','Male','Kandor','19','12','14','16','17','78'],
+['2013-09-19 17:44:30','Human','Warrior','Male','Kandor','19','13','12','14','17','75'],
+['2013-09-19 17:44:29','Human','Warrior','Male','Kandor','17','12','12','14','17','72'],
+['2013-09-19 17:44:29','Human','Warrior','Male','Kandor','18','12','9','17','15','71'],
+['2013-09-19 17:44:28','Human','Warrior','Male','Kandor','19','12','9','14','17','71'],
+['2013-09-19 17:44:27','Human','Warrior','Male','Kandor','18','10','13','14','17','72'],
+['2013-09-19 17:44:27','Human','Warrior','Male','Kandor','19','13','9','12','18','71'],
+['2013-09-19 17:44:27','Human','Warrior','Male','Kandor','17','9','11','16','17','70'],
+['2013-09-19 17:44:26','Human','Warrior','Male','Kandor','18','13','11','15','16','73'],
+['2013-09-19 17:44:26','Human','Warrior','Male','Kandor','18','13','11','14','17','73'],
+['2013-09-19 17:44:25','Human','Warrior','Male','Kandor','17','12','12','14','17','72'],
+['2013-09-19 17:44:25','Human','Warrior','Male','Kandor','18','13','11','14','17','73'],
+['2013-09-19 17:44:24','Human','Warrior','Male','Kandor','18','12','12','11','19','72'],
+['2013-09-19 17:44:24','Human','Warrior','Male','Kandor','18','12','9','14','17','70'],
+['2013-09-19 17:44:23','Human','Warrior','Male','Kandor','18','11','13','12','17','71'],
+['2013-09-19 17:44:23','Human','Warrior','Male','Kandor','19','15','9','11','16','70'],
+['2013-09-19 17:44:23','Human','Warrior','Male','Kandor','18','12','13','14','17','74'],
+['2013-09-19 17:44:22','Human','Warrior','Male','Kandor','17','12','10','13','19','71'],
+['2013-09-19 17:44:21','Human','Warrior','Male','Kandor','19','14','13','13','19','78'],
+['2013-09-19 17:44:21','Human','Warrior','Male','Kandor','19','11','11','15','17','73'],
+['2013-09-19 17:44:21','Human','Warrior','Male','Kandor','18','12','13','11','17','71'],
+['2013-09-19 17:44:20','Human','Warrior','Male','Kandor','17','10','14','16','19','76'],
+['2012-05-07 01:31:25','Human','Warrior','Male','Kandor','16','12','12','15','15','70'],
+
+
+]);      
+// Create and draw the visualization.
+visualization = new google.visualization.Table(document.getElementById('stat_table'));
+visualization.draw(data, {showRowNumber: true});
+}
+function drawCalcsTable() {
+// Create and populate the data table.
+var data = google.visualization.arrayToDataTable([
+['','Strength','Intelligence','Willpower','Dexterity','Constitution','Sum'],
+['Minimum','16','9','9','11','14','70'],
+['Maximum','19','15','14','17','19','78'],
+['Average','18.1','12.2','11.3','13.9','17.1','72.5']
+]);
+// Create and draw the visualization.
+visualization = new google.visualization.Table(document.getElementById('calcs_table'));
+visualization.draw(data, null);
+}
+google.setOnLoadCallback(drawStatsTable);
+google.setOnLoadCallback(drawCalcsTable);
+google.setOnLoadCallback(drawChart);
+</script>
+<style>
+td { text-align: center; }
+</style>
+</head>
+<body style="font-family: Arial;border: 0 none;">
+<h1>Human/Warrior/Kandor</h1>
+<p><a href="https://github.com/rascul/wotmad-stats/tree/master/csv/Human/Warrior/Kandor.csv">csv data</a></p>
+<p>Out of 31 stats:</p>
+<div id="calcs_table"></div>
+<br><br>
+<div id="stat_table"></div>
+</body>
+</html>
