@@ -106,7 +106,10 @@ var data = google.visualization.arrayToDataTable([
 				$total[$i-5] += $eline[$i];
 			}
 		}
-		fwrite($handle, "['$eline[0]','$eline[1]','$eline[2]','$eline[3]','$eline[4]','$eline[5]','$eline[6]','$eline[7]','$eline[8]','$eline[9]','" . rtrim($eline[10]) . "'],\n");
+		if ($count > 0)
+			fwrite($handle, "['$eline[0]','$eline[1]','$eline[2]','$eline[3]','$eline[4]',$eline[5],$eline[6],$eline[7],$eline[8],$eline[9]," . rtrim($eline[10]) . "],\n");
+		else
+			fwrite($handle, "['$eline[0]','$eline[1]','$eline[2]','$eline[3]','$eline[4]','$eline[5]','$eline[6]','$eline[7]','$eline[8]','$eline[9]','" . rtrim($eline[10]) . "'],\n");
 		$count++;
 	}
 	
