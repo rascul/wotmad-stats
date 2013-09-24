@@ -7,6 +7,23 @@ function drawStatsTable() {
 // Create and populate the data table.
 var data = google.visualization.arrayToDataTable([
 ['Submitted','Faction','Class','Sex','Homeland','Strength','Intelligence','Willpower','Dexterity','Constitution','Sum'],
+['2012-10-01 03:16:57','Darkside','Rogue','Male','Ramshorned','17','9','8','19','18','71'],
+['2012-10-01 03:14:43','Darkside','Rogue','Male','Ramshorned','17','7','11','15','19','69'],
+['2012-10-01 03:12:16','Darkside','Rogue','Male','Ramshorned','14','10','11','15','19','69'],
+['2012-10-01 03:10:11','Darkside','Rogue','Male','Ramshorned','16','7','11','16','17','67'],
+['2012-10-01 03:06:55','Darkside','Rogue','Male','Ramshorned','16','7','12','16','16','67'],
+['2012-10-01 03:03:09','Darkside','Rogue','Male','Ramshorned','13','7','10','17','18','65'],
+['2012-10-01 03:00:34','Darkside','Rogue','Male','Ramshorned','16','8','13','18','19','74'],
+['2012-10-01 02:57:23','Darkside','Rogue','Male','Ramshorned','15','8','10','17','15','65'],
+['2012-10-01 02:55:07','Darkside','Rogue','Male','Ramshorned','17','7','11','17','17','69'],
+['2012-10-01 02:52:29','Darkside','Rogue','Male','Ramshorned','16','5','10','17','17','65'],
+['2012-10-01 02:52:28','Darkside','Rogue','Male','Ramshorned','16','5','10','17','17','65'],
+['2012-10-01 02:49:08','Darkside','Rogue','Male','Ramshorned','13','7','12','19','17','68'],
+['2012-10-01 02:47:01','Darkside','Rogue','Male','Ramshorned','17','6','8','16','18','65'],
+['2012-10-01 02:44:32','Darkside','Rogue','Male','Ramshorned','16','9','11','14','16','66'],
+['2012-10-01 02:42:21','Darkside','Rogue','Male','Ramshorned','17','7','11','15','15','65'],
+['2012-10-01 02:40:02','Darkside','Rogue','Male','Ramshorned','17','5','10','15','19','66'],
+['2012-10-01 02:35:44','Darkside','Rogue','Male','Ramshorned','17','7','8','17','18','67'],
 ['2012-05-31 13:01:23','Darkside','Rogue','Male','Ramshorned','17','7','9','19','19','71'],
 ['2012-05-31 13:01:22','Darkside','Rogue','Male','Ramshorned','13','9','11','16','16','65'],
 ['2012-05-31 13:01:21','Darkside','Rogue','Male','Ramshorned','16','6','11','17','15','65'],
@@ -171,7 +188,7 @@ var data = google.visualization.arrayToDataTable([
 ['','Strength','Intelligence','Willpower','Dexterity','Constitution','Sum'],
 ['Minimum','12','4','5','12','13','65'],
 ['Maximum','18','11','13','19','19','74'],
-['Average','15','8','10','17','16.9','66.8']
+['Average','15.1','7.9','10','17','16.9','66.8']
 ]);
 // Create and draw the visualization.
 visualization = new google.visualization.Table(document.getElementById('calcs_table'));
@@ -188,7 +205,7 @@ td { text-align: center; }
 <body style="font-family: Arial;border: 0 none;">
 <h1>Darkside/Rogue/Ramshorned</h1>
 <p><a href="https://github.com/rascul/wotmad-stats/tree/master/csv/Darkside/Rogue/Ramshorned.csv">csv data</a></p>
-<p>Out of 151 stats:</p>
+<p>Out of 168 stats:</p>
 <div id="calcs_table"></div>
 <br><br>
 <div id="stat_table"></div>

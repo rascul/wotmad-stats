@@ -1,5 +1,5 @@
 
-<html><head><title>Human/Warrior/the Borderlands</title>
+<html><head><title>Human/Hunter/Ghealdan</title>
 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 <script type="text/javascript">google.load('visualization', '1', {packages: ['table', 'corechart']});</script>
 <script type="text/javascript">
@@ -7,10 +7,10 @@ function drawStatsTable() {
 // Create and populate the data table.
 var data = google.visualization.arrayToDataTable([
 ['Submitted','Faction','Class','Sex','Homeland','Strength','Intelligence','Willpower','Dexterity','Constitution','Sum'],
-['2012-04-15 22:16:00','Human','Warrior','Male','the Borderlands','17','9','11','18','16','71'],
-['2012-04-15 22:07:43','Human','Warrior','Male','the Borderlands','19','12','13','10','17','71'],
-['2012-04-15 21:58:16','Human','Warrior','Male','the Borderlands','18','11','13','14','17','73'],
-['2012-04-13 13:19:38','Human','Warrior','Male','the Borderlands','16','12','11','14','17','70'],
+['2013-09-24 16:00:56','Human','Hunter','Male','Ghealdan','15','17','15','16','11','74'],
+['2013-09-24 16:00:39','Human','Hunter','Male','Ghealdan','15','18','14','14','13','74'],
+['2013-09-24 16:00:25','Human','Hunter','Male','Ghealdan','15','14','16','13','13','71'],
+['2013-09-24 16:00:04','Human','Hunter','Male','Ghealdan','12','15','18','14','13','72'],
 
 
 ]);      
@@ -22,9 +22,9 @@ function drawCalcsTable() {
 // Create and populate the data table.
 var data = google.visualization.arrayToDataTable([
 ['','Strength','Intelligence','Willpower','Dexterity','Constitution','Sum'],
-['Minimum','16','9','11','10','16','70'],
-['Maximum','19','12','13','18','17','73'],
-['Average','17.5','11','12','14','16.8','71.3']
+['Minimum','12','14','14','13','11','71'],
+['Maximum','15','18','18','16','13','74'],
+['Average','14.3','16','15.8','14.3','12.5','72.8']
 ]);
 // Create and draw the visualization.
 visualization = new google.visualization.Table(document.getElementById('calcs_table'));
@@ -39,8 +39,8 @@ td { text-align: center; }
 </style>
 </head>
 <body style="font-family: Arial;border: 0 none;">
-<h1>Human/Warrior/the Borderlands</h1>
-<p><a href="https://github.com/rascul/wotmad-stats/tree/master/csv/Human/Warrior/the Borderlands.csv">csv data</a></p>
+<h1>Human/Hunter/Ghealdan</h1>
+<p><a href="https://github.com/rascul/wotmad-stats/tree/master/csv/Human/Hunter/Ghealdan.csv">csv data</a></p>
 <p>Out of 4 stats:</p>
 <div id="calcs_table"></div>
 <br><br>

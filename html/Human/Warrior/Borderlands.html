@@ -1,5 +1,5 @@
 
-<html><head><title>Darkside/Hunter/Bearish Trolloc</title>
+<html><head><title>Human/Warrior/Borderlands</title>
 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 <script type="text/javascript">google.load('visualization', '1', {packages: ['table', 'corechart']});</script>
 <script type="text/javascript">
@@ -7,8 +7,10 @@ function drawStatsTable() {
 // Create and populate the data table.
 var data = google.visualization.arrayToDataTable([
 ['Submitted','Faction','Class','Sex','Homeland','Strength','Intelligence','Willpower','Dexterity','Constitution','Sum'],
-['2012-08-02 14:08:16','Darkside','Hunter','Male','Bearish Trolloc','19','9','8','13','17','66'],
-['2012-08-02 14:06:15','Darkside','Hunter','Male','Bearish Trolloc','20','6','9','13','17','65'],
+['2012-04-15 22:16:00','Human','Warrior','Male','Borderlands','17','9','11','18','16','71'],
+['2012-04-15 22:07:43','Human','Warrior','Male','Borderlands','19','12','13','10','17','71'],
+['2012-04-15 21:58:16','Human','Warrior','Male','Borderlands','18','11','13','14','17','73'],
+['2012-04-13 13:19:38','Human','Warrior','Male','Borderlands','16','12','11','14','17','70'],
 
 
 ]);      
@@ -20,9 +22,9 @@ function drawCalcsTable() {
 // Create and populate the data table.
 var data = google.visualization.arrayToDataTable([
 ['','Strength','Intelligence','Willpower','Dexterity','Constitution','Sum'],
-['Minimum','19','6','8','13','17','65'],
-['Maximum','20','9','9','13','17','66'],
-['Average','19.5','7.5','8.5','13','17','65.5']
+['Minimum','16','9','11','10','16','70'],
+['Maximum','19','12','13','18','17','73'],
+['Average','17.5','11','12','14','16.8','71.3']
 ]);
 // Create and draw the visualization.
 visualization = new google.visualization.Table(document.getElementById('calcs_table'));
@@ -37,9 +39,9 @@ td { text-align: center; }
 </style>
 </head>
 <body style="font-family: Arial;border: 0 none;">
-<h1>Darkside/Hunter/Bearish Trolloc</h1>
-<p><a href="https://github.com/rascul/wotmad-stats/tree/master/csv/Darkside/Hunter/Bearish Trolloc.csv">csv data</a></p>
-<p>Out of 2 stats:</p>
+<h1>Human/Warrior/Borderlands</h1>
+<p><a href="https://github.com/rascul/wotmad-stats/tree/master/csv/Human/Warrior/Borderlands.csv">csv data</a></p>
+<p>Out of 4 stats:</p>
 <div id="calcs_table"></div>
 <br><br>
 <div id="stat_table"></div>
