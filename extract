@@ -1,93 +1,221 @@
-#!/bin/bash
-
-STATDIR="stats"
-HTMLDIR="../stats-pages/stats"
-
-# 2013-09-19 14:33:16,Human,Hunter,Male,Saldaea,16,14,12,15,18
-
-# download the latest stats
-wget -O db.csv http://wotmad.herokuapp.com/stats/export/ || exit 1
-#header="$(head -1 db.csv)"
-header="Submitted,Faction,Class,Sex,Homeland,Strength,Intelligence,Willpower,Dexterity,Constitution,Sum"
-sed -i 1d db.csv
-
-# figure out what's there
-mapfile -t factions < <(cut -d, -f2 db.csv | sort | uniq)
-mapfile -t classes < <(cut -d, -f3 db.csv | sort | uniq)
-mapfile -t homelands < <(cut -d, -f5 db.csv | sort | uniq)
-
-if [[ -d "$STATDIR" ]]; then
-	echo "Removing existing stat directory '$STATDIR'"
-	rm -r "$STATDIR"
-fi
-echo "Creating stat directory '$STATDIR'"
-mkdir "$STATDIR"
-
-if [[ -d "$HTMLDIR" ]]; then
-	echo "Removing existing html directory '$HTMLDIR'"
-	rm -r "$HTMLDIR"
-fi
-echo "Creating html directory '$HTMLDIR'"
-mkdir "$HTMLDIR"
+#!/usr/bin/php
+<?php
 
 
-# separate by faction/class/homeland
-IFS=,
-for faction in ${factions[@]}; do
-	[[ ! -d "$STATDIR/$faction" ]] && mkdir "$STATDIR/$faction"
-	[[ ! -d "$HTMLDIR/$faction" ]] && mkdir "$HTMLDIR/$faction"
-	
-	#grep ",$faction," db.csv >> "$STATDIR/$faction.db"
-	#if [[ $? -eq 0 ]]; then
-	#	echo "$header" >> "$STATDIR/$faction.csv"
-	#	python3 statsum.py "$STATDIR/$faction.db" > "$STATDIR/$faction.csv"
-	#	#python3 calc.py "$STATDIR/$faction.db" > "$STATDIR/$faction.calc"
-	#	rm "$STATDIR/$faction.db"
-	#	echo "Extracted '$STATDIR/$faction'"
-	#else
-	#	rm "$STATDIR/$faction.db"
-	#fi
-	
-	for class in ${classes[@]}; do
-		[[ ! -d "$STATDIR/$faction/$class" ]] && mkdir "$STATDIR/$faction/$class"
-		[[ ! -d "$HTMLDIR/$faction/$class" ]] && mkdir "$HTMLDIR/$faction/$class"
+
+$stats_url = "http://wotmad.herokuapp.com/stats/export/";
+#$stats_url = "/tmp/stats.csv";
+$stats_dir = "csv";
+$html_dir = "../stats-pages/html";
+$header = "Submitted,Faction,Class,Sex,Homeland,Strength,Intelligence,Willpower,Dexterity,Constitution,Sum\n";
+$stat_files = array();
+
+/* function to recursively remove a directory                  *
+ * from http://www.php.net/manual/en/function.rmdir.php#107233 */
+function rrmdir($dir) {
+	if (is_dir($dir)) {
+		$objects = scandir($dir);
+		foreach ($objects as $object) {
+			if ($object != "." && $object != "..") {
+				if (filetype($dir."/".$object) == "dir")
+					rrmdir($dir."/".$object);
+				else
+					unlink($dir."/".$object);
+			}
+		}
+		reset($objects);
+		rmdir($dir);
+	}
+}
+
+// clean up stats and html directories, starting fresh
+rrmdir($stats_dir);
+rrmdir($html_dir);
+mkdir($stats_dir);
+mkdir($html_dir);
+
+
+
+$count = 1;
+foreach (file($stats_url, FILE_SKIP_EMPTY_LINES) as $line) {
+	if ($count > 1) {
+		$line = trim($line);
+		$eline = explode(",", $line);
 		
-		grep ",$faction,$class," db.csv >> "$STATDIR/$faction/$class.db"
-		if [[ $? -eq 0 ]]; then
-			echo "$header" >> "$STATDIR/$faction/$class.csv"
-			python3 statsum.py "$STATDIR/$faction/$class.db" >> "$STATDIR/$faction/$class.csv"
-		#	#python3 calc.py "$STATDIR/$faction/$class.db" > "$STATDIR/$faction/$class.calc"
-			rm "$STATDIR/$faction/$class.db"
-			./genpage "$STATDIR/$faction/$class" > "$HTMLDIR/$faction/$class.html"
-			numstats=$(wc -l "$STATDIR/$faction/$class.csv")
-			echo "<p><a href=\"http://rascul.github.io/wotmad-stats/stats/$faction/$class.html\">$numstats</a></p>" >> "$HTMLDIR/index.html"
-			echo "Extracted '$STATDIR/$faction/$class'"
-		else
-			rm "$STATDIR/$faction/$class.db"
-		fi
+		$faction = $eline[1];
+		$class = $eline[2];
+		$homeland = $eline[4];
 		
-		for homeland in ${homelands[@]}; do
-			grep ",$faction,$class,\(Male\|Female\),$homeland," db.csv >> "$STATDIR/$faction/$class/$homeland.db"
-			if [[ $? -eq 0 ]]; then
-				echo "$header" >> "$STATDIR/$faction/$class/$homeland.csv"
-				python3 statsum.py "$STATDIR/$faction/$class/$homeland.db" >> "$STATDIR/$faction/$class/$homeland.csv"
-				#python3 calc.py "$STATDIR/$faction/$class/$homeland.db" > "$STATDIR/$faction/$class/$homeland.calc"
-				rm "$STATDIR/$faction/$class/$homeland.db"
-				./genpage "$STATDIR/$faction/$class/$homeland" > "$HTMLDIR/$faction/$class/$homeland.html"
-				numstats=$(wc -l "$STATDIR/$faction/$class/$homeland.csv")
-				echo "<p><a href=\"http://rascul.github.io/wotmad-stats/stats/$faction/$class/$homeland.html\">$numstats</a></p>" >> "$HTMLDIR/index.html"
-				echo "Extracted '$STATDIR/$faction/$class/$homeland'"
-				
-			else
-				rm "$STATDIR/$faction/$class/$homeland.db"
-			fi
-		done
-	done
-done
+		$sum = $eline[5] + $eline[6] + $eline[7] + $eline[8] + $eline[9];
+		
+		if (!is_dir("$stats_dir/$faction/$class")) {
+			echo "[dir] $faction/$class\n";
+			mkdir("$stats_dir/$faction/$class", 0755, true);
+			mkdir("$html_dir/$faction/$class", 0755, true);
+		}
+		
+		$handle = "";
+		if (file_exists("$stats_dir/$faction/$class/$homeland.csv"))
+			$handle = fopen("$stats_dir/$faction/$class/$homeland.csv", "a");
+		else {
+			echo "[csv] $faction/$class/$homeland\n";
+			$handle = fopen("$stats_dir/$faction/$class/$homeland.csv", "a");
+			fwrite($handle, $header);
+			array_push($stat_files, "$faction/$class/$homeland");
+		}
+		fwrite($handle, "$line,$sum\n");
+		fclose($handle);
+	}
+	$count++;
+}
 
-#echo "$header" >> "$STATDIR/stats.csv"
-#python3 calc.py "db.csv" > "$STATDIR/stats.csv"
-#python3 statsum.py "db.csv" >> "$STATDIR/stats.csv"
-#rm "db.csv"
-#echo "Extracted '$STATDIR/stats.csv"
+foreach ($stat_files as $file) {
+	echo "[html] $file\n";
+	$handle = fopen("$html_dir/$file.html", "w");
+	$html = "
+<html><head><title>$file</title>
+<script type=\"text/javascript\" src=\"https://www.google.com/jsapi\"></script>
+<script type=\"text/javascript\">google.load('visualization', '1', {packages: ['table', 'corechart']});</script>
+<script type=\"text/javascript\">
+function drawStatsTable() {
+// Create and populate the data table.
+var data = google.visualization.arrayToDataTable([
+";
+	
+	fwrite($handle, $html);
+	
+	$count = 0;
+	
+	$avg = array();
+	$min = array();
+	$max = array();
+	$total = array();
+	
+	foreach (file("$stats_dir/$file.csv") as $line) {
+		$eline = explode(",", $line);
+		
+		if ($count == 1) {
+			for ($i = 5; $i <= 10; $i++) {
+				$min[$i-5] = $eline[$i];
+				$max[$i-5] = $eline[$i];
+				$total[$i-5] = $eline[$i];
+			}
+		}
+		elseif ($count > 1) {
+			for ($i = 5; $i <= 10; $i++) {
+				if ($eline[$i] < $min[$i-5])
+					$min[$i-5] = $eline[$i];
+				if ($eline[$i] > $max[$i-5])
+					$max[$i-5] = $eline[$i];
+				$total[$i-5] += $eline[$i];
+			}
+		}
+		fwrite($handle, "['$eline[0]','$eline[1]','$eline[2]','$eline[3]','$eline[4]','$eline[5]','$eline[6]','$eline[7]','$eline[8]','$eline[9]','" . rtrim($eline[10]) . "'],\n");
+		$count++;
+	}
+	
+	$count--;
+	for ($i = 0; $i <= 5; $i++)
+		$avg[$i] = round($total[$i] / $count, 1);
+	
+	$min[5] = trim($min[5]);
+	$max[5] = trim($max[5]);
+	$avg[5] = trim($avg[5]);
+	
+	$html = "
 
+]);      
+// Create and draw the visualization.
+visualization = new google.visualization.Table(document.getElementById('stat_table'));
+visualization.draw(data, {showRowNumber: true});
+}
+function drawCalcsTable() {
+// Create and populate the data table.
+var data = google.visualization.arrayToDataTable([
+['','Strength','Intelligence','Willpower','Dexterity','Constitution','Sum'],
+['Minimum','$min[0]','$min[1]','$min[2]','$min[3]','$min[4]','$min[5]'],
+['Maximum','$max[0]','$max[1]','$max[2]','$max[3]','$max[4]','$max[5]'],
+['Average','$avg[0]','$avg[1]','$avg[2]','$avg[3]','$avg[4]','$avg[5]']
+]);
+// Create and draw the visualization.
+visualization = new google.visualization.Table(document.getElementById('calcs_table'));
+visualization.draw(data, null);
+}
+google.setOnLoadCallback(drawStatsTable);
+google.setOnLoadCallback(drawCalcsTable);
+google.setOnLoadCallback(drawChart);
+</script>
+<style>
+td { text-align: center; }
+</style>
+</head>
+<body style=\"font-family: Arial;border: 0 none;\">
+<h1>$file</h1>
+<p><a href=\"https://github.com/rascul/wotmad-stats/csv/$file.csv\">csv data</a></p>
+<p>Out of $count stats:</p>
+<div id=\"calcs_table\"></div>
+<br><br>
+<div id=\"stat_table\"></div>
+</body>
+</html>
+";
+	
+	fwrite($handle, $html);
+	fclose($handle);
+
+}
+
+// generate index.html
+if (file_exists("$html_dir/index.html"))
+	unlink("$html_dir/index.html");
+$handle = fopen("$html_dir/index.html", "a");
+$html = "
+<html>
+<head>
+<title>WoTMad Stats</title>
+</head>
+<body style=\"font-family: Arial;border: 0 none;\">
+<h1>WoTMad Stats</h1>
+<p>Data is from <a href=\"http://wotmad.herokuapp.com/stats\">WoTMad Stat Database</a></p>
+<table style=\"width: 100%;\"><tr valign=\"top\">
+";
+
+fwrite($handle, $html);
+
+if (is_dir($html_dir)) {
+	$factions = scandir($html_dir);
+	sort($factions);
+	foreach ($factions as $faction) {
+		if ($faction != "." && $faction != ".." && $faction != "index.html") {
+			fwrite($handle, "<td><h2>$faction</h2>\n");
+			
+			$classes = scandir("$html_dir/$faction");
+			foreach ($classes as $class) {
+				if ($class != "." && $class != "..") {
+					fwrite($handle, "<h3>$class</h3><ul>\n");
+					
+					$homelands = scandir("$html_dir/$faction/$class");
+					foreach ($homelands as $homeland)
+						if ($homeland != "." && $homeland != "..")
+							fwrite($handle, "<li><a href=\"$faction/$class/$homeland\">$homeland</a></li>\n");
+					fwrite($handle, "</ul>\n");
+				}
+			}
+			
+			
+			
+			fwrite($handle, "</td>\n");
+		}
+	}
+}
+
+$html = "
+</tr></table>
+</body>
+</html>
+";
+
+fwrite($handle, $html);
+fclose($handle);
+
+?>
