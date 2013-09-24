@@ -1,8 +1,6 @@
 #!/usr/bin/php
 <?php
 
-
-
 $stats_url = "http://wotmad.herokuapp.com/stats/export/";
 #$stats_url = "/tmp/stats.csv";
 $stats_dir = "csv";
@@ -33,8 +31,6 @@ rrmdir($stats_dir);
 rrmdir($html_dir);
 mkdir($stats_dir);
 mkdir($html_dir);
-
-
 
 $count = 1;
 foreach (file($stats_url, FILE_SKIP_EMPTY_LINES) as $line) {
@@ -151,7 +147,7 @@ td { text-align: center; }
 </head>
 <body style=\"font-family: Arial;border: 0 none;\">
 <h1>$file</h1>
-<p><a href=\"https://github.com/rascul/wotmad-stats/csv/$file.csv\">csv data</a></p>
+<p><a href=\"https://github.com/rascul/wotmad-stats/tree/master/csv/$file.csv\">csv data</a></p>
 <p>Out of $count stats:</p>
 <div id=\"calcs_table\"></div>
 <br><br>
@@ -166,6 +162,7 @@ td { text-align: center; }
 }
 
 // generate index.html
+echo "[html] index\n";
 if (file_exists("$html_dir/index.html"))
 	unlink("$html_dir/index.html");
 $handle = fopen("$html_dir/index.html", "a");
@@ -195,15 +192,16 @@ if (is_dir($html_dir)) {
 					fwrite($handle, "<h3>$class</h3><ul>\n");
 					
 					$homelands = scandir("$html_dir/$faction/$class");
-					foreach ($homelands as $homeland)
-						if ($homeland != "." && $homeland != "..")
-							fwrite($handle, "<li><a href=\"$faction/$class/$homeland\">$homeland</a></li>\n");
+					foreach ($homelands as $homeland) {
+						if ($homeland != "." && $homeland != "..") {
+							$csv_file = file("$stats_dir/$faction/$class/" . basename($homeland, ".html") . ".csv");
+							$num_stats = count($csv_file);
+							fwrite($handle, "<li><a href=\"$faction/$class/$homeland\">" . basename($homeland, ".html") . "</a> ($num_stats)</li>\n");
+						}
+					}
 					fwrite($handle, "</ul>\n");
 				}
 			}
-			
-			
-			
 			fwrite($handle, "</td>\n");
 		}
 	}
