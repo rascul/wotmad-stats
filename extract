@@ -195,7 +195,7 @@ if (is_dir($html_dir)) {
 					foreach ($homelands as $homeland) {
 						if ($homeland != "." && $homeland != "..") {
 							$csv_file = file("$stats_dir/$faction/$class/" . basename($homeland, ".html") . ".csv");
-							$num_stats = count($csv_file);
+							$num_stats = count($csv_file) - 1;
 							fwrite($handle, "<li><a href=\"html/$faction/$class/$homeland\">" . basename($homeland, ".html") . "</a> ($num_stats)</li>\n");
 						}
 					}
