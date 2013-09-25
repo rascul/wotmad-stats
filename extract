@@ -88,6 +88,11 @@ var data = google.visualization.arrayToDataTable([
 	$total = array();
 	
 	$sums = array_fill(55, 46, 0);
+	$str = array_fill(1, 21, 0);
+	$int = array_fill(1, 21, 0);
+	$wil = array_fill(1, 21, 0);
+	$dex = array_fill(1, 21, 0);
+	$con = array_fill(1, 21, 0);
 	
 	foreach (file("$stats_dir/$file.csv") as $line) {
 		$eline = explode(",", trim($line));
@@ -111,6 +116,11 @@ var data = google.visualization.arrayToDataTable([
 			
 			$sum = $eline[5] + $eline[6] + $eline[7] + $eline[8] + $eline[9];
 			$sums[$sum]++;
+			$str[$eline[5]]++;
+			$int[$eline[6]]++;
+			$wil[$eline[7]]++;
+			$dex[$eline[8]]++;
+			$con[$eline[9]]++;
 			
 			fwrite($handle, "['$eline[0]','$eline[1]','$eline[2]','$eline[3]','$eline[4]',$eline[5],$eline[6],$eline[7],$eline[8],$eline[9],$eline[10]],\n");
 		} else {
@@ -131,27 +141,22 @@ var data = google.visualization.arrayToDataTable([
 	$html = "
 
 ]);      
-// Create and draw the visualization.
 visualization = new google.visualization.Table(document.getElementById('stat_table'));
 visualization.draw(data, {showRowNumber: true});
 }
 function drawCalcsTable() {
-// Create and populate the data table.
 var data = google.visualization.arrayToDataTable([
 ['','Strength','Intelligence','Willpower','Dexterity','Constitution','Sum'],
 ['Minimum','$min[0]','$min[1]','$min[2]','$min[3]','$min[4]','$min[5]'],
 ['Maximum','$max[0]','$max[1]','$max[2]','$max[3]','$max[4]','$max[5]'],
 ['Average','$avg[0]','$avg[1]','$avg[2]','$avg[3]','$avg[4]','$avg[5]']
 ]);
-// Create and draw the visualization.
 visualization = new google.visualization.Table(document.getElementById('calcs_table'));
 visualization.draw(data, null);
 }
-
-      function drawSumsChart() {
-        // Create and populate the data table.
-        var data = google.visualization.arrayToDataTable([
-      ['sum',''],
+function drawSumsChart() {
+var data = google.visualization.arrayToDataTable([
+['sum','sum'],
 ";
 	
 	fwrite($handle, $html);
@@ -160,20 +165,59 @@ visualization.draw(data, null);
 			fwrite($handle, "[$i,$sums[$i]],\n");
 	
 	$html = "
-        ]);
-      
-        // Create and draw the visualization.
-        new google.visualization.LineChart(document.getElementById('sums_chart')).
-            draw(data, {curveType: \"function\",
-                        legend: {position: 'none'},
-                        hAxis: {title: 'statsum'},
-                        vAxis: {title: 'number of stats'}}
-                );
-      }
+]);
+new google.visualization.LineChart(document.getElementById('sums_chart')).
+draw(data, {curveType: \"function\",
+title: 'statsum',
+vAxis: {title: 'number of stats'}}
+);
+}
+
+function drawPhysicalsChart() {
+var data = google.visualization.arrayToDataTable([
+['stat','str','dex','con'],
+";
+	
+	fwrite($handle, $html);
+	
+	for ($i = 1; $i <= 21; $i++) 
+		if ($str[$i] or $dex[$i] or $con[$i])
+			fwrite($handle, "[$i,$str[$i],$dex[$i],$con[$i]],\n");
+	
+	$html = "
+]);
+new google.visualization.LineChart(document.getElementById('physicals_chart')).
+draw(data, {curveType: \"function\",
+title: 'physicals',
+vAxis: {title: 'number of stats'}}
+);
+}
+
+function drawMentalsChart() {
+var data = google.visualization.arrayToDataTable([
+['stat','int','wil'],
+";
+	
+	fwrite($handle, $html);
+	
+	for ($i = 1; $i <= 21; $i++) 
+		if ($int[$i] or $wil[$i])
+			fwrite($handle, "[$i,$int[$i],$wil[$i]],\n");
+	
+	$html = "
+]);
+new google.visualization.LineChart(document.getElementById('mentals_chart')).
+draw(data, {curveType: \"function\",
+title: 'mentals',
+vAxis: {title: 'number of stats'}}
+);
+}
 
 google.setOnLoadCallback(drawSumsChart);
 google.setOnLoadCallback(drawStatsTable);
 google.setOnLoadCallback(drawCalcsTable);
+google.setOnLoadCallback(drawPhysicalsChart);
+google.setOnLoadCallback(drawMentalsChart);
 google.setOnLoadCallback(drawChart);
 </script>
 <style>
@@ -183,12 +227,18 @@ td { text-align: center; }
 <body style=\"font-family: Arial;border: 0 none;\">
 
 <table width=\"100%\"><tr>
-<td style=\"width: 60%; text-align: left;\">
+<td style=\"width: 25%; text-align: left;\">
 <h1>$file</h1>
 <p><a href=\"https://github.com/rascul/wotmad-stats/tree/master/csv/$file.csv\">csv data</a></p>
 <p>Out of $count stats</p>
 </td>
-<td style=\"text-align: right\;width: 40%;\">
+<td style=\"text-align: right; width: 25%;\">
+<div id=\"physicals_chart\"></div>
+</td>
+<td style=\"text-align: right; width: 25%;\">
+<div id=\"mentals_chart\"></div>
+</td>
+<td style=\"text-align: right; width: 25%;\">
 <div id=\"sums_chart\"></div>
 </td>
 </tr></table>
