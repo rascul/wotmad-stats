@@ -90,26 +90,27 @@ var data = google.visualization.arrayToDataTable([
 	foreach (file("$stats_dir/$file.csv") as $line) {
 		$eline = explode(",", $line);
 		
-		if ($count == 1) {
-			for ($i = 5; $i <= 10; $i++) {
-				$min[$i-5] = $eline[$i];
-				$max[$i-5] = $eline[$i];
-				$total[$i-5] = $eline[$i];
-			}
-		}
-		elseif ($count > 1) {
-			for ($i = 5; $i <= 10; $i++) {
-				if ($eline[$i] < $min[$i-5])
+		if ($count) {
+			if ($count == 1) {
+				for ($i = 5; $i <= 10; $i++) {
 					$min[$i-5] = $eline[$i];
-				if ($eline[$i] > $max[$i-5])
 					$max[$i-5] = $eline[$i];
-				$total[$i-5] += $eline[$i];
+					$total[$i-5] = $eline[$i];
+				}
+			} elseif ($count > 1) {
+				for ($i = 5; $i <= 10; $i++) {
+					if ($eline[$i] < $min[$i-5])
+						$min[$i-5] = $eline[$i];
+					if ($eline[$i] > $max[$i-5])
+						$max[$i-5] = $eline[$i];
+					$total[$i-5] += $eline[$i];
+				}
 			}
-		}
-		if ($count > 0)
 			fwrite($handle, "['$eline[0]','$eline[1]','$eline[2]','$eline[3]','$eline[4]',$eline[5],$eline[6],$eline[7],$eline[8],$eline[9]," . rtrim($eline[10]) . "],\n");
-		else
+		} else {
 			fwrite($handle, "['$eline[0]','$eline[1]','$eline[2]','$eline[3]','$eline[4]','$eline[5]','$eline[6]','$eline[7]','$eline[8]','$eline[9]','" . rtrim($eline[10]) . "'],\n");
+		}
+		
 		$count++;
 	}
 	
