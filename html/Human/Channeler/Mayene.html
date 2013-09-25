@@ -41,6 +41,31 @@ var data = google.visualization.arrayToDataTable([
 visualization = new google.visualization.Table(document.getElementById('calcs_table'));
 visualization.draw(data, null);
 }
+
+      function drawSumsChart() {
+        // Create and populate the data table.
+        var data = google.visualization.arrayToDataTable([
+      ['sum',''],
+[70,4],
+[71,2],
+[72,2],
+[74,4],
+[75,1],
+[76,1],
+[77,1],
+
+        ]);
+      
+        // Create and draw the visualization.
+        new google.visualization.LineChart(document.getElementById('sums_chart')).
+            draw(data, {curveType: "function",
+                        legend: {position: 'none'},
+                        hAxis: {title: 'statsum'},
+                        vAxis: {title: 'number of stats'}}
+                );
+      }
+
+google.setOnLoadCallback(drawSumsChart);
 google.setOnLoadCallback(drawStatsTable);
 google.setOnLoadCallback(drawCalcsTable);
 google.setOnLoadCallback(drawChart);
@@ -50,9 +75,17 @@ td { text-align: center; }
 </style>
 </head>
 <body style="font-family: Arial;border: 0 none;">
+
+<table width="100%"><tr>
+<td style="width: 60%; text-align: left;">
 <h1>Human/Channeler/Mayene</h1>
 <p><a href="https://github.com/rascul/wotmad-stats/tree/master/csv/Human/Channeler/Mayene.csv">csv data</a></p>
-<p>Out of 15 stats:</p>
+<p>Out of 15 stats</p>
+</td>
+<td style="text-align: right\;width: 40%;">
+<div id="sums_chart"></div>
+</td>
+</tr></table>
 <div id="calcs_table"></div>
 <br><br>
 <div id="stat_table"></div>

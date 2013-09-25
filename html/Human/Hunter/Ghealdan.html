@@ -7,6 +7,19 @@ function drawStatsTable() {
 // Create and populate the data table.
 var data = google.visualization.arrayToDataTable([
 ['Submitted','Faction','Class','Sex','Homeland','Strength','Intelligence','Willpower','Dexterity','Constitution','Sum'],
+['2013-09-24 20:45:45','Human','Hunter','Female','Ghealdan',13,16,16,10,16,71],
+['2013-09-24 20:43:36','Human','Hunter','Female','Ghealdan',13,16,14,16,13,72],
+['2013-09-24 20:42:11','Human','Hunter','Female','Ghealdan',17,14,10,13,17,71],
+['2013-09-24 20:40:58','Human','Hunter','Female','Ghealdan',13,14,14,14,16,71],
+['2013-09-24 19:56:15','Human','Hunter','Female','Ghealdan',14,14,14,17,13,72],
+['2013-09-24 19:53:54','Human','Hunter','Female','Ghealdan',13,16,14,14,14,71],
+['2013-09-24 19:52:20','Human','Hunter','Female','Ghealdan',16,13,18,16,16,79],
+['2013-09-24 19:50:22','Human','Hunter','Female','Ghealdan',14,14,16,15,16,75],
+['2013-09-24 19:47:55','Human','Hunter','Female','Ghealdan',16,14,14,13,15,72],
+['2013-09-24 19:46:10','Human','Hunter','Female','Ghealdan',13,13,15,16,16,73],
+['2013-09-24 19:43:43','Human','Hunter','Female','Ghealdan',13,16,14,16,15,74],
+['2013-09-24 19:41:41','Human','Hunter','Female','Ghealdan',13,13,16,15,16,73],
+['2013-09-24 19:39:47','Human','Hunter','Female','Ghealdan',14,14,15,16,15,74],
 ['2013-09-24 16:00:56','Human','Hunter','Male','Ghealdan',15,17,15,16,11,74],
 ['2013-09-24 16:00:39','Human','Hunter','Male','Ghealdan',15,18,14,14,13,74],
 ['2013-09-24 16:00:25','Human','Hunter','Male','Ghealdan',15,14,16,13,13,71],
@@ -22,14 +35,38 @@ function drawCalcsTable() {
 // Create and populate the data table.
 var data = google.visualization.arrayToDataTable([
 ['','Strength','Intelligence','Willpower','Dexterity','Constitution','Sum'],
-['Minimum','12','14','14','13','11','71'],
-['Maximum','15','18','18','16','13','74'],
-['Average','14.3','16','15.8','14.3','12.5','72.8']
+['Minimum','12','13','10','10','11','71'],
+['Maximum','17','18','18','17','17','79'],
+['Average','14.1','14.8','14.9','14.6','14.6','72.9']
 ]);
 // Create and draw the visualization.
 visualization = new google.visualization.Table(document.getElementById('calcs_table'));
 visualization.draw(data, null);
 }
+
+      function drawSumsChart() {
+        // Create and populate the data table.
+        var data = google.visualization.arrayToDataTable([
+      ['sum',''],
+[71,5],
+[72,4],
+[73,2],
+[74,4],
+[75,1],
+[79,1],
+
+        ]);
+      
+        // Create and draw the visualization.
+        new google.visualization.LineChart(document.getElementById('sums_chart')).
+            draw(data, {curveType: "function",
+                        legend: {position: 'none'},
+                        hAxis: {title: 'statsum'},
+                        vAxis: {title: 'number of stats'}}
+                );
+      }
+
+google.setOnLoadCallback(drawSumsChart);
 google.setOnLoadCallback(drawStatsTable);
 google.setOnLoadCallback(drawCalcsTable);
 google.setOnLoadCallback(drawChart);
@@ -39,9 +76,17 @@ td { text-align: center; }
 </style>
 </head>
 <body style="font-family: Arial;border: 0 none;">
+
+<table width="100%"><tr>
+<td style="width: 60%; text-align: left;">
 <h1>Human/Hunter/Ghealdan</h1>
 <p><a href="https://github.com/rascul/wotmad-stats/tree/master/csv/Human/Hunter/Ghealdan.csv">csv data</a></p>
-<p>Out of 4 stats:</p>
+<p>Out of 17 stats</p>
+</td>
+<td style="text-align: right\;width: 40%;">
+<div id="sums_chart"></div>
+</td>
+</tr></table>
 <div id="calcs_table"></div>
 <br><br>
 <div id="stat_table"></div>

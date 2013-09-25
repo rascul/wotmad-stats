@@ -6390,6 +6390,37 @@ var data = google.visualization.arrayToDataTable([
 visualization = new google.visualization.Table(document.getElementById('calcs_table'));
 visualization.draw(data, null);
 }
+
+      function drawSumsChart() {
+        // Create and populate the data table.
+        var data = google.visualization.arrayToDataTable([
+      ['sum',''],
+[70,1430],
+[71,1268],
+[72,1149],
+[73,859],
+[74,663],
+[75,436],
+[76,283],
+[77,152],
+[78,68],
+[79,34],
+[80,14],
+[81,7],
+[82,1],
+
+        ]);
+      
+        // Create and draw the visualization.
+        new google.visualization.LineChart(document.getElementById('sums_chart')).
+            draw(data, {curveType: "function",
+                        legend: {position: 'none'},
+                        hAxis: {title: 'statsum'},
+                        vAxis: {title: 'number of stats'}}
+                );
+      }
+
+google.setOnLoadCallback(drawSumsChart);
 google.setOnLoadCallback(drawStatsTable);
 google.setOnLoadCallback(drawCalcsTable);
 google.setOnLoadCallback(drawChart);
@@ -6399,9 +6430,17 @@ td { text-align: center; }
 </style>
 </head>
 <body style="font-family: Arial;border: 0 none;">
+
+<table width="100%"><tr>
+<td style="width: 60%; text-align: left;">
 <h1>Human/Hunter/Arafel</h1>
 <p><a href="https://github.com/rascul/wotmad-stats/tree/master/csv/Human/Hunter/Arafel.csv">csv data</a></p>
-<p>Out of 6364 stats:</p>
+<p>Out of 6364 stats</p>
+</td>
+<td style="text-align: right\;width: 40%;">
+<div id="sums_chart"></div>
+</td>
+</tr></table>
 <div id="calcs_table"></div>
 <br><br>
 <div id="stat_table"></div>

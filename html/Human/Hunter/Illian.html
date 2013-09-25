@@ -182,6 +182,37 @@ var data = google.visualization.arrayToDataTable([
 visualization = new google.visualization.Table(document.getElementById('calcs_table'));
 visualization.draw(data, null);
 }
+
+      function drawSumsChart() {
+        // Create and populate the data table.
+        var data = google.visualization.arrayToDataTable([
+      ['sum',''],
+[70,12],
+[71,24],
+[72,18],
+[73,24],
+[74,11],
+[75,20],
+[76,14],
+[77,9],
+[78,6],
+[79,9],
+[80,6],
+[81,2],
+[83,1],
+
+        ]);
+      
+        // Create and draw the visualization.
+        new google.visualization.LineChart(document.getElementById('sums_chart')).
+            draw(data, {curveType: "function",
+                        legend: {position: 'none'},
+                        hAxis: {title: 'statsum'},
+                        vAxis: {title: 'number of stats'}}
+                );
+      }
+
+google.setOnLoadCallback(drawSumsChart);
 google.setOnLoadCallback(drawStatsTable);
 google.setOnLoadCallback(drawCalcsTable);
 google.setOnLoadCallback(drawChart);
@@ -191,9 +222,17 @@ td { text-align: center; }
 </style>
 </head>
 <body style="font-family: Arial;border: 0 none;">
+
+<table width="100%"><tr>
+<td style="width: 60%; text-align: left;">
 <h1>Human/Hunter/Illian</h1>
 <p><a href="https://github.com/rascul/wotmad-stats/tree/master/csv/Human/Hunter/Illian.csv">csv data</a></p>
-<p>Out of 156 stats:</p>
+<p>Out of 156 stats</p>
+</td>
+<td style="text-align: right\;width: 40%;">
+<div id="sums_chart"></div>
+</td>
+</tr></table>
 <div id="calcs_table"></div>
 <br><br>
 <div id="stat_table"></div>

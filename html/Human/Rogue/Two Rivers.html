@@ -3283,6 +3283,42 @@ var data = google.visualization.arrayToDataTable([
 visualization = new google.visualization.Table(document.getElementById('calcs_table'));
 visualization.draw(data, null);
 }
+
+      function drawSumsChart() {
+        // Create and populate the data table.
+        var data = google.visualization.arrayToDataTable([
+      ['sum',''],
+[70,503],
+[71,487],
+[72,445],
+[73,400],
+[74,365],
+[75,294],
+[76,244],
+[77,181],
+[78,115],
+[79,82],
+[80,61],
+[81,43],
+[82,20],
+[83,7],
+[84,3],
+[85,5],
+[86,1],
+[88,1],
+
+        ]);
+      
+        // Create and draw the visualization.
+        new google.visualization.LineChart(document.getElementById('sums_chart')).
+            draw(data, {curveType: "function",
+                        legend: {position: 'none'},
+                        hAxis: {title: 'statsum'},
+                        vAxis: {title: 'number of stats'}}
+                );
+      }
+
+google.setOnLoadCallback(drawSumsChart);
 google.setOnLoadCallback(drawStatsTable);
 google.setOnLoadCallback(drawCalcsTable);
 google.setOnLoadCallback(drawChart);
@@ -3292,9 +3328,17 @@ td { text-align: center; }
 </style>
 </head>
 <body style="font-family: Arial;border: 0 none;">
+
+<table width="100%"><tr>
+<td style="width: 60%; text-align: left;">
 <h1>Human/Rogue/Two Rivers</h1>
 <p><a href="https://github.com/rascul/wotmad-stats/tree/master/csv/Human/Rogue/Two Rivers.csv">csv data</a></p>
-<p>Out of 3257 stats:</p>
+<p>Out of 3257 stats</p>
+</td>
+<td style="text-align: right\;width: 40%;">
+<div id="sums_chart"></div>
+</td>
+</tr></table>
 <div id="calcs_table"></div>
 <br><br>
 <div id="stat_table"></div>
