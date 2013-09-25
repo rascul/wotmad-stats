@@ -87,8 +87,10 @@ var data = google.visualization.arrayToDataTable([
 	$max = array();
 	$total = array();
 	
+	$sums = array_fill(55, 46, 0);
+	
 	foreach (file("$stats_dir/$file.csv") as $line) {
-		$eline = explode(",", $line);
+		$eline = explode(",", trim($line));
 		
 		if ($count) {
 			if ($count == 1) {
@@ -106,9 +108,13 @@ var data = google.visualization.arrayToDataTable([
 					$total[$i-5] += $eline[$i];
 				}
 			}
-			fwrite($handle, "['$eline[0]','$eline[1]','$eline[2]','$eline[3]','$eline[4]',$eline[5],$eline[6],$eline[7],$eline[8],$eline[9]," . rtrim($eline[10]) . "],\n");
+			
+			$sum = $eline[5] + $eline[6] + $eline[7] + $eline[8] + $eline[9];
+			$sums[$sum]++;
+			
+			fwrite($handle, "['$eline[0]','$eline[1]','$eline[2]','$eline[3]','$eline[4]',$eline[5],$eline[6],$eline[7],$eline[8],$eline[9],$eline[10]],\n");
 		} else {
-			fwrite($handle, "['$eline[0]','$eline[1]','$eline[2]','$eline[3]','$eline[4]','$eline[5]','$eline[6]','$eline[7]','$eline[8]','$eline[9]','" . rtrim($eline[10]) . "'],\n");
+			fwrite($handle, "['$eline[0]','$eline[1]','$eline[2]','$eline[3]','$eline[4]','$eline[5]','$eline[6]','$eline[7]','$eline[8]','$eline[9]','$eline[10]'],\n");
 		}
 		
 		$count++;
@@ -141,6 +147,31 @@ var data = google.visualization.arrayToDataTable([
 visualization = new google.visualization.Table(document.getElementById('calcs_table'));
 visualization.draw(data, null);
 }
+
+      function drawSumsChart() {
+        // Create and populate the data table.
+        var data = google.visualization.arrayToDataTable([
+      ['sum',''],
+";
+	
+	fwrite($handle, $html);
+	for ($i = 55; $i <= 100; $i++)
+		if ($sums[$i])
+			fwrite($handle, "[$i,$sums[$i]],\n");
+	
+	$html = "
+        ]);
+      
+        // Create and draw the visualization.
+        new google.visualization.LineChart(document.getElementById('sums_chart')).
+            draw(data, {curveType: \"function\",
+                        legend: {position: 'none'},
+                        hAxis: {title: 'statsum'},
+                        vAxis: {title: 'number of stats'}}
+                );
+      }
+
+google.setOnLoadCallback(drawSumsChart);
 google.setOnLoadCallback(drawStatsTable);
 google.setOnLoadCallback(drawCalcsTable);
 google.setOnLoadCallback(drawChart);
@@ -150,9 +181,17 @@ td { text-align: center; }
 </style>
 </head>
 <body style=\"font-family: Arial;border: 0 none;\">
+
+<table width=\"100%\"><tr>
+<td style=\"width: 60%; text-align: left;\">
 <h1>$file</h1>
 <p><a href=\"https://github.com/rascul/wotmad-stats/tree/master/csv/$file.csv\">csv data</a></p>
-<p>Out of $count stats:</p>
+<p>Out of $count stats</p>
+</td>
+<td style=\"text-align: right\;width: 40%;\">
+<div id=\"sums_chart\"></div>
+</td>
+</tr></table>
 <div id=\"calcs_table\"></div>
 <br><br>
 <div id=\"stat_table\"></div>
