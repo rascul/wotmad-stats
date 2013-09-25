@@ -13776,27 +13776,22 @@ var data = google.visualization.arrayToDataTable([
 
 
 ]);      
-// Create and draw the visualization.
 visualization = new google.visualization.Table(document.getElementById('stat_table'));
 visualization.draw(data, {showRowNumber: true});
 }
 function drawCalcsTable() {
-// Create and populate the data table.
 var data = google.visualization.arrayToDataTable([
 ['','Strength','Intelligence','Willpower','Dexterity','Constitution','Sum'],
 ['Minimum','12','9','9','11','11','70'],
 ['Maximum','19','16','16','19','19','82'],
 ['Average','16.5','12.5','12.5','15.5','15.5','72.3']
 ]);
-// Create and draw the visualization.
 visualization = new google.visualization.Table(document.getElementById('calcs_table'));
 visualization.draw(data, null);
 }
-
-      function drawSumsChart() {
-        // Create and populate the data table.
-        var data = google.visualization.arrayToDataTable([
-      ['sum',''],
+function drawSumsChart() {
+var data = google.visualization.arrayToDataTable([
+['sum','sum'],
 [70,2944],
 [71,2827],
 [72,2506],
@@ -13811,20 +13806,60 @@ visualization.draw(data, null);
 [81,11],
 [82,2],
 
-        ]);
-      
-        // Create and draw the visualization.
-        new google.visualization.LineChart(document.getElementById('sums_chart')).
-            draw(data, {curveType: "function",
-                        legend: {position: 'none'},
-                        hAxis: {title: 'statsum'},
-                        vAxis: {title: 'number of stats'}}
-                );
-      }
+]);
+new google.visualization.LineChart(document.getElementById('sums_chart')).
+draw(data, {curveType: "function",
+title: 'statsum',
+vAxis: {title: 'number of stats'}}
+);
+}
+
+function drawPhysicalsChart() {
+var data = google.visualization.arrayToDataTable([
+['stat','str','dex','con'],
+[11,0,28,23],
+[12,23,205,205],
+[13,161,884,925],
+[14,862,1346,1228],
+[15,1291,5847,5945],
+[16,5892,2070,2043],
+[17,2122,2302,2328],
+[18,2353,853,856],
+[19,1062,231,213],
+
+]);
+new google.visualization.LineChart(document.getElementById('physicals_chart')).
+draw(data, {curveType: "function",
+title: 'physicals',
+vAxis: {title: 'number of stats'}}
+);
+}
+
+function drawMentalsChart() {
+var data = google.visualization.arrayToDataTable([
+['stat','int','wil'],
+[9,206,251],
+[10,871,835],
+[11,1304,1236],
+[12,5954,5891],
+[13,2005,2077],
+[14,2353,2395],
+[15,859,825],
+[16,214,256],
+
+]);
+new google.visualization.LineChart(document.getElementById('mentals_chart')).
+draw(data, {curveType: "function",
+title: 'mentals',
+vAxis: {title: 'number of stats'}}
+);
+}
 
 google.setOnLoadCallback(drawSumsChart);
 google.setOnLoadCallback(drawStatsTable);
 google.setOnLoadCallback(drawCalcsTable);
+google.setOnLoadCallback(drawPhysicalsChart);
+google.setOnLoadCallback(drawMentalsChart);
 google.setOnLoadCallback(drawChart);
 </script>
 <style>
@@ -13834,12 +13869,18 @@ td { text-align: center; }
 <body style="font-family: Arial;border: 0 none;">
 
 <table width="100%"><tr>
-<td style="width: 60%; text-align: left;">
+<td style="width: 25%; text-align: left;">
 <h1>Human/Hunter/Borderlands</h1>
 <p><a href="https://github.com/rascul/wotmad-stats/tree/master/csv/Human/Hunter/Borderlands.csv">csv data</a></p>
 <p>Out of 13766 stats</p>
 </td>
-<td style="text-align: right\;width: 40%;">
+<td style="text-align: right; width: 25%;">
+<div id="physicals_chart"></div>
+</td>
+<td style="text-align: right; width: 25%;">
+<div id="mentals_chart"></div>
+</td>
+<td style="text-align: right; width: 25%;">
 <div id="sums_chart"></div>
 </td>
 </tr></table>

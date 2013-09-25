@@ -4277,27 +4277,22 @@ var data = google.visualization.arrayToDataTable([
 
 
 ]);      
-// Create and draw the visualization.
 visualization = new google.visualization.Table(document.getElementById('stat_table'));
 visualization.draw(data, {showRowNumber: true});
 }
 function drawCalcsTable() {
-// Create and populate the data table.
 var data = google.visualization.arrayToDataTable([
 ['','Strength','Intelligence','Willpower','Dexterity','Constitution','Sum'],
 ['Minimum','10','5','3','13','11','65'],
 ['Maximum','19','13','11','19','19','75'],
 ['Average','15','10','8','17.7','16.1','66.9']
 ]);
-// Create and draw the visualization.
 visualization = new google.visualization.Table(document.getElementById('calcs_table'));
 visualization.draw(data, null);
 }
-
-      function drawSumsChart() {
-        // Create and populate the data table.
-        var data = google.visualization.arrayToDataTable([
-      ['sum',''],
+function drawSumsChart() {
+var data = google.visualization.arrayToDataTable([
+['sum','sum'],
 [65,1266],
 [66,988],
 [67,718],
@@ -4310,20 +4305,64 @@ visualization.draw(data, null);
 [74,13],
 [75,7],
 
-        ]);
-      
-        // Create and draw the visualization.
-        new google.visualization.LineChart(document.getElementById('sums_chart')).
-            draw(data, {curveType: "function",
-                        legend: {position: 'none'},
-                        hAxis: {title: 'statsum'},
-                        vAxis: {title: 'number of stats'}}
-                );
-      }
+]);
+new google.visualization.LineChart(document.getElementById('sums_chart')).
+draw(data, {curveType: "function",
+title: 'statsum',
+vAxis: {title: 'number of stats'}}
+);
+}
+
+function drawPhysicalsChart() {
+var data = google.visualization.arrayToDataTable([
+['stat','str','dex','con'],
+[10,9,0,0],
+[11,54,0,7],
+[12,212,0,53],
+[13,532,15,219],
+[14,636,58,491],
+[15,1105,273,593],
+[16,1041,536,1105],
+[17,445,647,1125],
+[18,229,1118,445],
+[19,4,1620,229],
+
+]);
+new google.visualization.LineChart(document.getElementById('physicals_chart')).
+draw(data, {curveType: "function",
+title: 'physicals',
+vAxis: {title: 'number of stats'}}
+);
+}
+
+function drawMentalsChart() {
+var data = google.visualization.arrayToDataTable([
+['stat','int','wil'],
+[3,0,8],
+[4,0,41],
+[5,11,234],
+[6,39,509],
+[7,211,596],
+[8,525,1076],
+[9,653,1103],
+[10,1080,474],
+[11,1044,226],
+[12,472,0],
+[13,232,0],
+
+]);
+new google.visualization.LineChart(document.getElementById('mentals_chart')).
+draw(data, {curveType: "function",
+title: 'mentals',
+vAxis: {title: 'number of stats'}}
+);
+}
 
 google.setOnLoadCallback(drawSumsChart);
 google.setOnLoadCallback(drawStatsTable);
 google.setOnLoadCallback(drawCalcsTable);
+google.setOnLoadCallback(drawPhysicalsChart);
+google.setOnLoadCallback(drawMentalsChart);
 google.setOnLoadCallback(drawChart);
 </script>
 <style>
@@ -4333,12 +4372,18 @@ td { text-align: center; }
 <body style="font-family: Arial;border: 0 none;">
 
 <table width="100%"><tr>
-<td style="width: 60%; text-align: left;">
+<td style="width: 25%; text-align: left;">
 <h1>Darkside/Rogue/Wolfish</h1>
 <p><a href="https://github.com/rascul/wotmad-stats/tree/master/csv/Darkside/Rogue/Wolfish.csv">csv data</a></p>
 <p>Out of 4267 stats</p>
 </td>
-<td style="text-align: right\;width: 40%;">
+<td style="text-align: right; width: 25%;">
+<div id="physicals_chart"></div>
+</td>
+<td style="text-align: right; width: 25%;">
+<div id="mentals_chart"></div>
+</td>
+<td style="text-align: right; width: 25%;">
 <div id="sums_chart"></div>
 </td>
 </tr></table>
