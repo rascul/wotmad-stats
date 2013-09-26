@@ -259,6 +259,9 @@ echo "[html] index\n";
 if (file_exists("$html_dir/../index.html"))
 	unlink("$html_dir/../index.html");
 $handle = fopen("$html_dir/../index.html", "a");
+
+$updated = date("G:i l, F jS, Y e");
+
 $html = "
 <html>
 <head>
@@ -267,6 +270,7 @@ $html = "
 <body style=\"font-family: Arial;border: 0 none;\">
 <h1>WoTMad Stats</h1>
 <p>Data is from <a href=\"http://wotmad.herokuapp.com/stats\">WoTMad Stat Database</a></p>
+<p>Last updated: $updated</p>
 <table style=\"width: 100%;\"><tr valign=\"top\">
 ";
 
