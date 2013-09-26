@@ -7,6 +7,15 @@ function drawStatsTable() {
 // Create and populate the data table.
 var data = google.visualization.arrayToDataTable([
 ['Submitted','Faction','Class','Sex','Homeland','Strength','Intelligence','Willpower','Dexterity','Constitution','Sum'],
+['2013-09-26 06:29:48','Human','Channeler','Female','Altara',12,18,18,17,9,74],
+['2013-09-26 06:26:44','Human','Channeler','Female','Altara',15,17,15,16,14,77],
+['2013-09-26 06:24:32','Human','Channeler','Female','Altara',16,14,17,14,9,70],
+['2013-09-26 06:21:33','Human','Channeler','Female','Altara',12,14,16,17,11,70],
+['2013-09-26 06:19:48','Human','Channeler','Female','Altara',15,14,15,16,12,72],
+['2013-09-26 06:16:25','Human','Channeler','Female','Altara',13,18,17,14,10,72],
+['2013-09-26 06:14:47','Human','Channeler','Female','Altara',16,17,18,17,12,80],
+['2013-09-26 06:11:42','Human','Channeler','Female','Altara',12,16,15,18,9,70],
+['2013-09-26 06:08:14','Human','Channeler','Female','Altara',16,13,15,17,10,71],
 ['2013-09-19 20:02:52','Human','Channeler','Female','Altara',12,15,18,17,10,72],
 ['2013-09-19 20:02:52','Human','Channeler','Female','Altara',12,18,15,16,10,71],
 ['2013-09-19 20:02:51','Human','Channeler','Female','Altara',15,14,15,17,12,73],
@@ -1610,17 +1619,17 @@ visualization.draw(data, null);
 function drawSumsChart() {
 var data = google.visualization.arrayToDataTable([
 ['sum','sum'],
-[70,366],
-[71,319],
-[72,259],
+[70,369],
+[71,320],
+[72,261],
 [73,205],
-[74,154],
+[74,155],
 [75,110],
 [76,69],
-[77,48],
+[77,49],
 [78,29],
 [79,14],
-[80,9],
+[80,10],
 [81,2],
 
 ]);
@@ -1634,16 +1643,16 @@ vAxis: {title: 'number of stats'}}
 function drawPhysicalsChart() {
 var data = google.visualization.arrayToDataTable([
 ['stat','str','dex','con'],
-[9,1,0,120],
-[10,49,0,530],
-[11,87,0,164],
-[12,545,30,175],
-[13,178,90,266],
-[14,224,540,329],
-[15,227,163,0],
-[16,273,199,0],
-[17,0,267,0],
-[18,0,295,0],
+[9,1,0,123],
+[10,49,0,532],
+[11,87,0,165],
+[12,548,30,177],
+[13,179,90,266],
+[14,224,542,330],
+[15,229,163,0],
+[16,276,201,0],
+[17,0,271,0],
+[18,0,296,0],
 
 ]);
 new google.visualization.LineChart(document.getElementById('physicals_chart')).
@@ -1657,12 +1666,12 @@ function drawMentalsChart() {
 var data = google.visualization.arrayToDataTable([
 ['stat','int','wil'],
 [12,23,0],
-[13,89,32],
-[14,547,88],
-[15,158,574],
-[16,214,170],
-[17,247,215],
-[18,306,237],
+[13,90,32],
+[14,550,88],
+[15,158,578],
+[16,215,171],
+[17,249,217],
+[18,308,239],
 [19,0,268],
 
 ]);
@@ -1690,7 +1699,7 @@ td { text-align: center; }
 <td style="width: 25%; text-align: left;">
 <h1>Human/Channeler/Altara</h1>
 <p><a href="https://github.com/rascul/wotmad-stats/tree/master/csv/Human/Channeler/Altara.csv">csv data</a></p>
-<p>Out of 1584 stats</p>
+<p>Out of 1593 stats</p>
 </td>
 <td style="text-align: right; width: 25%;">
 <div id="physicals_chart"></div>

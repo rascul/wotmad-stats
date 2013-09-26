@@ -7,6 +7,7 @@ function drawStatsTable() {
 // Create and populate the data table.
 var data = google.visualization.arrayToDataTable([
 ['Submitted','Faction','Class','Sex','Homeland','Strength','Intelligence','Willpower','Dexterity','Constitution','Sum'],
+['2013-09-26 18:11:03','Human','Hunter','Female','Ghealdan',13,16,16,10,16,71],
 ['2013-09-24 20:45:45','Human','Hunter','Female','Ghealdan',13,16,16,10,16,71],
 ['2013-09-24 20:43:36','Human','Hunter','Female','Ghealdan',13,16,14,16,13,72],
 ['2013-09-24 20:42:11','Human','Hunter','Female','Ghealdan',17,14,10,13,17,71],
@@ -35,7 +36,7 @@ var data = google.visualization.arrayToDataTable([
 ['','Strength','Intelligence','Willpower','Dexterity','Constitution','Sum'],
 ['Minimum','12','13','10','10','11','71'],
 ['Maximum','17','18','18','17','17','79'],
-['Average','14.1','14.8','14.9','14.6','14.6','72.9']
+['Average','14','14.8','14.9','14.3','14.7','72.8']
 ]);
 visualization = new google.visualization.Table(document.getElementById('calcs_table'));
 visualization.draw(data, null);
@@ -43,7 +44,7 @@ visualization.draw(data, null);
 function drawSumsChart() {
 var data = google.visualization.arrayToDataTable([
 ['sum','sum'],
-[71,5],
+[71,6],
 [72,4],
 [73,2],
 [74,4],
@@ -61,13 +62,13 @@ vAxis: {title: 'number of stats'}}
 function drawPhysicalsChart() {
 var data = google.visualization.arrayToDataTable([
 ['stat','str','dex','con'],
-[10,0,1,0],
+[10,0,2,0],
 [11,0,0,1],
 [12,1,0,0],
-[13,7,3,5],
+[13,8,3,5],
 [14,3,4,1],
 [15,3,2,3],
-[16,2,6,6],
+[16,2,6,7],
 [17,1,1,1],
 
 ]);
@@ -85,7 +86,7 @@ var data = google.visualization.arrayToDataTable([
 [13,3,0],
 [14,7,7],
 [15,1,3],
-[16,4,4],
+[16,5,5],
 [17,1,0],
 [18,1,2],
 
@@ -114,7 +115,7 @@ td { text-align: center; }
 <td style="width: 25%; text-align: left;">
 <h1>Human/Hunter/Ghealdan</h1>
 <p><a href="https://github.com/rascul/wotmad-stats/tree/master/csv/Human/Hunter/Ghealdan.csv">csv data</a></p>
-<p>Out of 17 stats</p>
+<p>Out of 18 stats</p>
 </td>
 <td style="text-align: right; width: 25%;">
 <div id="physicals_chart"></div>
