@@ -1,0 +1,134 @@
+
+<html><head><title>Human/Warrior/Altara</title>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">google.load('visualization', '1', {packages: ['table', 'corechart']});</script>
+<script type="text/javascript">
+function drawStatsTable() {
+// Create and populate the data table.
+var data = google.visualization.arrayToDataTable([
+['Submitted','Faction','Class','Sex','Homeland','Strength','Intelligence','Willpower','Dexterity','Constitution','Sum'],
+['2013-09-26 03:24:20','Human','Warrior','Male','Altara',16,13,11,19,15,74],
+['2013-09-26 03:24:20','Human','Warrior','Male','Altara',16,11,11,15,18,71],
+['2013-09-26 03:24:19','Human','Warrior','Male','Altara',15,13,11,16,18,73],
+['2013-09-26 03:24:19','Human','Warrior','Male','Altara',19,11,11,15,19,75],
+['2013-09-26 03:24:19','Human','Warrior','Male','Altara',19,9,15,19,18,80],
+['2013-09-26 02:44:04','Human','Warrior','Male','Altara',19,13,10,18,18,78],
+['2013-09-26 02:44:04','Human','Warrior','Male','Altara',19,15,11,18,15,78],
+['2013-09-26 02:44:04','Human','Warrior','Male','Altara',19,11,11,15,18,74],
+['2013-09-26 02:44:04','Human','Warrior','Male','Altara',15,14,11,19,15,74],
+['2013-09-26 02:44:03','Human','Warrior','Male','Altara',14,11,15,14,18,72],
+['2013-09-26 02:44:03','Human','Warrior','Male','Altara',17,11,15,15,16,74],
+['2013-09-26 02:44:03','Human','Warrior','Male','Altara',19,12,14,15,13,73],
+['2013-09-26 02:44:03','Human','Warrior','Male','Altara',17,11,9,18,18,73],
+['2013-09-26 02:44:02','Human','Warrior','Male','Altara',15,10,11,17,17,70],
+['2013-09-26 02:43:58','Human','Warrior','Male','Altara',19,12,11,19,16,77],
+['2013-09-26 02:43:56','Human','Warrior','Male','Altara',19,10,12,16,15,72],
+
+
+]);      
+visualization = new google.visualization.Table(document.getElementById('stat_table'));
+visualization.draw(data, {showRowNumber: true});
+}
+function drawCalcsTable() {
+var data = google.visualization.arrayToDataTable([
+['','Strength','Intelligence','Willpower','Dexterity','Constitution','Sum'],
+['Minimum','14','9','9','14','13','70'],
+['Maximum','19','15','15','19','19','80'],
+['Average','17.3','11.7','11.8','16.8','16.7','74.3']
+]);
+visualization = new google.visualization.Table(document.getElementById('calcs_table'));
+visualization.draw(data, null);
+}
+function drawSumsChart() {
+var data = google.visualization.arrayToDataTable([
+['sum','sum'],
+[70,1],
+[71,1],
+[72,2],
+[73,3],
+[74,4],
+[75,1],
+[77,1],
+[78,2],
+[80,1],
+
+]);
+new google.visualization.LineChart(document.getElementById('sums_chart')).
+draw(data, {curveType: "function",
+title: 'statsum',
+vAxis: {title: 'number of stats'}}
+);
+}
+
+function drawPhysicalsChart() {
+var data = google.visualization.arrayToDataTable([
+['stat','str','dex','con'],
+[13,0,0,1],
+[14,1,1,0],
+[15,3,5,4],
+[16,2,2,2],
+[17,2,1,1],
+[18,0,3,7],
+[19,8,4,1],
+
+]);
+new google.visualization.LineChart(document.getElementById('physicals_chart')).
+draw(data, {curveType: "function",
+title: 'physicals',
+vAxis: {title: 'number of stats'}}
+);
+}
+
+function drawMentalsChart() {
+var data = google.visualization.arrayToDataTable([
+['stat','int','wil'],
+[9,1,1],
+[10,2,1],
+[11,6,9],
+[12,2,1],
+[13,3,0],
+[14,1,1],
+[15,1,3],
+
+]);
+new google.visualization.LineChart(document.getElementById('mentals_chart')).
+draw(data, {curveType: "function",
+title: 'mentals',
+vAxis: {title: 'number of stats'}}
+);
+}
+
+google.setOnLoadCallback(drawSumsChart);
+google.setOnLoadCallback(drawStatsTable);
+google.setOnLoadCallback(drawCalcsTable);
+google.setOnLoadCallback(drawPhysicalsChart);
+google.setOnLoadCallback(drawMentalsChart);
+google.setOnLoadCallback(drawChart);
+</script>
+<style>
+td { text-align: center; }
+</style>
+</head>
+<body style="font-family: Arial;border: 0 none;">
+
+<table width="100%"><tr>
+<td style="width: 25%; text-align: left;">
+<h1>Human/Warrior/Altara</h1>
+<p><a href="https://github.com/rascul/wotmad-stats/tree/master/csv/Human/Warrior/Altara.csv">csv data</a></p>
+<p>Out of 16 stats</p>
+</td>
+<td style="text-align: right; width: 25%;">
+<div id="physicals_chart"></div>
+</td>
+<td style="text-align: right; width: 25%;">
+<div id="mentals_chart"></div>
+</td>
+<td style="text-align: right; width: 25%;">
+<div id="sums_chart"></div>
+</td>
+</tr></table>
+<div id="calcs_table"></div>
+<br><br>
+<div id="stat_table"></div>
+</body>
+</html>
