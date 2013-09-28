@@ -3,6 +3,8 @@ extract
 
 Sets of stats extracted from the statdb at http://wotmad.herokuapp.com.
 
+The rendered html is available at http://rascul.github.io/wotmad-stats.
+
 Organized by faction/class/sex/homeland.csv.
 
 See the `extract` script for how I did it.
