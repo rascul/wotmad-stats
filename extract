@@ -1,145 +1,212 @@
-#!/usr/bin/php
-<?php
+#!/usr/bin/python3
 
-$stats_url = "http://wotmad.herokuapp.com/stats/export/";
-#$stats_url = "/tmp/stats.csv";
-$stats_dir = "csv";
-$html_dir = "../stats-pages/html";
-$header = "Submitted,Faction,Class,Sex,Homeland,Strength,Intelligence,Willpower,Dexterity,Constitution,Sum\n";
-$stat_files = array();
+# this is a (slightly) configurable script to download the exported stats from
+# http://wotmad.herokuapp.com and do stuff with them
 
-/* function to recursively remove a directory                  *
- * from http://www.php.net/manual/en/function.rmdir.php#107233 */
-function rrmdir($dir) {
-	if (is_dir($dir)) {
-		$objects = scandir($dir);
-		foreach ($objects as $object) {
-			if ($object != "." && $object != "..") {
-				if (filetype($dir."/".$object) == "dir")
-					rrmdir($dir."/".$object);
-				else
-					unlink($dir."/".$object);
-			}
-		}
-		reset($objects);
-		rmdir($dir);
-	}
-}
+# configure this stuff accordingly
 
-// clean up stats and html directories, starting fresh
-rrmdir($stats_dir);
-rrmdir($html_dir);
-mkdir($stats_dir);
-mkdir($html_dir);
+# default url to use to get the statdb
+STATS_URL = 'http://wotmad.herokuapp.com/stats/export/'
 
-$count = 0;
-foreach (file($stats_url, FILE_SKIP_EMPTY_LINES) as $line) {
-	if ($count) {
-		$line = trim($line);
-		$eline = explode(",", $line);
+# directory to save the split csv files
+# this directory will be removed and recreated when this script runs
+CSV_DIR = 'csv'
+
+# default file to save the statdb as
+STATS_FILE = 'stats.csv'
+
+# directory to save the html
+# this directory will be removed and recreated when this script runs
+HTML_DIR = '../stats-pages/html'
+
+# file to use for the index page
+INDEX_FILE = '../stats-pages/index.html'
+
+# don't change anything past here unless you know what you're doing
+
+
+import os
+import sys
+import urllib.request
+import csv
+import datetime
+import calendar
+import shutil
+import itertools
+
+# download the statdb
+def download_stats(remote_url, local_file):
+	print("[csv] Downloading stats from {} to {}".format(remote_url, local_file))
+	urllib.request.urlretrieve(remote_url, local_file)
+
+# if STATS_FILE exists, then we only want new stats
+if os.path.isfile(STATS_FILE):
+	# get the timestamp of the latest stat we have
+	f = open(STATS_FILE, 'r')
+	# first row is header, we want second row
+	f.readline()
+	line = f.readline()
+	f.close()
+	
+	# date/time submitted is first field
+	timestamp = line.partition(',')[0]
+	# convert date/time into unix timestamp, add one so as not to duplicate the newest record we have already
+	timestamp = calendar.timegm(datetime.datetime.strptime(timestamp, '%Y-%m-%d %H:%M:%S').timetuple()) + 1
+	
+	tmp_file = STATS_FILE + '.tmp'
+	download_stats(STATS_URL + '?since={}'.format(timestamp), tmp_file)
+	
+	print("[csv] {}".format(STATS_FILE))
+	
+	# combine the stats files
+	old_stats = open(STATS_FILE, 'r')
+	new_stats = open(tmp_file, 'a')
+	
+	# skip the header line, tmp_file already has it
+	old_stats.readline()
+	
+	for line in old_stats:
+		new_stats.write(line)
+	
+	old_stats.close()
+	new_stats.close()
+	
+	# replace the old STATS_FILE with the new and updated one
+	os.rename(tmp_file, STATS_FILE)
+
+# grab all the stats
+else:
+	download_stats(STATS_URL, STATS_FILE)
+
+# recreate CSV_DIR for the new csv
+if os.path.isdir(CSV_DIR):
+	shutil.rmtree(CSV_DIR)
+print("[dir] {}".format(CSV_DIR))
+os.mkdir(CSV_DIR, 0o755)
+
+# recreate HTML_DIR for the new csv
+if os.path.isdir(HTML_DIR):
+	shutil.rmtree(HTML_DIR)
+print("[dir] {}".format(HTML_DIR))
+os.mkdir(HTML_DIR, 0o755)
+
+header = "Submitted,Faction,Class,Sex,Homeland,Strength,Intelligence,Willpower,Dexterity,Constitution,Sum\n"
+csv_files = []
+
+# open the stats file and start splitting it up
+with open(STATS_FILE, 'r', newline='') as stats_csv:
+	reader = csv.reader(stats_csv)
+	
+	# skip the header row
+	next(reader)
+	
+	for row in reader:
+		statsum = int(row[5]) + int(row[6]) + int(row[7]) + int(row[8]) + int(row[9])
 		
-		$faction = $eline[1];
-		$class = $eline[2];
-		$homeland = $eline[4];
+		# CSV_DIR/faction/class
+		if not os.path.isdir("{}/{}".format(CSV_DIR, row[1])):
+			print("[dir] {}".format(row[1]))
+			os.mkdir("{}/{}".format(CSV_DIR, row[1]), 0o755)
 		
-		$sum = $eline[5] + $eline[6] + $eline[7] + $eline[8] + $eline[9];
+		# HTML_DIR/faction/class
+		if not os.path.isdir("{}/{}".format(HTML_DIR, row[1])):
+			os.mkdir("{}/{}".format(HTML_DIR, row[1]), 0o755)
 		
-		if (!is_dir("$stats_dir/$faction/$class")) {
-			echo "[dir] $faction/$class\n";
-			mkdir("$stats_dir/$faction/$class", 0755, true);
-			mkdir("$html_dir/$faction/$class", 0755, true);
-		}
+		# CSV_DIR/faction/class
+		if not os.path.isdir("{}/{}/{}".format(CSV_DIR, row[1], row[2])):
+			print("[dir] {}/{}".format(row[1], row[2]))
+			os.mkdir("{}/{}/{}".format(CSV_DIR, row[1], row[2]), 0o755)
 		
-		$handle = "";
-		if (file_exists("$stats_dir/$faction/$class/$homeland.csv"))
-			$handle = fopen("$stats_dir/$faction/$class/$homeland.csv", "a");
-		else {
-			echo "[csv] $faction/$class/$homeland\n";
-			$handle = fopen("$stats_dir/$faction/$class/$homeland.csv", "a");
-			fwrite($handle, $header);
-			array_push($stat_files, "$faction/$class/$homeland");
-		}
-		fwrite($handle, "$line,$sum\n");
-		fclose($handle);
-	}
-	$count++;
-}
+		# HTML_DIR/faction/class
+		if not os.path.isdir("{}/{}/{}".format(HTML_DIR, row[1], row[2])):
+			os.mkdir("{}/{}/{}".format(HTML_DIR, row[1], row[2]), 0o755)
+		
+		csv = ''
+		# if csv file exists, open it
+		if os.path.isfile("{}/{}/{}/{}.csv".format(CSV_DIR, row[1], row[2], row[4])):
+			csv = open("{}/{}/{}/{}.csv".format(CSV_DIR, row[1], row[2], row[4]), 'a')
+		
+		# if csv file doesn't exist, create it
+		else:
+			print("[csv] {}/{}/{}".format(row[1], row[2], row[4]))
+			csv = open("{}/{}/{}/{}.csv".format(CSV_DIR, row[1], row[2], row[4]), 'w')
+			
+			# add to list of csv files
+			csv_files.append("{}/{}/{}".format(row[1], row[2], row[4]))
+			
+			# write the header
+			csv.write(header)
+		
+		# write the row with statsum to the csv file
+		row.append(str(statsum))
+		csv.write(','.join(row))
+		csv.write('\n')
+		csv.close()
 
-foreach ($stat_files as $file) {
-	echo "[html] $file\n";
-	$handle = fopen("$html_dir/$file.html", "w");
-	$html = "
-<html><head><title>$file</title>
+# now all the csv files are written, time to do write some html
+for f in csv_files:
+	print("[html] {}".format(f))
+	
+	with open("{}/{}.html".format(HTML_DIR, f), 'w') as html_file:
+		html = """
+<html><head><title>""" + f + """</title>
 <script type=\"text/javascript\" src=\"https://www.google.com/jsapi\"></script>
 <script type=\"text/javascript\">google.load('visualization', '1', {packages: ['table', 'corechart']});</script>
 <script type=\"text/javascript\">
 function drawStatsTable() {
 // Create and populate the data table.
 var data = google.visualization.arrayToDataTable([
-";
-	
-	fwrite($handle, $html);
-	
-	$count = 0;
-	
-	$avg = array();
-	$min = array();
-	$max = array();
-	$total = array();
-	
-	$sums = array_fill(55, 46, 0);
-	$str = array_fill(1, 21, 0);
-	$int = array_fill(1, 21, 0);
-	$wil = array_fill(1, 21, 0);
-	$dex = array_fill(1, 21, 0);
-	$con = array_fill(1, 21, 0);
-	
-	foreach (file("$stats_dir/$file.csv") as $line) {
-		$eline = explode(",", trim($line));
+"""
+		html_file.write(html)
 		
-		if ($count) {
-			if ($count == 1) {
-				for ($i = 5; $i <= 10; $i++) {
-					$min[$i-5] = $eline[$i];
-					$max[$i-5] = $eline[$i];
-					$total[$i-5] = $eline[$i];
-				}
-			} elseif ($count > 1) {
-				for ($i = 5; $i <= 10; $i++) {
-					if ($eline[$i] < $min[$i-5])
-						$min[$i-5] = $eline[$i];
-					if ($eline[$i] > $max[$i-5])
-						$max[$i-5] = $eline[$i];
-					$total[$i-5] += $eline[$i];
-				}
-			}
-			
-			$sum = $eline[5] + $eline[6] + $eline[7] + $eline[8] + $eline[9];
-			$sums[$sum]++;
-			$str[$eline[5]]++;
-			$int[$eline[6]]++;
-			$wil[$eline[7]]++;
-			$dex[$eline[8]]++;
-			$con[$eline[9]]++;
-			
-			fwrite($handle, "['$eline[0]','$eline[1]','$eline[2]','$eline[3]','$eline[4]',$eline[5],$eline[6],$eline[7],$eline[8],$eline[9],$eline[10]],\n");
-		} else {
-			fwrite($handle, "['$eline[0]','$eline[1]','$eline[2]','$eline[3]','$eline[4]','$eline[5]','$eline[6]','$eline[7]','$eline[8]','$eline[9]','$eline[10]'],\n");
-		}
+		count = 1
+		savg = list(itertools.repeat(0, 6))
+		smin = list(itertools.repeat(0, 6))
+		smax = list(itertools.repeat(0, 6))
+		stotal = list(itertools.repeat(0, 6))
 		
-		$count++;
-	}
-	
-	$count--;
-	for ($i = 0; $i <= 5; $i++)
-		$avg[$i] = round($total[$i] / $count, 1);
-	
-	$min[5] = trim($min[5]);
-	$max[5] = trim($max[5]);
-	$avg[5] = trim($avg[5]);
-	
-	$html = "
-
+		ssum = list(itertools.repeat(0, 100))
+		sstr = list(itertools.repeat(0, 21))
+		sint = list(itertools.repeat(0, 21))
+		swil = list(itertools.repeat(0, 21))
+		sdex = list(itertools.repeat(0, 21))
+		scon = list(itertools.repeat(0, 21))
+		
+		stats_csv = open("{}/{}.csv".format(CSV_DIR, f), 'r', newline='')
+		row = stats_csv.readline().strip().split(',')
+		html_file.write("{},\n".format(str(row)))
+		row = stats_csv.readline().strip().split(',')
+		
+		for i in range(5, 11):
+			smin[i-5] = int(row[i])
+			smax[i-5] = int(row[i])
+			stotal[i-5] = int(row[i])
+		
+		html_file.write("['{}', '{}', '{}', '{}', '{}', {}, {}, {}, {}, {}, {}],\n".format(row[0], row[1], row[2], row[3], row[4], row[5], row[6], row[7], row[8], row[9], row[10]))
+				
+		for line in stats_csv:
+			row = line.strip().split(',')
+			for i in range(5, 11):
+				if int(row[i]) < smin[i-5]:
+					smin[i-5] = int(row[i])
+				if int(row[i]) > smax[i-5]:
+					smax[i-5] = int(row[i])
+				stotal[i-5] += int(row[5])
+			sstr[int(row[5])] += 1
+			sint[int(row[6])] += 1
+			swil[int(row[7])] += 1
+			sdex[int(row[8])] += 1
+			scon[int(row[9])] += 1
+			ssum[int(row[10])] += 1
+			
+			#html_file.write("{},\n".format(str(row)))
+			html_file.write("['{}', '{}', '{}', '{}', '{}', {}, {}, {}, {}, {}, {}],\n".format(row[0], row[1], row[2], row[3], row[4], row[5], row[6], row[7], row[8], row[9], row[10]))
+			count += 1
+		
+		for i in range(6):
+			savg[i] = round(int(stotal[i]) / count, 1)
+		
+		html = """
 ]);      
 visualization = new google.visualization.Table(document.getElementById('stat_table'));
 visualization.draw(data, {showRowNumber: true});
@@ -147,9 +214,12 @@ visualization.draw(data, {showRowNumber: true});
 function drawCalcsTable() {
 var data = google.visualization.arrayToDataTable([
 ['','Strength','Intelligence','Willpower','Dexterity','Constitution','Sum'],
-['Minimum','$min[0]','$min[1]','$min[2]','$min[3]','$min[4]','$min[5]'],
-['Maximum','$max[0]','$max[1]','$max[2]','$max[3]','$max[4]','$max[5]'],
-['Average','$avg[0]','$avg[1]','$avg[2]','$avg[3]','$avg[4]','$avg[5]']
+"""
+		html += "['Minimum', {}, {}, {}, {}, {}, {}],\n".format(smin[0], smin[1], smin[2], smin[3], smin[4], smin[5])
+		html += "['Maximum', {}, {}, {}, {}, {}, {}],\n".format(smax[0], smax[1], smax[2], smax[3], smax[4], smax[5])
+		html += "['Average', {}, {}, {}, {}, {}, {}]\n".format(savg[0], savg[1], savg[2], savg[3], savg[4], savg[5])
+		
+		html += """
 ]);
 visualization = new google.visualization.Table(document.getElementById('calcs_table'));
 visualization.draw(data, null);
@@ -157,14 +227,12 @@ visualization.draw(data, null);
 function drawSumsChart() {
 var data = google.visualization.arrayToDataTable([
 ['sum','sum'],
-";
-	
-	fwrite($handle, $html);
-	for ($i = 55; $i <= 100; $i++)
-		if ($sums[$i])
-			fwrite($handle, "[$i,$sums[$i]],\n");
-	
-	$html = "
+"""
+		html_file.write(html)
+		for i in range(55, 100):
+			if ssum[i]:
+				html_file.write("[{},{}],\n".format(i, ssum[i]))
+		html = """
 ]);
 new google.visualization.LineChart(document.getElementById('sums_chart')).
 draw(data, {curveType: \"function\",
@@ -176,15 +244,12 @@ vAxis: {title: 'number of stats'}}
 function drawPhysicalsChart() {
 var data = google.visualization.arrayToDataTable([
 ['stat','str','dex','con'],
-";
-	
-	fwrite($handle, $html);
-	
-	for ($i = 1; $i <= 21; $i++) 
-		if ($str[$i] or $dex[$i] or $con[$i])
-			fwrite($handle, "[$i,$str[$i],$dex[$i],$con[$i]],\n");
-	
-	$html = "
+"""
+		html_file.write(html)
+		for i in range(1, 21):
+			if sstr[i] or sdex[i] or scon[i]:
+				html_file.write("[{}, {}, {}, {}],\n".format(i, sstr[i], sdex[i], scon[i]))
+		html = """
 ]);
 new google.visualization.LineChart(document.getElementById('physicals_chart')).
 draw(data, {curveType: \"function\",
@@ -196,15 +261,12 @@ vAxis: {title: 'number of stats'}}
 function drawMentalsChart() {
 var data = google.visualization.arrayToDataTable([
 ['stat','int','wil'],
-";
-	
-	fwrite($handle, $html);
-	
-	for ($i = 1; $i <= 21; $i++) 
-		if ($int[$i] or $wil[$i])
-			fwrite($handle, "[$i,$int[$i],$wil[$i]],\n");
-	
-	$html = "
+"""
+		html_file.write(html)
+		for i in range(1, 19):
+			if sint[i] or swil[i]:
+				html_file.write("[{}, {}, {}],\n".format(i, sint[i], swil[i]))
+		html = """
 ]);
 new google.visualization.LineChart(document.getElementById('mentals_chart')).
 draw(data, {curveType: \"function\",
@@ -223,14 +285,15 @@ google.setOnLoadCallback(drawChart);
 <style>
 td { text-align: center; }
 </style>
-</head>
+</head>"""
+		html += """
 <body style=\"font-family: Arial;border: 0 none;\">
 
 <table width=\"100%\"><tr>
 <td style=\"width: 25%; text-align: left;\">
-<h1>$file</h1>
-<p><a href=\"https://github.com/rascul/wotmad-stats/tree/master/csv/$file.csv\">csv data</a></p>
-<p>Out of $count stats</p>
+<h1>{}</h1>
+<p><a href=\"https://github.com/rascul/wotmad-stats/tree/master/csv/{}.csv\">csv data</a></p>
+<p>Out of {} stats</p>
 </td>
 <td style=\"text-align: right; width: 25%;\">
 <div id=\"physicals_chart\"></div>
@@ -247,22 +310,18 @@ td { text-align: center; }
 <div id=\"stat_table\"></div>
 </body>
 </html>
-";
-	
-	fwrite($handle, $html);
-	fclose($handle);
+""".format(f, f, count)
+		html_file.write(html)
+		html_file.close()
 
-}
+# generate index.html
+print("[html] index")
+if os.path.isfile(HTML_DIR + "/../index.html"):
+	os.remove(HTML_DIR + "/../index.html")
+index = open(HTML_DIR + "/../index.html", 'w')
+update = datetime.datetime.now().strftime("%c")
 
-// generate index.html
-echo "[html] index\n";
-if (file_exists("$html_dir/../index.html"))
-	unlink("$html_dir/../index.html");
-$handle = fopen("$html_dir/../index.html", "a");
-
-$updated = date("G:i l, F jS, Y e");
-
-$html = "
+html = """
 <html>
 <head>
 <title>WoTMad Stats</title>
@@ -270,47 +329,49 @@ $html = "
 <body style=\"font-family: Arial;border: 0 none;\">
 <h1>WoTMad Stats</h1>
 <p>Data is from <a href=\"http://wotmad.herokuapp.com/stats\">WoTMad Stat Database</a></p>
-<p>Last updated: $updated</p>
+<p>Last updated: {}</p>
 <table style=\"width: 100%;\"><tr valign=\"top\">
-";
+""".format(update)
 
-fwrite($handle, $html);
+index.write(html)
 
-if (is_dir($html_dir)) {
-	$factions = scandir($html_dir);
-	sort($factions);
-	foreach ($factions as $faction) {
-		if ($faction != "." && $faction != ".." && $faction != "index.html") {
-			fwrite($handle, "<td><h2>$faction</h2>\n");
+for faction in sorted(os.listdir(HTML_DIR)):
+	index.write("<td><h2>" + faction + "</h2>\n")
+	for classs in sorted(os.listdir("{}/{}".format(HTML_DIR, faction))):
+		index.write("<h3>" + classs + "</h3><ul>\n")
+		for homeland in sorted(os.listdir("{}/{}/{}".format(HTML_DIR, faction, classs))):
+			homeland = homeland.split('.')[0]
+			num_lines = sum(1 for line in open("{}/{}/{}/{}.csv".format(CSV_DIR, faction, classs, homeland))) - 1
 			
-			$classes = scandir("$html_dir/$faction");
-			foreach ($classes as $class) {
-				if ($class != "." && $class != "..") {
-					fwrite($handle, "<h3>$class</h3><ul>\n");
-					
-					$homelands = scandir("$html_dir/$faction/$class");
-					foreach ($homelands as $homeland) {
-						if ($homeland != "." && $homeland != "..") {
-							$csv_file = file("$stats_dir/$faction/$class/" . basename($homeland, ".html") . ".csv");
-							$num_stats = count($csv_file) - 1;
-							fwrite($handle, "<li><a href=\"html/$faction/$class/$homeland\">" . basename($homeland, ".html") . "</a> ($num_stats)</li>\n");
-						}
-					}
-					fwrite($handle, "</ul>\n");
-				}
-			}
-			fwrite($handle, "</td>\n");
-		}
-	}
-}
+			index.write("<li><a href=\"html/{}/{}/{}.html\">{}</a> ({})</li>\n".format(faction, classs, homeland, homeland, num_lines))
+		index.write("</ul>\n")
+	index.write("</td>\n")
+index.close()
+				
+		
+		
+		
 
-$html = "
-</tr></table>
-</body>
-</html>
-";
 
-fwrite($handle, $html);
-fclose($handle);
 
-?>
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
