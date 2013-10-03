@@ -11,6 +11,10 @@ var data = google.visualization.arrayToDataTable([
 ['2012-04-15 22:07:43','Human','Warrior','Male','Borderlands',19,12,13,10,17,71],
 ['2012-04-15 21:58:16','Human','Warrior','Male','Borderlands',18,11,13,14,17,73],
 ['2012-04-13 13:19:38','Human','Warrior','Male','Borderlands',16,12,11,14,17,70],
+['2012-04-15 22:16:00','Human','Warrior','Male','Borderlands',17,9,11,18,16,71],
+['2012-04-15 22:07:43','Human','Warrior','Male','Borderlands',19,12,13,10,17,71],
+['2012-04-15 21:58:16','Human','Warrior','Male','Borderlands',18,11,13,14,17,73],
+['2012-04-13 13:19:38','Human','Warrior','Male','Borderlands',16,12,11,14,17,70],
 
 
 ]);      
@@ -30,9 +34,9 @@ visualization.draw(data, null);
 function drawSumsChart() {
 var data = google.visualization.arrayToDataTable([
 ['sum','sum'],
-[70,1],
-[71,2],
-[73,1],
+[70,2],
+[71,4],
+[73,2],
 
 ]);
 new google.visualization.LineChart(document.getElementById('sums_chart')).
@@ -45,12 +49,12 @@ vAxis: {title: 'number of stats'}}
 function drawPhysicalsChart() {
 var data = google.visualization.arrayToDataTable([
 ['stat','str','dex','con'],
-[10,0,1,0],
-[14,0,2,0],
-[16,1,0,1],
-[17,1,0,3],
-[18,1,1,0],
-[19,1,0,0],
+[10,0,2,0],
+[14,0,4,0],
+[16,2,0,2],
+[17,2,0,6],
+[18,2,2,0],
+[19,2,0,0],
 
 ]);
 new google.visualization.LineChart(document.getElementById('physicals_chart')).
@@ -63,10 +67,10 @@ vAxis: {title: 'number of stats'}}
 function drawMentalsChart() {
 var data = google.visualization.arrayToDataTable([
 ['stat','int','wil'],
-[9,1,0],
-[11,1,2],
-[12,2,0],
-[13,0,2],
+[9,2,0],
+[11,2,4],
+[12,4,0],
+[13,0,4],
 
 ]);
 new google.visualization.LineChart(document.getElementById('mentals_chart')).
@@ -93,7 +97,7 @@ td { text-align: center; }
 <td style="width: 25%; text-align: left;">
 <h1>Human/Warrior/Borderlands</h1>
 <p><a href="https://github.com/rascul/wotmad-stats/tree/master/csv/Human/Warrior/Borderlands.csv">csv data</a></p>
-<p>Out of 4 stats</p>
+<p>Out of 8 stats</p>
 </td>
 <td style="text-align: right; width: 25%;">
 <div id="physicals_chart"></div>
