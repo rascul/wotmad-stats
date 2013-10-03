@@ -6,10 +6,8 @@
 function drawStatsTable() {
 // Create and populate the data table.
 var data = google.visualization.arrayToDataTable([
-['Submitted','Faction','Class','Sex','Homeland','Strength','Intelligence','Willpower','Dexterity','Constitution','Sum'],
-['2013-03-20 01:09:01','Human','Rogue','Female','Illian',14,12,11,16,18,71],
-['2013-03-20 01:09:01','Human','Rogue','Female','Illian',14,12,11,16,18,71],
-
+['Submitted', 'Faction', 'Class', 'Sex', 'Homeland', 'Strength', 'Intelligence', 'Willpower', 'Dexterity', 'Constitution', 'Sum'],
+['2013-03-20 01:09:01', 'Human', 'Rogue', 'Female', 'Illian', 14, 12, 11, 16, 18, 71],
 
 ]);      
 visualization = new google.visualization.Table(document.getElementById('stat_table'));
@@ -18,9 +16,10 @@ visualization.draw(data, {showRowNumber: true});
 function drawCalcsTable() {
 var data = google.visualization.arrayToDataTable([
 ['','Strength','Intelligence','Willpower','Dexterity','Constitution','Sum'],
-['Minimum','14','12','11','16','18','71'],
-['Maximum','14','12','11','16','18','71'],
-['Average','14','12','11','16','18','71']
+['Minimum', 14, 12, 11, 16, 18, 71],
+['Maximum', 14, 12, 11, 16, 18, 71],
+['Average', 14.0, 12.0, 11.0, 16.0, 18.0, 71.0]
+
 ]);
 visualization = new google.visualization.Table(document.getElementById('calcs_table'));
 visualization.draw(data, null);
@@ -28,7 +27,6 @@ visualization.draw(data, null);
 function drawSumsChart() {
 var data = google.visualization.arrayToDataTable([
 ['sum','sum'],
-[71,2],
 
 ]);
 new google.visualization.LineChart(document.getElementById('sums_chart')).
@@ -41,9 +39,6 @@ vAxis: {title: 'number of stats'}}
 function drawPhysicalsChart() {
 var data = google.visualization.arrayToDataTable([
 ['stat','str','dex','con'],
-[14,2,0,0],
-[16,0,2,0],
-[18,0,0,2],
 
 ]);
 new google.visualization.LineChart(document.getElementById('physicals_chart')).
@@ -56,8 +51,6 @@ vAxis: {title: 'number of stats'}}
 function drawMentalsChart() {
 var data = google.visualization.arrayToDataTable([
 ['stat','int','wil'],
-[11,0,2],
-[12,2,0],
 
 ]);
 new google.visualization.LineChart(document.getElementById('mentals_chart')).
@@ -84,7 +77,7 @@ td { text-align: center; }
 <td style="width: 25%; text-align: left;">
 <h1>Human/Rogue/Illian</h1>
 <p><a href="https://github.com/rascul/wotmad-stats/tree/master/csv/Human/Rogue/Illian.csv">csv data</a></p>
-<p>Out of 2 stats</p>
+<p>Out of 1 stats</p>
 </td>
 <td style="text-align: right; width: 25%;">
 <div id="physicals_chart"></div>

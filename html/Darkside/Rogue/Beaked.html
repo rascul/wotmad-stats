@@ -6,18 +6,12 @@
 function drawStatsTable() {
 // Create and populate the data table.
 var data = google.visualization.arrayToDataTable([
-['Submitted','Faction','Class','Sex','Homeland','Strength','Intelligence','Willpower','Dexterity','Constitution','Sum'],
-['2012-09-03 17:38:18','Darkside','Rogue','Male','Beaked',15,12,6,19,15,67],
-['2012-09-03 17:32:46','Darkside','Rogue','Male','Beaked',13,12,11,17,17,70],
-['2012-09-03 17:23:30','Darkside','Rogue','Male','Beaked',14,14,7,19,17,71],
-['2012-09-03 17:17:26','Darkside','Rogue','Male','Beaked',16,8,8,16,18,66],
-['2012-09-03 17:13:37','Darkside','Rogue','Male','Beaked',15,14,4,18,18,69],
-['2012-09-03 17:38:18','Darkside','Rogue','Male','Beaked',15,12,6,19,15,67],
-['2012-09-03 17:32:46','Darkside','Rogue','Male','Beaked',13,12,11,17,17,70],
-['2012-09-03 17:23:30','Darkside','Rogue','Male','Beaked',14,14,7,19,17,71],
-['2012-09-03 17:17:26','Darkside','Rogue','Male','Beaked',16,8,8,16,18,66],
-['2012-09-03 17:13:37','Darkside','Rogue','Male','Beaked',15,14,4,18,18,69],
-
+['Submitted', 'Faction', 'Class', 'Sex', 'Homeland', 'Strength', 'Intelligence', 'Willpower', 'Dexterity', 'Constitution', 'Sum'],
+['2012-09-03 17:38:18', 'Darkside', 'Rogue', 'Male', 'Beaked', 15, 12, 6, 19, 15, 67],
+['2012-09-03 17:32:46', 'Darkside', 'Rogue', 'Male', 'Beaked', 13, 12, 11, 17, 17, 70],
+['2012-09-03 17:23:30', 'Darkside', 'Rogue', 'Male', 'Beaked', 14, 14, 7, 19, 17, 71],
+['2012-09-03 17:17:26', 'Darkside', 'Rogue', 'Male', 'Beaked', 16, 8, 8, 16, 18, 66],
+['2012-09-03 17:13:37', 'Darkside', 'Rogue', 'Male', 'Beaked', 15, 14, 4, 18, 18, 69],
 
 ]);      
 visualization = new google.visualization.Table(document.getElementById('stat_table'));
@@ -26,9 +20,10 @@ visualization.draw(data, {showRowNumber: true});
 function drawCalcsTable() {
 var data = google.visualization.arrayToDataTable([
 ['','Strength','Intelligence','Willpower','Dexterity','Constitution','Sum'],
-['Minimum','13','8','4','16','15','66'],
-['Maximum','16','14','11','19','18','71'],
-['Average','14.6','12','7.2','17.8','17','68.6']
+['Minimum', 13, 8, 4, 16, 15, 66],
+['Maximum', 16, 14, 11, 19, 18, 71],
+['Average', 14.6, 14.0, 12.8, 15.4, 14.6, 25.0]
+
 ]);
 visualization = new google.visualization.Table(document.getElementById('calcs_table'));
 visualization.draw(data, null);
@@ -36,11 +31,10 @@ visualization.draw(data, null);
 function drawSumsChart() {
 var data = google.visualization.arrayToDataTable([
 ['sum','sum'],
-[66,2],
-[67,2],
-[69,2],
-[70,2],
-[71,2],
+[66,1],
+[69,1],
+[70,1],
+[71,1],
 
 ]);
 new google.visualization.LineChart(document.getElementById('sums_chart')).
@@ -53,13 +47,13 @@ vAxis: {title: 'number of stats'}}
 function drawPhysicalsChart() {
 var data = google.visualization.arrayToDataTable([
 ['stat','str','dex','con'],
-[13,2,0,0],
-[14,2,0,0],
-[15,4,0,2],
-[16,2,2,0],
-[17,0,2,4],
-[18,0,2,4],
-[19,0,4,0],
+[13, 1, 0, 0],
+[14, 1, 0, 0],
+[15, 1, 0, 0],
+[16, 1, 1, 0],
+[17, 0, 1, 2],
+[18, 0, 1, 2],
+[19, 0, 1, 0],
 
 ]);
 new google.visualization.LineChart(document.getElementById('physicals_chart')).
@@ -72,13 +66,12 @@ vAxis: {title: 'number of stats'}}
 function drawMentalsChart() {
 var data = google.visualization.arrayToDataTable([
 ['stat','int','wil'],
-[4,0,2],
-[6,0,2],
-[7,0,2],
-[8,2,2],
-[11,0,2],
-[12,4,0],
-[14,4,0],
+[4, 0, 1],
+[7, 0, 1],
+[8, 1, 1],
+[11, 0, 1],
+[12, 1, 0],
+[14, 2, 0],
 
 ]);
 new google.visualization.LineChart(document.getElementById('mentals_chart')).
@@ -105,7 +98,7 @@ td { text-align: center; }
 <td style="width: 25%; text-align: left;">
 <h1>Darkside/Rogue/Beaked</h1>
 <p><a href="https://github.com/rascul/wotmad-stats/tree/master/csv/Darkside/Rogue/Beaked.csv">csv data</a></p>
-<p>Out of 10 stats</p>
+<p>Out of 5 stats</p>
 </td>
 <td style="text-align: right; width: 25%;">
 <div id="physicals_chart"></div>

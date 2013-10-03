@@ -6,38 +6,22 @@
 function drawStatsTable() {
 // Create and populate the data table.
 var data = google.visualization.arrayToDataTable([
-['Submitted','Faction','Class','Sex','Homeland','Strength','Intelligence','Willpower','Dexterity','Constitution','Sum'],
-['2013-09-19 18:56:10','Human','Channeler','Male','Mayene',12,19,16,13,14,74],
-['2013-09-19 18:56:09','Human','Channeler','Male','Mayene',14,19,18,14,9,74],
-['2013-09-19 18:56:09','Human','Channeler','Male','Mayene',12,18,17,14,10,71],
-['2013-09-19 18:56:08','Human','Channeler','Male','Mayene',11,19,19,13,14,76],
-['2013-09-19 18:56:08','Human','Channeler','Male','Mayene',11,19,17,13,14,74],
-['2013-09-19 18:56:06','Human','Channeler','Male','Mayene',12,19,15,12,13,71],
-['2013-09-19 18:56:06','Human','Channeler','Male','Mayene',14,17,19,17,10,77],
-['2013-09-19 18:56:06','Human','Channeler','Male','Mayene',11,19,17,15,10,72],
-['2013-09-19 18:56:05','Human','Channeler','Male','Mayene',9,18,19,14,10,70],
-['2013-09-19 18:56:05','Human','Channeler','Male','Mayene',9,19,16,14,14,72],
-['2013-09-19 18:56:04','Human','Channeler','Male','Mayene',9,18,16,15,12,70],
-['2013-09-19 18:56:04','Human','Channeler','Male','Mayene',11,19,16,12,12,70],
-['2013-09-19 18:56:03','Human','Channeler','Male','Mayene',9,18,19,15,13,74],
-['2013-09-19 18:56:02','Human','Channeler','Male','Mayene',13,18,14,16,14,75],
-['2013-09-19 18:56:02','Human','Channeler','Male','Mayene',13,18,16,12,11,70],
-['2013-09-19 18:56:10','Human','Channeler','Male','Mayene',12,19,16,13,14,74],
-['2013-09-19 18:56:09','Human','Channeler','Male','Mayene',14,19,18,14,9,74],
-['2013-09-19 18:56:09','Human','Channeler','Male','Mayene',12,18,17,14,10,71],
-['2013-09-19 18:56:08','Human','Channeler','Male','Mayene',11,19,19,13,14,76],
-['2013-09-19 18:56:08','Human','Channeler','Male','Mayene',11,19,17,13,14,74],
-['2013-09-19 18:56:06','Human','Channeler','Male','Mayene',12,19,15,12,13,71],
-['2013-09-19 18:56:06','Human','Channeler','Male','Mayene',14,17,19,17,10,77],
-['2013-09-19 18:56:06','Human','Channeler','Male','Mayene',11,19,17,15,10,72],
-['2013-09-19 18:56:05','Human','Channeler','Male','Mayene',9,18,19,14,10,70],
-['2013-09-19 18:56:05','Human','Channeler','Male','Mayene',9,19,16,14,14,72],
-['2013-09-19 18:56:04','Human','Channeler','Male','Mayene',9,18,16,15,12,70],
-['2013-09-19 18:56:04','Human','Channeler','Male','Mayene',11,19,16,12,12,70],
-['2013-09-19 18:56:03','Human','Channeler','Male','Mayene',9,18,19,15,13,74],
-['2013-09-19 18:56:02','Human','Channeler','Male','Mayene',13,18,14,16,14,75],
-['2013-09-19 18:56:02','Human','Channeler','Male','Mayene',13,18,16,12,11,70],
-
+['Submitted', 'Faction', 'Class', 'Sex', 'Homeland', 'Strength', 'Intelligence', 'Willpower', 'Dexterity', 'Constitution', 'Sum'],
+['2013-09-19 18:56:10', 'Human', 'Channeler', 'Male', 'Mayene', 12, 19, 16, 13, 14, 74],
+['2013-09-19 18:56:09', 'Human', 'Channeler', 'Male', 'Mayene', 14, 19, 18, 14, 9, 74],
+['2013-09-19 18:56:09', 'Human', 'Channeler', 'Male', 'Mayene', 12, 18, 17, 14, 10, 71],
+['2013-09-19 18:56:08', 'Human', 'Channeler', 'Male', 'Mayene', 11, 19, 19, 13, 14, 76],
+['2013-09-19 18:56:08', 'Human', 'Channeler', 'Male', 'Mayene', 11, 19, 17, 13, 14, 74],
+['2013-09-19 18:56:06', 'Human', 'Channeler', 'Male', 'Mayene', 12, 19, 15, 12, 13, 71],
+['2013-09-19 18:56:06', 'Human', 'Channeler', 'Male', 'Mayene', 14, 17, 19, 17, 10, 77],
+['2013-09-19 18:56:06', 'Human', 'Channeler', 'Male', 'Mayene', 11, 19, 17, 15, 10, 72],
+['2013-09-19 18:56:05', 'Human', 'Channeler', 'Male', 'Mayene', 9, 18, 19, 14, 10, 70],
+['2013-09-19 18:56:05', 'Human', 'Channeler', 'Male', 'Mayene', 9, 19, 16, 14, 14, 72],
+['2013-09-19 18:56:04', 'Human', 'Channeler', 'Male', 'Mayene', 9, 18, 16, 15, 12, 70],
+['2013-09-19 18:56:04', 'Human', 'Channeler', 'Male', 'Mayene', 11, 19, 16, 12, 12, 70],
+['2013-09-19 18:56:03', 'Human', 'Channeler', 'Male', 'Mayene', 9, 18, 19, 15, 13, 74],
+['2013-09-19 18:56:02', 'Human', 'Channeler', 'Male', 'Mayene', 13, 18, 14, 16, 14, 75],
+['2013-09-19 18:56:02', 'Human', 'Channeler', 'Male', 'Mayene', 13, 18, 16, 12, 11, 70],
 
 ]);      
 visualization = new google.visualization.Table(document.getElementById('stat_table'));
@@ -46,9 +30,10 @@ visualization.draw(data, {showRowNumber: true});
 function drawCalcsTable() {
 var data = google.visualization.arrayToDataTable([
 ['','Strength','Intelligence','Willpower','Dexterity','Constitution','Sum'],
-['Minimum','9','17','14','12','9','70'],
-['Maximum','14','19','19','17','14','77'],
-['Average','11.3','18.5','16.9','13.9','12','72.7']
+['Minimum', 9, 17, 14, 12, 9, 70],
+['Maximum', 14, 19, 19, 17, 14, 77],
+['Average', 11.3, 11.8, 11.6, 11.4, 11.5, 15.5]
+
 ]);
 visualization = new google.visualization.Table(document.getElementById('calcs_table'));
 visualization.draw(data, null);
@@ -56,13 +41,13 @@ visualization.draw(data, null);
 function drawSumsChart() {
 var data = google.visualization.arrayToDataTable([
 ['sum','sum'],
-[70,8],
-[71,4],
-[72,4],
-[74,8],
-[75,2],
-[76,2],
-[77,2],
+[70,4],
+[71,2],
+[72,2],
+[74,3],
+[75,1],
+[76,1],
+[77,1],
 
 ]);
 new google.visualization.LineChart(document.getElementById('sums_chart')).
@@ -75,15 +60,15 @@ vAxis: {title: 'number of stats'}}
 function drawPhysicalsChart() {
 var data = google.visualization.arrayToDataTable([
 ['stat','str','dex','con'],
-[9,8,0,2],
-[10,0,0,8],
-[11,8,0,2],
-[12,6,6,4],
-[13,4,6,4],
-[14,4,8,10],
-[15,0,6,0],
-[16,0,2,0],
-[17,0,2,0],
+[9, 4, 0, 1],
+[10, 0, 0, 4],
+[11, 4, 0, 1],
+[12, 2, 3, 2],
+[13, 2, 2, 2],
+[14, 2, 4, 4],
+[15, 0, 3, 0],
+[16, 0, 1, 0],
+[17, 0, 1, 0],
 
 ]);
 new google.visualization.LineChart(document.getElementById('physicals_chart')).
@@ -96,12 +81,11 @@ vAxis: {title: 'number of stats'}}
 function drawMentalsChart() {
 var data = google.visualization.arrayToDataTable([
 ['stat','int','wil'],
-[14,0,2],
-[15,0,2],
-[16,0,10],
-[17,2,6],
-[18,12,2],
-[19,16,8],
+[14, 0, 1],
+[15, 0, 1],
+[16, 0, 4],
+[17, 1, 3],
+[18, 6, 1],
 
 ]);
 new google.visualization.LineChart(document.getElementById('mentals_chart')).
@@ -128,7 +112,7 @@ td { text-align: center; }
 <td style="width: 25%; text-align: left;">
 <h1>Human/Channeler/Mayene</h1>
 <p><a href="https://github.com/rascul/wotmad-stats/tree/master/csv/Human/Channeler/Mayene.csv">csv data</a></p>
-<p>Out of 30 stats</p>
+<p>Out of 15 stats</p>
 </td>
 <td style="text-align: right; width: 25%;">
 <div id="physicals_chart"></div>

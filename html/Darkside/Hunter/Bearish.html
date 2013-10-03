@@ -6,12 +6,9 @@
 function drawStatsTable() {
 // Create and populate the data table.
 var data = google.visualization.arrayToDataTable([
-['Submitted','Faction','Class','Sex','Homeland','Strength','Intelligence','Willpower','Dexterity','Constitution','Sum'],
-['2012-08-02 14:08:16','Darkside','Hunter','Male','Bearish',19,9,8,13,17,66],
-['2012-08-02 14:06:15','Darkside','Hunter','Male','Bearish',20,6,9,13,17,65],
-['2012-08-02 14:08:16','Darkside','Hunter','Male','Bearish',19,9,8,13,17,66],
-['2012-08-02 14:06:15','Darkside','Hunter','Male','Bearish',20,6,9,13,17,65],
-
+['Submitted', 'Faction', 'Class', 'Sex', 'Homeland', 'Strength', 'Intelligence', 'Willpower', 'Dexterity', 'Constitution', 'Sum'],
+['2012-08-02 14:08:16', 'Darkside', 'Hunter', 'Male', 'Bearish', 19, 9, 8, 13, 17, 66],
+['2012-08-02 14:06:15', 'Darkside', 'Hunter', 'Male', 'Bearish', 20, 6, 9, 13, 17, 65],
 
 ]);      
 visualization = new google.visualization.Table(document.getElementById('stat_table'));
@@ -20,9 +17,10 @@ visualization.draw(data, {showRowNumber: true});
 function drawCalcsTable() {
 var data = google.visualization.arrayToDataTable([
 ['','Strength','Intelligence','Willpower','Dexterity','Constitution','Sum'],
-['Minimum','19','6','8','13','17','65'],
-['Maximum','20','9','9','13','17','66'],
-['Average','19.5','7.5','8.5','13','17','65.5']
+['Minimum', 19, 6, 8, 13, 17, 65],
+['Maximum', 20, 9, 9, 13, 17, 66],
+['Average', 19.5, 14.5, 14.0, 16.5, 18.5, 43.0]
+
 ]);
 visualization = new google.visualization.Table(document.getElementById('calcs_table'));
 visualization.draw(data, null);
@@ -30,8 +28,7 @@ visualization.draw(data, null);
 function drawSumsChart() {
 var data = google.visualization.arrayToDataTable([
 ['sum','sum'],
-[65,2],
-[66,2],
+[65,1],
 
 ]);
 new google.visualization.LineChart(document.getElementById('sums_chart')).
@@ -44,10 +41,9 @@ vAxis: {title: 'number of stats'}}
 function drawPhysicalsChart() {
 var data = google.visualization.arrayToDataTable([
 ['stat','str','dex','con'],
-[13,0,4,0],
-[17,0,0,4],
-[19,2,0,0],
-[20,2,0,0],
+[13, 0, 1, 0],
+[17, 0, 0, 1],
+[20, 1, 0, 0],
 
 ]);
 new google.visualization.LineChart(document.getElementById('physicals_chart')).
@@ -60,9 +56,8 @@ vAxis: {title: 'number of stats'}}
 function drawMentalsChart() {
 var data = google.visualization.arrayToDataTable([
 ['stat','int','wil'],
-[6,2,0],
-[8,0,2],
-[9,2,2],
+[6, 1, 0],
+[9, 0, 1],
 
 ]);
 new google.visualization.LineChart(document.getElementById('mentals_chart')).
@@ -89,7 +84,7 @@ td { text-align: center; }
 <td style="width: 25%; text-align: left;">
 <h1>Darkside/Hunter/Bearish</h1>
 <p><a href="https://github.com/rascul/wotmad-stats/tree/master/csv/Darkside/Hunter/Bearish.csv">csv data</a></p>
-<p>Out of 4 stats</p>
+<p>Out of 2 stats</p>
 </td>
 <td style="text-align: right; width: 25%;">
 <div id="physicals_chart"></div>
