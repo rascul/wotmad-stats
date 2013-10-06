@@ -1,5 +1,5 @@
 
-<html><head><title>Human/Warrior/Borderlands</title>
+<html><head><title>Human/Warrior/Tear</title>
 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 <script type="text/javascript">google.load('visualization', '1', {packages: ['table', 'corechart']});</script>
 <script type="text/javascript">
@@ -7,11 +7,8 @@ function drawStatsTable() {
 // Create and populate the data table.
 var data = google.visualization.arrayToDataTable([
 ['Submitted', 'Faction', 'Class', 'Sex', 'Homeland', 'Strength', 'Intelligence', 'Willpower', 'Dexterity', 'Constitution', 'Sum'],
-['2013-10-05 17:35:53', 'Human', 'Warrior', 'Male', 'Borderlands', 16, 12, 12, 15, 16, 71],
-['2012-04-15 22:16:00', 'Human', 'Warrior', 'Male', 'Borderlands', 17, 9, 11, 18, 16, 71],
-['2012-04-15 22:07:43', 'Human', 'Warrior', 'Male', 'Borderlands', 19, 12, 13, 10, 17, 71],
-['2012-04-15 21:58:16', 'Human', 'Warrior', 'Male', 'Borderlands', 18, 11, 13, 14, 17, 73],
-['2012-04-13 13:19:38', 'Human', 'Warrior', 'Male', 'Borderlands', 16, 12, 11, 14, 17, 70],
+['2013-10-05 17:19:47', 'Human', 'Warrior', 'Male', 'Tear', 17, 14, 13, 13, 14, 71],
+['2013-10-05 17:15:15', 'Human', 'Warrior', 'Male', 'Tear', 18, 13, 14, 13, 14, 72],
 
 ]);      
 visualization = new google.visualization.Table(document.getElementById('stat_table'));
@@ -20,9 +17,9 @@ visualization.draw(data, {showRowNumber: true});
 function drawCalcsTable() {
 var data = google.visualization.arrayToDataTable([
 ['','Strength','Intelligence','Willpower','Dexterity','Constitution','Sum'],
-['Minimum', 16, 9, 11, 10, 16, 70],
-['Maximum', 19, 12, 13, 18, 17, 73],
-['Average', 17.2, 16.4, 16.4, 17.0, 17.2, 28.2]
+['Minimum', 17, 13, 13, 13, 14, 71],
+['Maximum', 18, 14, 14, 13, 14, 72],
+['Average', 17.5, 16.0, 15.5, 15.5, 16.0, 44.5]
 
 ]);
 visualization = new google.visualization.Table(document.getElementById('calcs_table'));
@@ -31,9 +28,7 @@ visualization.draw(data, null);
 function drawSumsChart() {
 var data = google.visualization.arrayToDataTable([
 ['sum','sum'],
-[70,1],
-[71,2],
-[73,1],
+[72,1],
 
 ]);
 new google.visualization.LineChart(document.getElementById('sums_chart')).
@@ -46,12 +41,9 @@ vAxis: {title: 'number of stats'}}
 function drawPhysicalsChart() {
 var data = google.visualization.arrayToDataTable([
 ['stat','str','dex','con'],
-[10, 0, 1, 0],
-[14, 0, 2, 0],
-[16, 1, 0, 1],
-[17, 1, 0, 3],
-[18, 1, 1, 0],
-[19, 1, 0, 0],
+[13, 0, 1, 0],
+[14, 0, 0, 1],
+[18, 1, 0, 0],
 
 ]);
 new google.visualization.LineChart(document.getElementById('physicals_chart')).
@@ -64,10 +56,8 @@ vAxis: {title: 'number of stats'}}
 function drawMentalsChart() {
 var data = google.visualization.arrayToDataTable([
 ['stat','int','wil'],
-[9, 1, 0],
-[11, 1, 2],
-[12, 2, 0],
-[13, 0, 2],
+[13, 1, 0],
+[14, 0, 1],
 
 ]);
 new google.visualization.LineChart(document.getElementById('mentals_chart')).
@@ -92,9 +82,9 @@ td { text-align: center; }
 
 <table width="100%"><tr>
 <td style="width: 25%; text-align: left;">
-<h1>Human/Warrior/Borderlands</h1>
-<p><a href="https://github.com/rascul/wotmad-stats/tree/master/csv/Human/Warrior/Borderlands.csv">csv data</a></p>
-<p>Out of 5 stats</p>
+<h1>Human/Warrior/Tear</h1>
+<p><a href="https://github.com/rascul/wotmad-stats/tree/master/csv/Human/Warrior/Tear.csv">csv data</a></p>
+<p>Out of 2 stats</p>
 </td>
 <td style="text-align: right; width: 25%;">
 <div id="physicals_chart"></div>

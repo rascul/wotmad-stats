@@ -7,6 +7,28 @@ function drawStatsTable() {
 // Create and populate the data table.
 var data = google.visualization.arrayToDataTable([
 ['Submitted', 'Faction', 'Class', 'Sex', 'Homeland', 'Strength', 'Intelligence', 'Willpower', 'Dexterity', 'Constitution', 'Sum'],
+['2013-10-05 18:38:14', 'Human', 'Hunter', 'Male', 'Borderlands', 16, 13, 13, 15, 15, 72],
+['2013-10-05 18:35:48', 'Human', 'Hunter', 'Male', 'Borderlands', 16, 16, 10, 15, 15, 72],
+['2013-10-05 18:33:36', 'Human', 'Hunter', 'Male', 'Borderlands', 16, 12, 12, 17, 16, 73],
+['2013-10-05 18:30:43', 'Human', 'Hunter', 'Male', 'Borderlands', 17, 14, 11, 14, 17, 73],
+['2013-10-05 18:28:14', 'Human', 'Hunter', 'Male', 'Borderlands', 16, 9, 16, 15, 14, 70],
+['2013-10-05 18:25:45', 'Human', 'Hunter', 'Male', 'Borderlands', 17, 14, 14, 17, 15, 77],
+['2013-10-05 18:21:03', 'Human', 'Hunter', 'Male', 'Borderlands', 16, 9, 15, 17, 16, 73],
+['2013-10-05 18:19:08', 'Human', 'Hunter', 'Male', 'Borderlands', 19, 10, 13, 14, 15, 71],
+['2013-10-05 18:17:01', 'Human', 'Hunter', 'Male', 'Borderlands', 16, 11, 12, 18, 15, 72],
+['2013-10-05 18:14:11', 'Human', 'Hunter', 'Male', 'Borderlands', 17, 14, 12, 16, 14, 73],
+['2013-10-05 18:11:33', 'Human', 'Hunter', 'Male', 'Borderlands', 17, 12, 11, 15, 16, 71],
+['2013-10-05 18:08:48', 'Human', 'Hunter', 'Male', 'Borderlands', 16, 14, 14, 15, 15, 74],
+['2013-10-05 18:06:42', 'Human', 'Hunter', 'Male', 'Borderlands', 17, 12, 10, 17, 15, 71],
+['2013-10-05 18:02:50', 'Human', 'Hunter', 'Male', 'Borderlands', 16, 15, 13, 15, 18, 77],
+['2013-10-05 18:00:34', 'Human', 'Hunter', 'Male', 'Borderlands', 17, 12, 12, 15, 15, 71],
+['2013-10-05 17:57:46', 'Human', 'Hunter', 'Male', 'Borderlands', 19, 14, 11, 15, 15, 74],
+['2013-10-05 17:54:44', 'Human', 'Hunter', 'Male', 'Borderlands', 17, 12, 10, 17, 15, 71],
+['2013-10-05 17:51:53', 'Human', 'Hunter', 'Male', 'Borderlands', 19, 10, 13, 15, 15, 72],
+['2013-10-05 17:48:59', 'Human', 'Hunter', 'Male', 'Borderlands', 14, 15, 13, 14, 16, 72],
+['2013-10-05 17:46:33', 'Human', 'Hunter', 'Male', 'Borderlands', 19, 15, 10, 16, 16, 76],
+['2013-10-05 17:44:31', 'Human', 'Hunter', 'Male', 'Borderlands', 13, 14, 13, 15, 16, 71],
+['2013-10-05 17:40:59', 'Human', 'Hunter', 'Male', 'Borderlands', 19, 9, 12, 16, 14, 70],
 ['2013-09-27 23:00:42', 'Human', 'Hunter', 'Male', 'Borderlands', 16, 12, 15, 14, 13, 70],
 ['2013-09-27 22:59:20', 'Human', 'Hunter', 'Male', 'Borderlands', 17, 10, 11, 15, 17, 70],
 ['2013-09-27 21:19:39', 'Human', 'Hunter', 'Male', 'Borderlands', 19, 12, 11, 14, 16, 72],
@@ -13802,14 +13824,14 @@ visualization.draw(data, null);
 function drawSumsChart() {
 var data = google.visualization.arrayToDataTable([
 ['sum','sum'],
-[70,2947],
-[71,2828],
-[72,2507],
-[73,1940],
-[74,1413],
+[70,2950],
+[71,2834],
+[72,2511],
+[73,1944],
+[74,1415],
 [75,977],
-[76,541],
-[77,326],
+[76,542],
+[77,328],
 [78,166],
 [79,84],
 [80,33],
@@ -13829,13 +13851,13 @@ var data = google.visualization.arrayToDataTable([
 ['stat','str','dex','con'],
 [11, 0, 28, 23],
 [12, 23, 205, 205],
-[13, 161, 885, 926],
-[14, 862, 1348, 1228],
-[15, 1292, 5848, 5948],
-[16, 5897, 2073, 2045],
-[17, 2124, 2304, 2329],
-[18, 2353, 853, 858],
-[19, 1063, 231, 213],
+[13, 162, 885, 927],
+[14, 863, 1352, 1231],
+[15, 1292, 5857, 5958],
+[16, 5905, 2076, 2051],
+[17, 2131, 2309, 2330],
+[18, 2353, 854, 859],
+[19, 1068, 231, 213],
 
 ]);
 new google.visualization.LineChart(document.getElementById('physicals_chart')).
@@ -13848,14 +13870,14 @@ vAxis: {title: 'number of stats'}}
 function drawMentalsChart() {
 var data = google.visualization.arrayToDataTable([
 ['stat','int','wil'],
-[9, 206, 251],
-[10, 872, 836],
-[11, 1304, 1238],
-[12, 5957, 5895],
-[13, 2007, 2077],
-[14, 2355, 2395],
-[15, 860, 826],
-[16, 214, 257],
+[9, 209, 251],
+[10, 874, 840],
+[11, 1305, 1241],
+[12, 5963, 5900],
+[13, 2007, 2082],
+[14, 2361, 2397],
+[15, 863, 828],
+[16, 215, 258],
 
 ]);
 new google.visualization.LineChart(document.getElementById('mentals_chart')).
@@ -13882,7 +13904,7 @@ td { text-align: center; }
 <td style="width: 25%; text-align: left;">
 <h1>Human/Hunter/Borderlands</h1>
 <p><a href="https://github.com/rascul/wotmad-stats/tree/master/csv/Human/Hunter/Borderlands.csv">csv data</a></p>
-<p>Out of 13776 stats</p>
+<p>Out of 13798 stats</p>
 </td>
 <td style="text-align: right; width: 25%;">
 <div id="physicals_chart"></div>

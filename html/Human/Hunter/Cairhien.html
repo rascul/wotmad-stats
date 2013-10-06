@@ -1,5 +1,5 @@
 
-<html><head><title>Human/Warrior/Borderlands</title>
+<html><head><title>Human/Hunter/Cairhien</title>
 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 <script type="text/javascript">google.load('visualization', '1', {packages: ['table', 'corechart']});</script>
 <script type="text/javascript">
@@ -7,11 +7,13 @@ function drawStatsTable() {
 // Create and populate the data table.
 var data = google.visualization.arrayToDataTable([
 ['Submitted', 'Faction', 'Class', 'Sex', 'Homeland', 'Strength', 'Intelligence', 'Willpower', 'Dexterity', 'Constitution', 'Sum'],
-['2013-10-05 17:35:53', 'Human', 'Warrior', 'Male', 'Borderlands', 16, 12, 12, 15, 16, 71],
-['2012-04-15 22:16:00', 'Human', 'Warrior', 'Male', 'Borderlands', 17, 9, 11, 18, 16, 71],
-['2012-04-15 22:07:43', 'Human', 'Warrior', 'Male', 'Borderlands', 19, 12, 13, 10, 17, 71],
-['2012-04-15 21:58:16', 'Human', 'Warrior', 'Male', 'Borderlands', 18, 11, 13, 14, 17, 73],
-['2012-04-13 13:19:38', 'Human', 'Warrior', 'Male', 'Borderlands', 16, 12, 11, 14, 17, 70],
+['2013-10-05 00:06:00', 'Human', 'Hunter', 'Male', 'Cairhien', 18, 16, 18, 17, 13, 82],
+['2013-10-05 00:04:05', 'Human', 'Hunter', 'Male', 'Cairhien', 14, 16, 11, 15, 14, 70],
+['2013-10-05 00:00:40', 'Human', 'Hunter', 'Male', 'Cairhien', 18, 16, 17, 14, 14, 79],
+['2013-10-04 23:57:45', 'Human', 'Hunter', 'Male', 'Cairhien', 16, 15, 16, 16, 13, 76],
+['2013-10-04 23:55:05', 'Human', 'Hunter', 'Male', 'Cairhien', 14, 16, 15, 16, 11, 72],
+['2013-10-04 23:51:31', 'Human', 'Hunter', 'Male', 'Cairhien', 13, 15, 18, 14, 10, 70],
+['2013-10-04 23:48:27', 'Human', 'Hunter', 'Male', 'Cairhien', 18, 14, 17, 15, 14, 78],
 
 ]);      
 visualization = new google.visualization.Table(document.getElementById('stat_table'));
@@ -20,9 +22,9 @@ visualization.draw(data, {showRowNumber: true});
 function drawCalcsTable() {
 var data = google.visualization.arrayToDataTable([
 ['','Strength','Intelligence','Willpower','Dexterity','Constitution','Sum'],
-['Minimum', 16, 9, 11, 10, 16, 70],
-['Maximum', 19, 12, 13, 18, 17, 73],
-['Average', 17.2, 16.4, 16.4, 17.0, 17.2, 28.2]
+['Minimum', 13, 14, 11, 14, 10, 70],
+['Maximum', 18, 16, 18, 17, 14, 82],
+['Average', 15.9, 15.6, 15.9, 15.7, 15.1, 25.0]
 
 ]);
 visualization = new google.visualization.Table(document.getElementById('calcs_table'));
@@ -31,9 +33,11 @@ visualization.draw(data, null);
 function drawSumsChart() {
 var data = google.visualization.arrayToDataTable([
 ['sum','sum'],
-[70,1],
-[71,2],
-[73,1],
+[70,2],
+[72,1],
+[76,1],
+[78,1],
+[79,1],
 
 ]);
 new google.visualization.LineChart(document.getElementById('sums_chart')).
@@ -46,12 +50,13 @@ vAxis: {title: 'number of stats'}}
 function drawPhysicalsChart() {
 var data = google.visualization.arrayToDataTable([
 ['stat','str','dex','con'],
-[10, 0, 1, 0],
-[14, 0, 2, 0],
-[16, 1, 0, 1],
-[17, 1, 0, 3],
-[18, 1, 1, 0],
-[19, 1, 0, 0],
+[10, 0, 0, 1],
+[11, 0, 0, 1],
+[13, 1, 0, 1],
+[14, 2, 2, 3],
+[15, 0, 2, 0],
+[16, 1, 2, 0],
+[18, 2, 0, 0],
 
 ]);
 new google.visualization.LineChart(document.getElementById('physicals_chart')).
@@ -64,10 +69,12 @@ vAxis: {title: 'number of stats'}}
 function drawMentalsChart() {
 var data = google.visualization.arrayToDataTable([
 ['stat','int','wil'],
-[9, 1, 0],
-[11, 1, 2],
-[12, 2, 0],
-[13, 0, 2],
+[11, 0, 1],
+[14, 1, 0],
+[15, 2, 1],
+[16, 3, 1],
+[17, 0, 2],
+[18, 0, 1],
 
 ]);
 new google.visualization.LineChart(document.getElementById('mentals_chart')).
@@ -92,9 +99,9 @@ td { text-align: center; }
 
 <table width="100%"><tr>
 <td style="width: 25%; text-align: left;">
-<h1>Human/Warrior/Borderlands</h1>
-<p><a href="https://github.com/rascul/wotmad-stats/tree/master/csv/Human/Warrior/Borderlands.csv">csv data</a></p>
-<p>Out of 5 stats</p>
+<h1>Human/Hunter/Cairhien</h1>
+<p><a href="https://github.com/rascul/wotmad-stats/tree/master/csv/Human/Hunter/Cairhien.csv">csv data</a></p>
+<p>Out of 7 stats</p>
 </td>
 <td style="text-align: right; width: 25%;">
 <div id="physicals_chart"></div>
