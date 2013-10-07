@@ -7,6 +7,27 @@ function drawStatsTable() {
 // Create and populate the data table.
 var data = google.visualization.arrayToDataTable([
 ['Submitted', 'Faction', 'Class', 'Sex', 'Homeland', 'Strength', 'Intelligence', 'Willpower', 'Dexterity', 'Constitution', 'Sum'],
+['2013-10-07 05:29:16', 'Human', 'Warrior', 'Male', 'Illian', 18, 15, 15, 16, 15, 79],
+['2013-10-07 05:29:15', 'Human', 'Warrior', 'Male', 'Illian', 16, 11, 17, 15, 16, 75],
+['2013-10-07 05:29:15', 'Human', 'Warrior', 'Male', 'Illian', 15, 12, 16, 17, 16, 76],
+['2013-10-07 05:29:15', 'Human', 'Warrior', 'Male', 'Illian', 19, 16, 13, 18, 13, 79],
+['2013-10-07 05:29:14', 'Human', 'Warrior', 'Male', 'Illian', 19, 14, 14, 12, 19, 78],
+['2013-10-07 05:29:14', 'Human', 'Warrior', 'Male', 'Illian', 15, 18, 13, 12, 15, 73],
+['2013-10-07 05:29:14', 'Human', 'Warrior', 'Male', 'Illian', 17, 17, 10, 15, 18, 77],
+['2013-10-07 05:29:13', 'Human', 'Warrior', 'Male', 'Illian', 16, 14, 13, 17, 15, 75],
+['2013-10-07 05:29:13', 'Human', 'Warrior', 'Male', 'Illian', 15, 16, 13, 15, 15, 74],
+['2013-10-07 05:29:13', 'Human', 'Warrior', 'Male', 'Illian', 15, 16, 12, 15, 15, 73],
+['2013-10-07 05:29:13', 'Human', 'Warrior', 'Male', 'Illian', 16, 14, 16, 15, 15, 76],
+['2013-10-07 05:29:12', 'Human', 'Warrior', 'Male', 'Illian', 13, 14, 13, 19, 19, 78],
+['2013-10-07 05:29:12', 'Human', 'Warrior', 'Male', 'Illian', 15, 15, 13, 15, 13, 71],
+['2013-10-07 05:29:12', 'Human', 'Warrior', 'Male', 'Illian', 17, 15, 12, 15, 15, 74],
+['2013-10-07 05:29:11', 'Human', 'Warrior', 'Male', 'Illian', 15, 14, 16, 15, 16, 76],
+['2013-10-07 05:29:11', 'Human', 'Warrior', 'Male', 'Illian', 11, 14, 17, 15, 15, 72],
+['2013-10-07 05:29:11', 'Human', 'Warrior', 'Male', 'Illian', 11, 14, 13, 15, 19, 72],
+['2013-10-07 05:29:10', 'Human', 'Warrior', 'Male', 'Illian', 16, 14, 17, 15, 16, 78],
+['2013-10-07 05:29:05', 'Human', 'Warrior', 'Male', 'Illian', 14, 14, 13, 15, 16, 72],
+['2013-10-07 05:29:05', 'Human', 'Warrior', 'Male', 'Illian', 15, 16, 13, 18, 16, 78],
+['2013-10-07 05:29:04', 'Human', 'Warrior', 'Male', 'Illian', 15, 14, 13, 16, 16, 74],
 ['2013-09-22 03:08:59', 'Human', 'Warrior', 'Male', 'Illian', 18, 18, 15, 19, 17, 87],
 ['2013-09-22 03:08:59', 'Human', 'Warrior', 'Male', 'Illian', 17, 10, 13, 18, 16, 74],
 ['2013-09-22 03:08:59', 'Human', 'Warrior', 'Male', 'Illian', 15, 15, 13, 18, 16, 77],
@@ -2660,15 +2681,15 @@ function drawSumsChart() {
 var data = google.visualization.arrayToDataTable([
 ['sum','sum'],
 [70,127],
-[71,175],
-[72,210],
-[73,273],
-[74,286],
-[75,281],
-[76,285],
-[77,257],
-[78,219],
-[79,162],
+[71,176],
+[72,213],
+[73,275],
+[74,289],
+[75,283],
+[76,288],
+[77,258],
+[78,223],
+[79,163],
 [80,134],
 [81,81],
 [82,61],
@@ -2676,7 +2697,7 @@ var data = google.visualization.arrayToDataTable([
 [84,15],
 [85,11],
 [86,8],
-[87,5],
+[87,6],
 [90,1],
 
 ]);
@@ -2690,15 +2711,15 @@ vAxis: {title: 'number of stats'}}
 function drawPhysicalsChart() {
 var data = google.visualization.arrayToDataTable([
 ['stat','str','dex','con'],
-[11, 69, 71, 0],
-[12, 95, 82, 65],
-[13, 100, 82, 85],
-[14, 184, 187, 95],
-[15, 1211, 1184, 187],
-[16, 264, 277, 1211],
-[17, 247, 301, 265],
-[18, 303, 312, 270],
-[19, 159, 136, 454],
+[11, 71, 71, 0],
+[12, 95, 84, 65],
+[13, 101, 82, 87],
+[14, 185, 187, 95],
+[15, 1219, 1196, 194],
+[16, 268, 278, 1218],
+[17, 249, 303, 266],
+[18, 304, 314, 271],
+[19, 161, 138, 457],
 
 ]);
 new google.visualization.LineChart(document.getElementById('physicals_chart')).
@@ -2712,15 +2733,15 @@ function drawMentalsChart() {
 var data = google.visualization.arrayToDataTable([
 ['stat','int','wil'],
 [9, 0, 66],
-[10, 71, 88],
-[11, 89, 84],
-[12, 101, 180],
-[13, 215, 1208],
-[14, 1196, 266],
-[15, 250, 278],
-[16, 274, 299],
-[17, 290, 163],
-[18, 146, 0],
+[10, 71, 89],
+[11, 90, 84],
+[12, 102, 182],
+[13, 215, 1218],
+[14, 1206, 267],
+[15, 252, 279],
+[16, 278, 302],
+[17, 291, 166],
+[18, 148, 0],
 
 ]);
 new google.visualization.LineChart(document.getElementById('mentals_chart')).
@@ -2747,7 +2768,7 @@ td { text-align: center; }
 <td style="width: 25%; text-align: left;">
 <h1>Human/Warrior/Illian</h1>
 <p><a href="https://github.com/rascul/wotmad-stats/tree/master/csv/Human/Warrior/Illian.csv">csv data</a></p>
-<p>Out of 2633 stats</p>
+<p>Out of 2654 stats</p>
 </td>
 <td style="text-align: right; width: 25%;">
 <div id="physicals_chart"></div>
