@@ -7,6 +7,8 @@ function drawStatsTable() {
 // Create and populate the data table.
 var data = google.visualization.arrayToDataTable([
 ['Submitted', 'Faction', 'Class', 'Sex', 'Homeland', 'Strength', 'Intelligence', 'Willpower', 'Dexterity', 'Constitution', 'Sum'],
+['2013-10-08 01:21:40', 'Human', 'Hunter', 'Male', 'Kandor', 16, 13, 11, 15, 16, 71],
+['2013-10-08 01:18:31', 'Human', 'Hunter', 'Male', 'Kandor', 16, 15, 12, 17, 15, 75],
 ['2013-10-07 21:26:15', 'Human', 'Hunter', 'Male', 'Kandor', 16, 12, 10, 15, 17, 70],
 ['2013-10-07 21:21:07', 'Human', 'Hunter', 'Male', 'Kandor', 18, 12, 12, 11, 17, 70],
 ['2013-10-07 21:15:58', 'Human', 'Hunter', 'Male', 'Kandor', 16, 16, 12, 17, 15, 76],
@@ -22377,12 +22379,12 @@ visualization.draw(data, null);
 function drawSumsChart() {
 var data = google.visualization.arrayToDataTable([
 ['sum','sum'],
-[70,4789],
+[70,4790],
 [71,4519],
 [72,3946],
 [73,3249],
 [74,2297],
-[75,1546],
+[75,1547],
 [76,989],
 [77,541],
 [78,266],
@@ -22407,9 +22409,9 @@ var data = google.visualization.arrayToDataTable([
 [12, 44, 341, 356],
 [13, 295, 1413, 1498],
 [14, 1487, 2104, 1975],
-[15, 2063, 9592, 9364],
-[16, 9451, 3306, 3415],
-[17, 3413, 3794, 3854],
+[15, 2063, 9593, 9365],
+[16, 9453, 3306, 3415],
+[17, 3413, 3795, 3855],
 [18, 3820, 1410, 1420],
 [19, 1777, 344, 415],
 
@@ -22425,12 +22427,12 @@ function drawMentalsChart() {
 var data = google.visualization.arrayToDataTable([
 ['stat','int','wil'],
 [9, 405, 376],
-[10, 1482, 1441],
+[10, 1482, 1442],
 [11, 2035, 2058],
-[12, 9512, 9411],
+[12, 9513, 9412],
 [13, 3290, 3345],
 [14, 3837, 3882],
-[15, 1390, 1426],
+[15, 1391, 1426],
 [16, 399, 411],
 
 ]);
@@ -22458,7 +22460,7 @@ td { text-align: center; }
 <td style="width: 25%; text-align: left;">
 <h1>Human/Hunter/Kandor</h1>
 <p><a href="https://github.com/rascul/wotmad-stats/tree/master/csv/Human/Hunter/Kandor.csv">csv data</a></p>
-<p>Out of 22351 stats</p>
+<p>Out of 22353 stats</p>
 </td>
 <td style="text-align: right; width: 25%;">
 <div id="physicals_chart"></div>
