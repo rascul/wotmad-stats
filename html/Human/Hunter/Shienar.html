@@ -7,6 +7,51 @@ function drawStatsTable() {
 // Create and populate the data table.
 var data = google.visualization.arrayToDataTable([
 ['Submitted', 'Faction', 'Class', 'Sex', 'Homeland', 'Strength', 'Intelligence', 'Willpower', 'Dexterity', 'Constitution', 'Sum'],
+['2013-10-08 04:42:47', 'Human', 'Hunter', 'Male', 'Shienar', 16, 13, 14, 17, 12, 72],
+['2013-10-08 04:40:58', 'Human', 'Hunter', 'Male', 'Shienar', 16, 12, 14, 14, 16, 72],
+['2013-10-08 04:39:38', 'Human', 'Hunter', 'Male', 'Shienar', 17, 14, 9, 15, 15, 70],
+['2013-10-08 04:37:05', 'Human', 'Hunter', 'Male', 'Shienar', 16, 12, 13, 14, 15, 70],
+['2013-10-08 04:35:26', 'Human', 'Hunter', 'Male', 'Shienar', 18, 15, 12, 15, 13, 73],
+['2013-10-08 04:32:43', 'Human', 'Hunter', 'Male', 'Shienar', 16, 14, 12, 13, 15, 70],
+['2013-10-08 04:30:16', 'Human', 'Hunter', 'Male', 'Shienar', 16, 12, 12, 15, 17, 72],
+['2013-10-08 04:28:39', 'Human', 'Hunter', 'Male', 'Shienar', 16, 12, 12, 15, 15, 70],
+['2013-10-08 04:26:52', 'Human', 'Hunter', 'Male', 'Shienar', 17, 12, 11, 17, 13, 70],
+['2013-10-08 04:24:52', 'Human', 'Hunter', 'Male', 'Shienar', 19, 12, 11, 12, 16, 70],
+['2013-10-08 04:23:00', 'Human', 'Hunter', 'Male', 'Shienar', 13, 12, 13, 15, 19, 72],
+['2013-10-08 04:20:59', 'Human', 'Hunter', 'Male', 'Shienar', 16, 13, 16, 15, 12, 72],
+['2013-10-08 04:19:07', 'Human', 'Hunter', 'Male', 'Shienar', 15, 13, 11, 15, 16, 70],
+['2013-10-08 04:17:09', 'Human', 'Hunter', 'Male', 'Shienar', 14, 14, 12, 14, 16, 70],
+['2013-10-08 04:15:13', 'Human', 'Hunter', 'Male', 'Shienar', 16, 12, 13, 15, 17, 73],
+['2013-10-08 04:13:17', 'Human', 'Hunter', 'Male', 'Shienar', 14, 12, 10, 17, 17, 70],
+['2013-10-08 04:11:40', 'Human', 'Hunter', 'Male', 'Shienar', 18, 12, 12, 14, 15, 71],
+['2013-10-08 04:09:33', 'Human', 'Hunter', 'Male', 'Shienar', 18, 12, 14, 15, 15, 74],
+['2013-10-08 04:07:39', 'Human', 'Hunter', 'Male', 'Shienar', 18, 12, 15, 15, 15, 75],
+['2013-10-08 04:05:32', 'Human', 'Hunter', 'Male', 'Shienar', 18, 15, 12, 15, 15, 75],
+['2013-10-08 04:03:50', 'Human', 'Hunter', 'Male', 'Shienar', 15, 13, 13, 16, 15, 72],
+['2013-10-08 04:02:35', 'Human', 'Hunter', 'Male', 'Shienar', 16, 14, 11, 15, 15, 71],
+['2013-10-08 03:59:44', 'Human', 'Hunter', 'Male', 'Shienar', 16, 12, 12, 15, 15, 70],
+['2013-10-08 03:57:28', 'Human', 'Hunter', 'Male', 'Shienar', 15, 11, 14, 15, 16, 71],
+['2013-10-08 03:55:59', 'Human', 'Hunter', 'Male', 'Shienar', 14, 10, 15, 17, 15, 71],
+['2013-10-08 03:53:57', 'Human', 'Hunter', 'Male', 'Shienar', 17, 12, 12, 14, 15, 70],
+['2013-10-08 03:52:00', 'Human', 'Hunter', 'Male', 'Shienar', 14, 12, 13, 16, 17, 72],
+['2013-10-08 03:50:39', 'Human', 'Hunter', 'Male', 'Shienar', 16, 12, 12, 16, 15, 71],
+['2013-10-08 03:48:57', 'Human', 'Hunter', 'Male', 'Shienar', 16, 10, 14, 17, 15, 72],
+['2013-10-08 03:47:30', 'Human', 'Hunter', 'Male', 'Shienar', 17, 12, 12, 15, 16, 72],
+['2013-10-08 03:46:05', 'Human', 'Hunter', 'Male', 'Shienar', 16, 12, 12, 13, 18, 71],
+['2013-10-08 03:43:18', 'Human', 'Hunter', 'Male', 'Shienar', 15, 10, 11, 17, 18, 71],
+['2013-10-08 03:39:43', 'Human', 'Hunter', 'Male', 'Shienar', 16, 9, 12, 16, 17, 70],
+['2013-10-08 03:36:47', 'Human', 'Hunter', 'Male', 'Shienar', 13, 15, 13, 16, 17, 74],
+['2013-10-08 03:35:40', 'Human', 'Hunter', 'Male', 'Shienar', 19, 14, 10, 15, 14, 72],
+['2013-10-08 03:34:03', 'Human', 'Hunter', 'Male', 'Shienar', 17, 15, 9, 16, 15, 72],
+['2013-10-08 03:31:31', 'Human', 'Hunter', 'Male', 'Shienar', 18, 10, 12, 17, 18, 75],
+['2013-10-08 03:29:47', 'Human', 'Hunter', 'Male', 'Shienar', 19, 9, 15, 15, 15, 73],
+['2013-10-08 03:28:13', 'Human', 'Hunter', 'Male', 'Shienar', 17, 12, 13, 15, 15, 72],
+['2013-10-08 03:26:13', 'Human', 'Hunter', 'Male', 'Shienar', 18, 10, 12, 15, 15, 70],
+['2013-10-08 03:24:37', 'Human', 'Hunter', 'Male', 'Shienar', 18, 12, 12, 15, 17, 74],
+['2013-10-08 03:21:49', 'Human', 'Hunter', 'Male', 'Shienar', 14, 12, 12, 17, 17, 72],
+['2013-10-08 03:19:51', 'Human', 'Hunter', 'Male', 'Shienar', 19, 12, 14, 13, 15, 73],
+['2013-10-08 03:18:23', 'Human', 'Hunter', 'Male', 'Shienar', 16, 12, 13, 15, 16, 72],
+['2013-10-08 03:16:16', 'Human', 'Hunter', 'Male', 'Shienar', 16, 12, 12, 17, 15, 72],
 ['2013-10-08 03:14:14', 'Human', 'Hunter', 'Male', 'Shienar', 16, 15, 14, 17, 16, 78],
 ['2013-10-08 03:12:31', 'Human', 'Hunter', 'Male', 'Shienar', 17, 15, 14, 15, 14, 75],
 ['2013-10-08 03:10:28', 'Human', 'Hunter', 'Male', 'Shienar', 17, 12, 13, 13, 16, 71],
@@ -10240,7 +10285,7 @@ var data = google.visualization.arrayToDataTable([
 ['','Strength','Intelligence','Willpower','Dexterity','Constitution','Sum'],
 ['Minimum', 12, 9, 9, 11, 11, 70],
 ['Maximum', 19, 16, 16, 19, 19, 83],
-['Average', 16.4, 16.4, 16.4, 16.4, 16.4, 16.5]
+['Average', 16.4, 16.4, 16.4, 16.4, 16.4, 16.4]
 
 ]);
 visualization = new google.visualization.Table(document.getElementById('calcs_table'));
@@ -10249,15 +10294,15 @@ visualization.draw(data, null);
 function drawSumsChart() {
 var data = google.visualization.arrayToDataTable([
 ['sum','sum'],
-[70,2253],
-[71,2043],
-[72,1859],
-[73,1431],
-[74,1057],
-[75,665],
+[70,2266],
+[71,2050],
+[72,1873],
+[73,1435],
+[74,1060],
+[75,668],
 [76,423],
 [77,256],
-[78,126],
+[78,127],
 [79,71],
 [80,27],
 [81,7],
@@ -10276,14 +10321,14 @@ function drawPhysicalsChart() {
 var data = google.visualization.arrayToDataTable([
 ['stat','str','dex','con'],
 [11, 0, 18, 21],
-[12, 17, 138, 144],
-[13, 142, 682, 658],
-[14, 679, 955, 948],
-[15, 924, 4395, 4359],
-[16, 4484, 1444, 1532],
-[17, 1438, 1781, 1787],
-[18, 1732, 675, 603],
-[19, 806, 134, 170],
+[12, 17, 139, 145],
+[13, 144, 685, 660],
+[14, 684, 960, 949],
+[15, 928, 4416, 4380],
+[16, 4500, 1450, 1540],
+[17, 1444, 1790, 1795],
+[18, 1740, 675, 606],
+[19, 810, 134, 171],
 
 ]);
 new google.visualization.LineChart(document.getElementById('physicals_chart')).
@@ -10296,14 +10341,14 @@ vAxis: {title: 'number of stats'}}
 function drawMentalsChart() {
 var data = google.visualization.arrayToDataTable([
 ['stat','int','wil'],
-[9, 177, 176],
-[10, 715, 633],
-[11, 902, 907],
-[12, 4373, 4375],
-[13, 1448, 1508],
-[14, 1804, 1772],
-[15, 613, 688],
-[16, 190, 163],
+[9, 179, 178],
+[10, 720, 635],
+[11, 903, 912],
+[12, 4397, 4393],
+[13, 1451, 1516],
+[14, 1809, 1778],
+[15, 618, 691],
+[16, 190, 164],
 
 ]);
 new google.visualization.LineChart(document.getElementById('mentals_chart')).
@@ -10330,7 +10375,7 @@ td { text-align: center; }
 <td style="width: 25%; text-align: left;">
 <h1>Human/Hunter/Shienar</h1>
 <p><a href="https://github.com/rascul/wotmad-stats/tree/master/csv/Human/Hunter/Shienar.csv">csv data</a></p>
-<p>Out of 10223 stats</p>
+<p>Out of 10268 stats</p>
 </td>
 <td style="text-align: right; width: 25%;">
 <div id="physicals_chart"></div>
