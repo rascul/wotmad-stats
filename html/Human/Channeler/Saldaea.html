@@ -7,6 +7,13 @@ function drawStatsTable() {
 // Create and populate the data table.
 var data = google.visualization.arrayToDataTable([
 ['Submitted', 'Faction', 'Class', 'Sex', 'Homeland', 'Strength', 'Intelligence', 'Willpower', 'Dexterity', 'Constitution', 'Sum'],
+['2013-10-08 17:03:21', 'Human', 'Channeler', 'Female', 'Saldaea', 13, 15, 15, 11, 16, 70],
+['2013-10-08 16:59:21', 'Human', 'Channeler', 'Female', 'Saldaea', 15, 14, 14, 16, 12, 71],
+['2013-10-08 16:55:28', 'Human', 'Channeler', 'Female', 'Saldaea', 15, 15, 15, 15, 12, 72],
+['2013-10-08 16:53:00', 'Human', 'Channeler', 'Female', 'Saldaea', 14, 17, 18, 13, 16, 78],
+['2013-10-08 16:45:03', 'Human', 'Channeler', 'Female', 'Saldaea', 14, 16, 15, 12, 13, 70],
+['2013-10-08 16:39:49', 'Human', 'Channeler', 'Female', 'Saldaea', 14, 15, 16, 14, 12, 71],
+['2013-10-08 16:38:10', 'Human', 'Channeler', 'Female', 'Saldaea', 17, 14, 15, 15, 12, 73],
 ['2013-10-08 01:02:13', 'Human', 'Channeler', 'Female', 'Saldaea', 16, 15, 13, 15, 13, 72],
 ['2013-10-08 00:58:02', 'Human', 'Channeler', 'Female', 'Saldaea', 16, 12, 19, 13, 12, 72],
 ['2013-10-08 00:55:12', 'Human', 'Channeler', 'Female', 'Saldaea', 15, 15, 15, 13, 12, 70],
@@ -6972,15 +6979,15 @@ visualization.draw(data, null);
 function drawSumsChart() {
 var data = google.visualization.arrayToDataTable([
 ['sum','sum'],
-[70,1811],
-[71,1513],
-[72,1228],
-[73,934],
+[70,1812],
+[71,1515],
+[72,1230],
+[73,935],
 [74,619],
 [75,408],
 [76,226],
 [77,112],
-[78,54],
+[78,55],
 [79,23],
 [80,16],
 [82,1],
@@ -6999,12 +7006,12 @@ var data = google.visualization.arrayToDataTable([
 [9, 0, 14, 79],
 [10, 12, 77, 379],
 [11, 75, 365, 588],
-[12, 381, 585, 2818],
-[13, 608, 2741, 1114],
-[14, 2840, 1114, 1297],
-[15, 1099, 1369, 519],
-[16, 1297, 538, 149],
-[17, 487, 140, 2],
+[12, 381, 586, 2822],
+[13, 608, 2742, 1116],
+[14, 2843, 1115, 1297],
+[15, 1101, 1372, 519],
+[16, 1298, 539, 150],
+[17, 488, 140, 2],
 [18, 146, 2, 0],
 
 ]);
@@ -7021,12 +7028,12 @@ var data = google.visualization.arrayToDataTable([
 [10, 1, 2],
 [11, 6, 11],
 [12, 83, 78],
-[13, 367, 365],
-[14, 583, 593],
-[15, 2829, 2843],
-[16, 1079, 1117],
-[17, 1396, 1300],
-[18, 463, 501],
+[13, 367, 366],
+[14, 585, 594],
+[15, 2832, 2846],
+[16, 1080, 1118],
+[17, 1397, 1300],
+[18, 463, 502],
 
 ]);
 new google.visualization.LineChart(document.getElementById('mentals_chart')).
@@ -7053,7 +7060,7 @@ td { text-align: center; }
 <td style="width: 25%; text-align: left;">
 <h1>Human/Channeler/Saldaea</h1>
 <p><a href="https://github.com/rascul/wotmad-stats/tree/master/csv/Human/Channeler/Saldaea.csv">csv data</a></p>
-<p>Out of 6946 stats</p>
+<p>Out of 6953 stats</p>
 </td>
 <td style="text-align: right; width: 25%;">
 <div id="physicals_chart"></div>
