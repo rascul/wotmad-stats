@@ -7,6 +7,28 @@ function drawStatsTable() {
 // Create and populate the data table.
 var data = google.visualization.arrayToDataTable([
 ['Submitted', 'Faction', 'Class', 'Sex', 'Homeland', 'Strength', 'Intelligence', 'Willpower', 'Dexterity', 'Constitution', 'Sum'],
+['2013-10-08 15:17:26', 'Human', 'Channeler', 'Male', 'Altara', 13, 18, 15, 14, 12, 72],
+['2013-10-08 15:12:49', 'Human', 'Channeler', 'Male', 'Altara', 12, 18, 17, 14, 10, 71],
+['2013-10-08 15:10:23', 'Human', 'Channeler', 'Male', 'Altara', 15, 16, 15, 17, 12, 75],
+['2013-10-08 15:02:05', 'Human', 'Channeler', 'Male', 'Altara', 16, 18, 18, 13, 9, 74],
+['2013-10-08 14:59:44', 'Human', 'Channeler', 'Male', 'Altara', 16, 14, 15, 15, 10, 70],
+['2013-10-08 14:57:31', 'Human', 'Channeler', 'Male', 'Altara', 13, 12, 18, 15, 13, 71],
+['2013-10-08 14:54:45', 'Human', 'Channeler', 'Male', 'Altara', 16, 13, 15, 16, 10, 70],
+['2013-10-08 14:51:53', 'Human', 'Channeler', 'Male', 'Altara', 12, 16, 19, 15, 10, 72],
+['2013-10-08 14:49:16', 'Human', 'Channeler', 'Male', 'Altara', 15, 14, 14, 17, 12, 72],
+['2013-10-08 14:45:47', 'Human', 'Channeler', 'Male', 'Altara', 14, 14, 17, 15, 10, 70],
+['2013-10-08 14:43:13', 'Human', 'Channeler', 'Male', 'Altara', 16, 14, 17, 13, 14, 74],
+['2013-10-08 14:38:27', 'Human', 'Channeler', 'Male', 'Altara', 16, 14, 19, 12, 10, 71],
+['2013-10-08 14:36:11', 'Human', 'Channeler', 'Male', 'Altara', 15, 16, 15, 18, 14, 78],
+['2013-10-08 14:32:15', 'Human', 'Channeler', 'Male', 'Altara', 12, 18, 15, 16, 10, 71],
+['2013-10-08 14:27:37', 'Human', 'Channeler', 'Male', 'Altara', 14, 14, 19, 18, 13, 78],
+['2013-10-08 14:23:25', 'Human', 'Channeler', 'Male', 'Altara', 16, 12, 15, 17, 10, 70],
+['2013-10-08 14:21:06', 'Human', 'Channeler', 'Male', 'Altara', 15, 14, 15, 14, 14, 72],
+['2013-10-08 14:17:49', 'Human', 'Channeler', 'Male', 'Altara', 11, 18, 17, 14, 10, 70],
+['2013-10-08 14:14:10', 'Human', 'Channeler', 'Male', 'Altara', 16, 15, 18, 14, 13, 76],
+['2013-10-08 14:11:47', 'Human', 'Channeler', 'Male', 'Altara', 12, 17, 19, 14, 10, 72],
+['2013-10-08 14:08:59', 'Human', 'Channeler', 'Male', 'Altara', 14, 13, 15, 16, 13, 71],
+['2013-10-08 14:05:21', 'Human', 'Channeler', 'Male', 'Altara', 14, 14, 15, 14, 14, 71],
 ['2013-09-26 06:29:48', 'Human', 'Channeler', 'Female', 'Altara', 12, 18, 18, 17, 9, 74],
 ['2013-09-26 06:26:44', 'Human', 'Channeler', 'Female', 'Altara', 15, 17, 15, 16, 14, 77],
 ['2013-09-26 06:24:32', 'Human', 'Channeler', 'Female', 'Altara', 16, 14, 17, 14, 9, 70],
@@ -1619,15 +1641,15 @@ visualization.draw(data, null);
 function drawSumsChart() {
 var data = google.visualization.arrayToDataTable([
 ['sum','sum'],
-[70,369],
-[71,320],
-[72,261],
+[70,374],
+[71,326],
+[72,265],
 [73,205],
-[74,154],
-[75,110],
-[76,69],
+[74,157],
+[75,111],
+[76,70],
 [77,49],
-[78,29],
+[78,31],
 [79,14],
 [80,10],
 [81,2],
@@ -1643,16 +1665,16 @@ vAxis: {title: 'number of stats'}}
 function drawPhysicalsChart() {
 var data = google.visualization.arrayToDataTable([
 ['stat','str','dex','con'],
-[9, 1, 0, 122],
-[10, 49, 0, 532],
-[11, 87, 0, 165],
-[12, 547, 30, 177],
-[13, 179, 90, 266],
-[14, 224, 542, 330],
-[15, 229, 163, 0],
-[16, 276, 201, 0],
-[17, 0, 270, 0],
-[18, 0, 296, 0],
+[9, 1, 0, 124],
+[10, 49, 0, 542],
+[11, 88, 0, 165],
+[12, 552, 31, 179],
+[13, 180, 92, 270],
+[14, 228, 548, 334],
+[15, 233, 167, 0],
+[16, 283, 204, 0],
+[17, 0, 274, 0],
+[18, 0, 298, 0],
 
 ]);
 new google.visualization.LineChart(document.getElementById('physicals_chart')).
@@ -1665,13 +1687,13 @@ vAxis: {title: 'number of stats'}}
 function drawMentalsChart() {
 var data = google.visualization.arrayToDataTable([
 ['stat','int','wil'],
-[12, 23, 0],
-[13, 90, 32],
-[14, 550, 88],
-[15, 158, 578],
-[16, 215, 171],
-[17, 249, 217],
-[18, 307, 238],
+[12, 25, 0],
+[13, 92, 32],
+[14, 558, 89],
+[15, 159, 587],
+[16, 218, 171],
+[17, 250, 221],
+[18, 312, 242],
 
 ]);
 new google.visualization.LineChart(document.getElementById('mentals_chart')).
@@ -1698,7 +1720,7 @@ td { text-align: center; }
 <td style="width: 25%; text-align: left;">
 <h1>Human/Channeler/Altara</h1>
 <p><a href="https://github.com/rascul/wotmad-stats/tree/master/csv/Human/Channeler/Altara.csv">csv data</a></p>
-<p>Out of 1593 stats</p>
+<p>Out of 1615 stats</p>
 </td>
 <td style="text-align: right; width: 25%;">
 <div id="physicals_chart"></div>
