@@ -7,6 +7,10 @@ function drawStatsTable() {
 // Create and populate the data table.
 var data = google.visualization.arrayToDataTable([
 ['Submitted', 'Faction', 'Class', 'Sex', 'Homeland', 'Strength', 'Intelligence', 'Willpower', 'Dexterity', 'Constitution', 'Sum'],
+['2013-10-09 17:22:04', 'Human', 'Rogue', 'Male', 'Two Rivers', 17, 12, 15, 16, 18, 78],
+['2013-10-09 17:15:58', 'Human', 'Rogue', 'Male', 'Two Rivers', 14, 15, 17, 15, 16, 77],
+['2013-10-09 17:07:04', 'Human', 'Rogue', 'Male', 'Two Rivers', 17, 15, 14, 15, 17, 78],
+['2013-10-09 17:02:30', 'Human', 'Rogue', 'Male', 'Two Rivers', 15, 12, 14, 16, 15, 72],
 ['2013-09-30 06:22:18', 'Human', 'Rogue', 'Male', 'Two Rivers', 14, 12, 15, 15, 15, 71],
 ['2013-09-30 06:19:59', 'Human', 'Rogue', 'Male', 'Two Rivers', 15, 9, 14, 17, 18, 73],
 ['2013-09-30 06:18:30', 'Human', 'Rogue', 'Male', 'Two Rivers', 11, 11, 18, 15, 15, 70],
@@ -3322,14 +3326,14 @@ function drawSumsChart() {
 var data = google.visualization.arrayToDataTable([
 ['sum','sum'],
 [70,507],
-[71,491],
-[72,449],
+[71,492],
+[72,450],
 [73,409],
 [74,370],
 [75,303],
 [76,245],
-[77,181],
-[78,115],
+[77,182],
+[78,116],
 [79,82],
 [80,62],
 [81,43],
@@ -3355,10 +3359,10 @@ var data = google.visualization.arrayToDataTable([
 [11, 186, 52, 50],
 [12, 226, 166, 170],
 [13, 262, 235, 238],
-[14, 999, 278, 250],
-[15, 396, 1011, 998],
-[16, 396, 362, 383],
-[17, 512, 432, 454],
+[14, 1001, 278, 250],
+[15, 397, 1014, 1000],
+[16, 396, 363, 384],
+[17, 513, 432, 455],
 [18, 269, 495, 485],
 [19, 0, 263, 266],
 
@@ -3376,12 +3380,12 @@ var data = google.visualization.arrayToDataTable([
 [9, 246, 0],
 [10, 226, 43],
 [11, 247, 176],
-[12, 969, 243],
+[12, 971, 243],
 [13, 421, 269],
-[14, 453, 1013],
-[15, 478, 397],
+[14, 453, 1015],
+[15, 480, 398],
 [16, 254, 424],
-[17, 0, 484],
+[17, 0, 485],
 [18, 0, 245],
 
 ]);
@@ -3409,7 +3413,7 @@ td { text-align: center; }
 <td style="width: 25%; text-align: left;">
 <h1>Human/Rogue/Two Rivers</h1>
 <p><a href="https://github.com/rascul/wotmad-stats/tree/master/csv/Human/Rogue/Two Rivers.csv">csv data</a></p>
-<p>Out of 3295 stats</p>
+<p>Out of 3299 stats</p>
 </td>
 <td style="text-align: right; width: 25%;">
 <div id="physicals_chart"></div>
