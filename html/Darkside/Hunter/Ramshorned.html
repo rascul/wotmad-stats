@@ -7,6 +7,8 @@ function drawStatsTable() {
 // Create and populate the data table.
 var data = google.visualization.arrayToDataTable([
 ['Submitted', 'Faction', 'Class', 'Sex', 'Homeland', 'Strength', 'Intelligence', 'Willpower', 'Dexterity', 'Constitution', 'Sum'],
+['2013-10-10 15:37:46', 'Darkside', 'Hunter', 'Male', 'Ramshorned', 18, 6, 10, 16, 18, 68],
+['2013-10-10 15:37:46', 'Darkside', 'Hunter', 'Male', 'Ramshorned', 19, 6, 8, 14, 19, 66],
 ['2013-09-19 18:39:28', 'Darkside', 'Hunter', 'Male', 'Ramshorned', 16, 8, 9, 15, 17, 65],
 ['2013-09-19 18:39:27', 'Darkside', 'Hunter', 'Male', 'Ramshorned', 17, 8, 11, 16, 15, 67],
 ['2013-09-19 18:39:27', 'Darkside', 'Hunter', 'Male', 'Ramshorned', 19, 7, 11, 15, 14, 66],
@@ -8922,8 +8924,8 @@ visualization.draw(data, null);
 function drawSumsChart() {
 var data = google.visualization.arrayToDataTable([
 ['sum','sum'],
-[65,2865],
-[66,2201],
+[65,2866],
+[66,2202],
 [67,1590],
 [68,975],
 [69,595],
@@ -8951,12 +8953,12 @@ var data = google.visualization.arrayToDataTable([
 [11, 17, 65, 0],
 [12, 71, 443, 15],
 [13, 438, 927, 81],
-[14, 939, 1256, 401],
-[15, 1185, 2227, 905],
-[16, 2299, 2369, 1233],
-[17, 2354, 1055, 2366],
+[14, 939, 1257, 401],
+[15, 1185, 2228, 905],
+[16, 2300, 2369, 1233],
+[17, 2354, 1055, 2367],
 [18, 1059, 543, 2450],
-[19, 533, 0, 1444],
+[19, 534, 0, 1445],
 
 ]);
 new google.visualization.LineChart(document.getElementById('physicals_chart')).
@@ -8972,10 +8974,10 @@ var data = google.visualization.arrayToDataTable([
 [3, 13, 0],
 [4, 81, 0],
 [5, 450, 13],
-[6, 1046, 82],
+[6, 1047, 82],
 [7, 1206, 390],
-[8, 2187, 927],
-[9, 2355, 1231],
+[8, 2188, 928],
+[9, 2355, 1232],
 [10, 1084, 2282],
 [11, 473, 2369],
 [12, 0, 1114],
@@ -9006,7 +9008,7 @@ td { text-align: center; }
 <td style="width: 25%; text-align: left;">
 <h1>Darkside/Hunter/Ramshorned</h1>
 <p><a href="https://github.com/rascul/wotmad-stats/tree/master/csv/Darkside/Hunter/Ramshorned.csv">csv data</a></p>
-<p>Out of 8896 stats</p>
+<p>Out of 8898 stats</p>
 </td>
 <td style="text-align: right; width: 25%;">
 <div id="physicals_chart"></div>
