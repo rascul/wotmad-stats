@@ -7,6 +7,20 @@ function drawStatsTable() {
 // Create and populate the data table.
 var data = google.visualization.arrayToDataTable([
 ['Submitted', 'Faction', 'Class', 'Sex', 'Homeland', 'Strength', 'Intelligence', 'Willpower', 'Dexterity', 'Constitution', 'Sum'],
+['2013-10-09 20:02:42', 'Human', 'Channeler', 'Female', 'Murandy', 15, 17, 15, 14, 13, 74],
+['2013-10-09 19:59:15', 'Human', 'Channeler', 'Female', 'Murandy', 12, 13, 18, 17, 10, 70],
+['2013-10-09 19:49:48', 'Human', 'Channeler', 'Female', 'Murandy', 13, 16, 17, 18, 13, 77],
+['2013-10-09 19:36:52', 'Human', 'Channeler', 'Female', 'Murandy', 13, 14, 19, 14, 12, 72],
+['2013-10-09 19:31:59', 'Human', 'Channeler', 'Female', 'Murandy', 13, 16, 19, 14, 10, 72],
+['2013-10-09 19:25:12', 'Human', 'Channeler', 'Female', 'Murandy', 14, 14, 17, 14, 14, 73],
+['2013-10-09 19:18:49', 'Human', 'Channeler', 'Female', 'Murandy', 12, 15, 18, 16, 14, 75],
+['2013-10-09 19:14:26', 'Human', 'Channeler', 'Female', 'Murandy', 12, 14, 17, 17, 10, 70],
+['2013-10-09 19:06:29', 'Human', 'Channeler', 'Female', 'Murandy', 13, 14, 19, 14, 13, 73],
+['2013-10-09 19:02:12', 'Human', 'Channeler', 'Female', 'Murandy', 16, 17, 14, 14, 10, 71],
+['2013-10-09 18:56:02', 'Human', 'Channeler', 'Female', 'Murandy', 15, 14, 15, 18, 9, 71],
+['2013-10-09 18:52:26', 'Human', 'Channeler', 'Female', 'Murandy', 12, 17, 14, 16, 14, 73],
+['2013-10-09 18:48:12', 'Human', 'Channeler', 'Female', 'Murandy', 12, 17, 15, 13, 13, 70],
+['2013-10-09 18:36:04', 'Human', 'Channeler', 'Female', 'Murandy', 12, 13, 19, 15, 13, 72],
 ['2013-10-09 18:28:37', 'Human', 'Channeler', 'Female', 'Murandy', 15, 16, 15, 18, 11, 75],
 ['2013-10-09 18:25:17', 'Human', 'Channeler', 'Female', 'Murandy', 15, 16, 15, 13, 11, 70],
 ['2013-10-09 18:16:59', 'Human', 'Channeler', 'Female', 'Murandy', 13, 14, 14, 15, 14, 70],
@@ -934,14 +948,14 @@ visualization.draw(data, null);
 function drawSumsChart() {
 var data = google.visualization.arrayToDataTable([
 ['sum','sum'],
-[70,211],
-[71,186],
-[72,157],
-[73,105],
+[70,214],
+[71,188],
+[72,160],
+[73,108],
 [74,88],
-[75,51],
+[75,53],
 [76,49],
-[77,25],
+[77,26],
 [78,11],
 [79,13],
 [80,7],
@@ -959,16 +973,16 @@ vAxis: {title: 'number of stats'}}
 function drawPhysicalsChart() {
 var data = google.visualization.arrayToDataTable([
 ['stat','str','dex','con'],
-[9, 0, 0, 81],
-[10, 0, 0, 314],
-[11, 77, 0, 77],
-[12, 306, 0, 136],
-[13, 100, 79, 147],
-[14, 113, 294, 152],
-[15, 154, 87, 0],
-[16, 157, 133, 0],
-[17, 0, 145, 0],
-[18, 0, 169, 0],
+[9, 0, 0, 82],
+[10, 0, 0, 318],
+[11, 77, 0, 78],
+[12, 312, 0, 137],
+[13, 104, 80, 151],
+[14, 114, 299, 155],
+[15, 156, 88, 0],
+[16, 158, 135, 0],
+[17, 0, 147, 0],
+[18, 0, 172, 0],
 
 ]);
 new google.visualization.LineChart(document.getElementById('physicals_chart')).
@@ -981,12 +995,12 @@ vAxis: {title: 'number of stats'}}
 function drawMentalsChart() {
 var data = google.visualization.arrayToDataTable([
 ['stat','int','wil'],
-[13, 68, 0],
-[14, 313, 75],
-[15, 101, 321],
-[16, 132, 82],
-[17, 127, 114],
-[18, 166, 131],
+[13, 70, 0],
+[14, 318, 77],
+[15, 102, 324],
+[16, 135, 82],
+[17, 130, 117],
+[18, 166, 133],
 
 ]);
 new google.visualization.LineChart(document.getElementById('mentals_chart')).
@@ -1013,7 +1027,7 @@ td { text-align: center; }
 <td style="width: 25%; text-align: left;">
 <h1>Human/Channeler/Murandy</h1>
 <p><a href="https://github.com/rascul/wotmad-stats/tree/master/csv/Human/Channeler/Murandy.csv">csv data</a></p>
-<p>Out of 908 stats</p>
+<p>Out of 922 stats</p>
 </td>
 <td style="text-align: right; width: 25%;">
 <div id="physicals_chart"></div>
