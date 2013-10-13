@@ -7,6 +7,28 @@ function drawStatsTable() {
 // Create and populate the data table.
 var data = google.visualization.arrayToDataTable([
 ['Submitted', 'Faction', 'Class', 'Sex', 'Homeland', 'Strength', 'Intelligence', 'Willpower', 'Dexterity', 'Constitution', 'Sum'],
+['2013-10-11 02:10:48', 'Human', 'Rogue', 'Male', 'Two Rivers', 15, 15, 12, 15, 17, 74],
+['2013-10-11 02:07:11', 'Human', 'Rogue', 'Male', 'Two Rivers', 16, 12, 15, 15, 14, 72],
+['2013-10-11 02:02:50', 'Human', 'Rogue', 'Male', 'Two Rivers', 14, 15, 17, 19, 18, 83],
+['2013-10-11 01:58:31', 'Human', 'Rogue', 'Male', 'Two Rivers', 14, 14, 17, 16, 16, 77],
+['2013-10-11 01:54:27', 'Human', 'Rogue', 'Male', 'Two Rivers', 14, 12, 17, 15, 16, 74],
+['2013-10-11 01:49:11', 'Human', 'Rogue', 'Male', 'Two Rivers', 14, 12, 14, 18, 13, 71],
+['2013-10-11 01:41:14', 'Human', 'Rogue', 'Male', 'Two Rivers', 14, 12, 16, 15, 16, 73],
+['2013-10-11 01:35:43', 'Human', 'Rogue', 'Male', 'Two Rivers', 14, 12, 15, 11, 18, 70],
+['2013-10-11 01:30:09', 'Human', 'Rogue', 'Male', 'Two Rivers', 16, 13, 17, 14, 15, 75],
+['2013-10-11 01:24:50', 'Human', 'Rogue', 'Male', 'Two Rivers', 11, 15, 14, 15, 18, 73],
+['2013-10-11 01:19:58', 'Human', 'Rogue', 'Male', 'Two Rivers', 15, 11, 18, 15, 15, 74],
+['2013-10-11 01:14:19', 'Human', 'Rogue', 'Male', 'Two Rivers', 14, 9, 15, 17, 15, 70],
+['2013-10-11 01:08:59', 'Human', 'Rogue', 'Male', 'Two Rivers', 16, 12, 13, 15, 19, 75],
+['2013-10-11 01:03:36', 'Human', 'Rogue', 'Male', 'Two Rivers', 17, 10, 14, 17, 15, 73],
+['2013-10-11 00:57:46', 'Human', 'Rogue', 'Male', 'Two Rivers', 13, 13, 15, 19, 16, 76],
+['2013-10-11 00:53:32', 'Human', 'Rogue', 'Male', 'Two Rivers', 14, 15, 17, 14, 14, 74],
+['2013-10-10 20:49:18', 'Human', 'Rogue', 'Male', 'Two Rivers', 10, 14, 16, 15, 15, 70],
+['2013-10-10 20:44:39', 'Human', 'Rogue', 'Male', 'Two Rivers', 14, 12, 13, 18, 15, 72],
+['2013-10-10 20:41:22', 'Human', 'Rogue', 'Male', 'Two Rivers', 14, 9, 16, 13, 19, 71],
+['2013-10-10 20:37:01', 'Human', 'Rogue', 'Male', 'Two Rivers', 10, 15, 13, 18, 17, 73],
+['2013-10-10 20:32:53', 'Human', 'Rogue', 'Male', 'Two Rivers', 17, 15, 12, 16, 12, 72],
+['2013-10-10 20:29:03', 'Human', 'Rogue', 'Male', 'Two Rivers', 13, 15, 14, 14, 18, 74],
 ['2013-10-09 17:22:04', 'Human', 'Rogue', 'Male', 'Two Rivers', 17, 12, 15, 16, 18, 78],
 ['2013-10-09 17:15:58', 'Human', 'Rogue', 'Male', 'Two Rivers', 14, 15, 17, 15, 16, 77],
 ['2013-10-09 17:07:04', 'Human', 'Rogue', 'Male', 'Two Rivers', 17, 15, 14, 15, 17, 78],
@@ -3325,20 +3347,20 @@ visualization.draw(data, null);
 function drawSumsChart() {
 var data = google.visualization.arrayToDataTable([
 ['sum','sum'],
-[70,507],
-[71,492],
-[72,450],
-[73,409],
-[74,370],
-[75,303],
-[76,245],
-[77,182],
-[78,116],
+[70,510],
+[71,494],
+[72,453],
+[73,413],
+[74,374],
+[75,305],
+[76,246],
+[77,183],
+[78,117],
 [79,82],
 [80,62],
 [81,43],
 [82,20],
-[83,7],
+[83,8],
 [84,3],
 [85,5],
 [86,1],
@@ -3355,16 +3377,16 @@ vAxis: {title: 'number of stats'}}
 function drawPhysicalsChart() {
 var data = google.visualization.arrayToDataTable([
 ['stat','str','dex','con'],
-[10, 48, 0, 0],
-[11, 186, 52, 50],
-[12, 226, 166, 170],
-[13, 262, 235, 238],
-[14, 1001, 278, 250],
-[15, 397, 1014, 1000],
-[16, 396, 363, 384],
-[17, 513, 432, 455],
-[18, 269, 495, 485],
-[19, 0, 263, 266],
+[10, 50, 0, 0],
+[11, 187, 53, 50],
+[12, 226, 166, 171],
+[13, 264, 236, 239],
+[14, 1011, 281, 252],
+[15, 398, 1021, 1006],
+[16, 399, 366, 388],
+[17, 516, 434, 456],
+[18, 269, 498, 490],
+[19, 0, 265, 268],
 
 ]);
 new google.visualization.LineChart(document.getElementById('physicals_chart')).
@@ -3377,16 +3399,16 @@ vAxis: {title: 'number of stats'}}
 function drawMentalsChart() {
 var data = google.visualization.arrayToDataTable([
 ['stat','int','wil'],
-[9, 246, 0],
-[10, 226, 43],
-[11, 247, 176],
-[12, 971, 243],
-[13, 421, 269],
-[14, 453, 1015],
-[15, 480, 398],
-[16, 254, 424],
-[17, 0, 485],
-[18, 0, 245],
+[9, 248, 0],
+[10, 227, 43],
+[11, 248, 176],
+[12, 979, 244],
+[13, 423, 272],
+[14, 455, 1019],
+[15, 486, 403],
+[16, 254, 427],
+[17, 0, 490],
+[18, 0, 246],
 
 ]);
 new google.visualization.LineChart(document.getElementById('mentals_chart')).
@@ -3413,7 +3435,7 @@ td { text-align: center; }
 <td style="width: 25%; text-align: left;">
 <h1>Human/Rogue/Two Rivers</h1>
 <p><a href="https://github.com/rascul/wotmad-stats/tree/master/csv/Human/Rogue/Two Rivers.csv">csv data</a></p>
-<p>Out of 3299 stats</p>
+<p>Out of 3321 stats</p>
 </td>
 <td style="text-align: right; width: 25%;">
 <div id="physicals_chart"></div>

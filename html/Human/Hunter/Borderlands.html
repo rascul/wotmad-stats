@@ -7,6 +7,8 @@ function drawStatsTable() {
 // Create and populate the data table.
 var data = google.visualization.arrayToDataTable([
 ['Submitted', 'Faction', 'Class', 'Sex', 'Homeland', 'Strength', 'Intelligence', 'Willpower', 'Dexterity', 'Constitution', 'Sum'],
+['2013-10-12 17:25:40', 'Human', 'Hunter', 'Male', 'Borderlands', 19, 12, 12, 18, 16, 77],
+['2013-10-12 14:44:10', 'Human', 'Hunter', 'Male', 'Borderlands', 16, 15, 15, 13, 11, 70],
 ['2013-10-10 13:18:31', 'Human', 'Hunter', 'Male', 'Borderlands', 16, 12, 14, 17, 15, 74],
 ['2013-10-10 13:14:40', 'Human', 'Hunter', 'Male', 'Borderlands', 16, 12, 14, 16, 15, 73],
 ['2013-10-10 13:11:34', 'Human', 'Hunter', 'Male', 'Borderlands', 16, 9, 14, 16, 15, 70],
@@ -13843,11 +13845,11 @@ visualization.draw(data, null);
 function drawSumsChart() {
 var data = google.visualization.arrayToDataTable([
 ['sum','sum'],
-[70,2954],
+[70,2955],
 [71,2835],
 [72,2518],
 [73,1948],
-[74,1416],
+[74,1417],
 [75,978],
 [76,543],
 [77,328],
@@ -13868,13 +13870,13 @@ vAxis: {title: 'number of stats'}}
 function drawPhysicalsChart() {
 var data = google.visualization.arrayToDataTable([
 ['stat','str','dex','con'],
-[11, 0, 28, 23],
+[11, 0, 28, 24],
 [12, 23, 205, 205],
-[13, 163, 885, 927],
+[13, 163, 886, 927],
 [14, 865, 1354, 1232],
-[15, 1292, 5866, 5969],
-[16, 5913, 2081, 2054],
-[17, 2134, 2311, 2332],
+[15, 1292, 5866, 5970],
+[16, 5915, 2081, 2054],
+[17, 2134, 2312, 2332],
 [18, 2355, 855, 861],
 [19, 1071, 231, 213],
 
@@ -13892,10 +13894,10 @@ var data = google.visualization.arrayToDataTable([
 [9, 211, 252],
 [10, 877, 843],
 [11, 1305, 1242],
-[12, 5966, 5907],
+[12, 5967, 5907],
 [13, 2012, 2084],
-[14, 2365, 2401],
-[15, 864, 829],
+[14, 2365, 2402],
+[15, 865, 830],
 [16, 216, 258],
 
 ]);
@@ -13923,7 +13925,7 @@ td { text-align: center; }
 <td style="width: 25%; text-align: left;">
 <h1>Human/Hunter/Borderlands</h1>
 <p><a href="https://github.com/rascul/wotmad-stats/tree/master/csv/Human/Hunter/Borderlands.csv">csv data</a></p>
-<p>Out of 13817 stats</p>
+<p>Out of 13819 stats</p>
 </td>
 <td style="text-align: right; width: 25%;">
 <div id="physicals_chart"></div>
