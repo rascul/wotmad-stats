@@ -7,6 +7,13 @@ function drawStatsTable() {
 // Create and populate the data table.
 var data = google.visualization.arrayToDataTable([
 ['Submitted', 'Faction', 'Class', 'Sex', 'Homeland', 'Strength', 'Intelligence', 'Willpower', 'Dexterity', 'Constitution', 'Sum'],
+['2013-10-14 09:07:25', 'Human', 'Hunter', 'Female', 'Two Rivers', 18, 15, 12, 14, 14, 73],
+['2013-10-14 09:04:45', 'Human', 'Hunter', 'Female', 'Two Rivers', 15, 11, 14, 13, 18, 71],
+['2013-10-14 09:00:58', 'Human', 'Hunter', 'Female', 'Two Rivers', 12, 12, 18, 12, 17, 71],
+['2013-10-14 08:57:04', 'Human', 'Hunter', 'Female', 'Two Rivers', 17, 9, 12, 14, 19, 71],
+['2013-10-14 08:53:25', 'Human', 'Hunter', 'Female', 'Two Rivers', 13, 13, 16, 13, 16, 71],
+['2013-10-14 08:50:24', 'Human', 'Hunter', 'Female', 'Two Rivers', 15, 15, 15, 17, 12, 74],
+['2013-10-14 08:47:55', 'Human', 'Hunter', 'Female', 'Two Rivers', 17, 11, 17, 14, 15, 74],
 ['2013-10-11 00:14:10', 'Human', 'Hunter', 'Male', 'Two Rivers', 15, 14, 12, 16, 15, 72],
 ['2013-10-11 00:11:16', 'Human', 'Hunter', 'Male', 'Two Rivers', 17, 15, 13, 13, 14, 72],
 ['2013-10-11 00:08:28', 'Human', 'Hunter', 'Male', 'Two Rivers', 19, 10, 16, 11, 14, 70],
@@ -1966,10 +1973,10 @@ function drawSumsChart() {
 var data = google.visualization.arrayToDataTable([
 ['sum','sum'],
 [70,356],
-[71,348],
-[72,309],
+[71,352],
+[72,310],
 [73,245],
-[74,190],
+[74,192],
 [75,169],
 [76,115],
 [77,77],
@@ -1994,14 +2001,14 @@ var data = google.visualization.arrayToDataTable([
 [9, 0, 32, 0],
 [10, 0, 92, 0],
 [11, 29, 126, 29],
-[12, 71, 173, 93],
-[13, 137, 566, 122],
-[14, 142, 217, 176],
-[15, 535, 268, 580],
-[16, 242, 308, 239],
-[17, 267, 156, 270],
-[18, 320, 0, 275],
-[19, 195, 0, 154],
+[12, 72, 174, 94],
+[13, 138, 568, 122],
+[14, 142, 219, 176],
+[15, 538, 268, 582],
+[16, 242, 309, 240],
+[17, 269, 157, 271],
+[18, 320, 0, 276],
+[19, 195, 0, 155],
 
 ]);
 new google.visualization.LineChart(document.getElementById('physicals_chart')).
@@ -2014,16 +2021,16 @@ vAxis: {title: 'number of stats'}}
 function drawMentalsChart() {
 var data = google.visualization.arrayToDataTable([
 ['stat','int','wil'],
-[9, 114, 0],
+[9, 115, 0],
 [10, 139, 35],
-[11, 166, 81],
-[12, 572, 124],
-[13, 215, 145],
-[14, 294, 594],
-[15, 282, 227],
-[16, 156, 268],
-[17, 0, 321],
-[18, 0, 143],
+[11, 168, 81],
+[12, 573, 126],
+[13, 216, 145],
+[14, 295, 595],
+[15, 283, 228],
+[16, 156, 269],
+[17, 0, 322],
+[18, 0, 144],
 
 ]);
 new google.visualization.LineChart(document.getElementById('mentals_chart')).
@@ -2050,7 +2057,7 @@ td { text-align: center; }
 <td style="width: 25%; text-align: left;">
 <h1>Human/Hunter/Two Rivers</h1>
 <p><a href="https://github.com/rascul/wotmad-stats/tree/master/csv/Human/Hunter/Two Rivers.csv">csv data</a></p>
-<p>Out of 1939 stats</p>
+<p>Out of 1946 stats</p>
 </td>
 <td style="text-align: right; width: 25%;">
 <div id="physicals_chart"></div>
