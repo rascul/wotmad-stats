@@ -7,6 +7,11 @@ function drawStatsTable() {
 // Create and populate the data table.
 var data = google.visualization.arrayToDataTable([
 ['Submitted', 'Faction', 'Class', 'Sex', 'Homeland', 'Strength', 'Intelligence', 'Willpower', 'Dexterity', 'Constitution', 'Sum'],
+['2013-10-23 08:29:47', 'Human', 'Hunter', 'Female', 'Saldaea', 16, 14, 14, 13, 16, 73],
+['2013-10-23 08:28:27', 'Human', 'Hunter', 'Female', 'Saldaea', 19, 9, 12, 15, 18, 73],
+['2013-10-19 20:37:53', 'Human', 'Hunter', 'Female', 'Saldaea', 18, 11, 9, 17, 16, 71],
+['2013-10-19 20:36:50', 'Human', 'Hunter', 'Female', 'Saldaea', 16, 12, 13, 18, 14, 73],
+['2013-10-19 20:34:32', 'Human', 'Hunter', 'Female', 'Saldaea', 18, 12, 14, 15, 14, 73],
 ['2013-10-16 23:11:22', 'Human', 'Hunter', 'Female', 'Saldaea', 17, 12, 13, 16, 15, 73],
 ['2013-10-16 23:07:57', 'Human', 'Hunter', 'Female', 'Saldaea', 17, 13, 16, 15, 15, 76],
 ['2013-10-16 23:05:41', 'Human', 'Hunter', 'Female', 'Saldaea', 16, 12, 12, 17, 16, 73],
@@ -7994,9 +7999,9 @@ function drawSumsChart() {
 var data = google.visualization.arrayToDataTable([
 ['sum','sum'],
 [70,1719],
-[71,1600],
+[71,1601],
 [72,1472],
-[73,1065],
+[73,1069],
 [74,887],
 [75,517],
 [76,339],
@@ -8022,12 +8027,12 @@ var data = google.visualization.arrayToDataTable([
 [11, 0, 15, 23],
 [12, 6, 114, 115],
 [13, 101, 524, 567],
-[14, 513, 769, 757],
-[15, 734, 3336, 3278],
-[16, 3507, 1135, 1203],
-[17, 1136, 1420, 1394],
-[18, 1313, 511, 486],
-[19, 656, 142, 143],
+[14, 513, 769, 759],
+[15, 734, 3338, 3279],
+[16, 3508, 1136, 1204],
+[17, 1137, 1421, 1394],
+[18, 1315, 512, 487],
+[19, 657, 142, 143],
 
 ]);
 new google.visualization.LineChart(document.getElementById('physicals_chart')).
@@ -8040,12 +8045,12 @@ vAxis: {title: 'number of stats'}}
 function drawMentalsChart() {
 var data = google.visualization.arrayToDataTable([
 ['stat','int','wil'],
-[9, 121, 135],
+[9, 122, 136],
 [10, 586, 528],
-[11, 703, 742],
-[12, 3363, 3366],
-[13, 1185, 1163],
-[14, 1373, 1365],
+[11, 704, 742],
+[12, 3366, 3367],
+[13, 1185, 1165],
+[14, 1373, 1366],
 [15, 495, 530],
 [16, 140, 137],
 
@@ -8074,7 +8079,7 @@ td { text-align: center; }
 <td style="width: 25%; text-align: left;">
 <h1>Human/Hunter/Saldaea</h1>
 <p><a href="https://github.com/rascul/wotmad-stats/tree/master/csv/Human/Hunter/Saldaea.csv">csv data</a></p>
-<p>Out of 7967 stats</p>
+<p>Out of 7972 stats</p>
 </td>
 <td style="text-align: right; width: 25%;">
 <div id="physicals_chart"></div>
