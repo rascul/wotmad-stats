@@ -7,6 +7,8 @@ function drawStatsTable() {
 // Create and populate the data table.
 var data = google.visualization.arrayToDataTable([
 ['Submitted', 'Faction', 'Class', 'Sex', 'Homeland', 'Strength', 'Intelligence', 'Willpower', 'Dexterity', 'Constitution', 'Sum'],
+['2013-11-12 03:12:37', 'Human', 'Hunter', 'Male', 'Borderlands', 17, 12, 13, 12, 18, 72],
+['2013-11-11 16:47:14', 'Human', 'Hunter', 'Male', 'Borderlands', 18, 12, 11, 17, 17, 75],
 ['2013-10-21 22:52:52', 'Human', 'Hunter', 'Male', 'Borderlands', 19, 13, 13, 19, 18, 82],
 ['2013-10-21 22:50:30', 'Human', 'Hunter', 'Male', 'Borderlands', 14, 13, 10, 16, 17, 70],
 ['2013-10-21 22:46:56', 'Human', 'Hunter', 'Male', 'Borderlands', 17, 10, 13, 17, 15, 72],
@@ -14036,14 +14038,14 @@ var data = google.visualization.arrayToDataTable([
 [72,2548],
 [73,1968],
 [74,1438],
-[75,995],
+[75,996],
 [76,549],
 [77,334],
 [78,166],
 [79,84],
 [80,35],
 [81,11],
-[82,2],
+[82,3],
 
 ]);
 new google.visualization.LineChart(document.getElementById('sums_chart')).
@@ -14062,9 +14064,9 @@ var data = google.visualization.arrayToDataTable([
 [14, 877, 1374, 1249],
 [15, 1315, 5947, 6049],
 [16, 5984, 2106, 2087],
-[17, 2165, 2349, 2361],
-[18, 2390, 867, 870],
-[19, 1087, 233, 214],
+[17, 2165, 2350, 2362],
+[18, 2391, 867, 871],
+[19, 1088, 234, 214],
 
 ]);
 new google.visualization.LineChart(document.getElementById('physicals_chart')).
@@ -14079,9 +14081,9 @@ var data = google.visualization.arrayToDataTable([
 ['stat','int','wil'],
 [9, 215, 258],
 [10, 889, 854],
-[11, 1321, 1257],
-[12, 6044, 5986],
-[13, 2046, 2117],
+[11, 1321, 1258],
+[12, 6045, 5986],
+[13, 2047, 2118],
 [14, 2393, 2431],
 [15, 878, 841],
 [16, 218, 260],
@@ -14111,7 +14113,7 @@ td { text-align: center; }
 <td style="width: 25%; text-align: left;">
 <h1>Human/Hunter/Borderlands</h1>
 <p><a href="https://github.com/rascul/wotmad-stats/tree/master/csv/Human/Hunter/Borderlands.csv">csv data</a></p>
-<p>Out of 14005 stats</p>
+<p>Out of 14007 stats</p>
 </td>
 <td style="text-align: right; width: 25%;">
 <div id="physicals_chart"></div>
