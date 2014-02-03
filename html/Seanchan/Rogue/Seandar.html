@@ -7,6 +7,31 @@ function drawStatsTable() {
 // Create and populate the data table.
 var data = google.visualization.arrayToDataTable([
 ['Submitted', 'Faction', 'Class', 'Sex', 'Homeland', 'Strength', 'Intelligence', 'Willpower', 'Dexterity', 'Constitution', 'Sum'],
+['2013-11-13 03:53:48', 'Seanchan', 'Rogue', 'Male', 'Seandar', 17, 16, 13, 19, 17, 82],
+['2013-11-13 03:51:34', 'Seanchan', 'Rogue', 'Male', 'Seandar', 16, 12, 14, 17, 14, 73],
+['2013-11-12 22:53:31', 'Seanchan', 'Rogue', 'Male', 'Seandar', 14, 9, 14, 16, 19, 72],
+['2013-11-12 22:51:44', 'Seanchan', 'Rogue', 'Male', 'Seandar', 16, 12, 11, 17, 15, 71],
+['2013-11-12 22:48:19', 'Seanchan', 'Rogue', 'Male', 'Seandar', 13, 13, 12, 18, 15, 71],
+['2013-11-12 22:32:44', 'Seanchan', 'Rogue', 'Male', 'Seandar', 16, 12, 9, 16, 19, 72],
+['2013-11-12 22:31:01', 'Seanchan', 'Rogue', 'Male', 'Seandar', 14, 12, 15, 19, 15, 75],
+['2013-11-12 22:28:36', 'Seanchan', 'Rogue', 'Male', 'Seandar', 18, 11, 13, 19, 14, 75],
+['2013-11-12 22:26:32', 'Seanchan', 'Rogue', 'Male', 'Seandar', 19, 12, 10, 17, 14, 72],
+['2013-11-12 22:19:07', 'Seanchan', 'Rogue', 'Male', 'Seandar', 15, 14, 13, 19, 16, 77],
+['2013-11-12 22:16:47', 'Seanchan', 'Rogue', 'Male', 'Seandar', 15, 12, 15, 19, 15, 76],
+['2013-11-12 22:14:00', 'Seanchan', 'Rogue', 'Male', 'Seandar', 15, 14, 12, 17, 16, 74],
+['2013-11-12 22:11:42', 'Seanchan', 'Rogue', 'Male', 'Seandar', 16, 12, 13, 17, 16, 74],
+['2013-11-12 22:08:22', 'Seanchan', 'Rogue', 'Male', 'Seandar', 14, 15, 12, 17, 15, 73],
+['2013-11-12 22:06:25', 'Seanchan', 'Rogue', 'Male', 'Seandar', 17, 12, 16, 19, 14, 78],
+['2013-11-12 22:04:04', 'Seanchan', 'Rogue', 'Male', 'Seandar', 19, 11, 11, 16, 14, 71],
+['2013-11-12 22:02:20', 'Seanchan', 'Rogue', 'Male', 'Seandar', 15, 14, 11, 19, 14, 73],
+['2013-11-12 21:59:54', 'Seanchan', 'Rogue', 'Male', 'Seandar', 18, 16, 13, 18, 16, 81],
+['2013-11-12 21:58:05', 'Seanchan', 'Rogue', 'Male', 'Seandar', 15, 12, 12, 17, 14, 70],
+['2013-11-12 21:55:15', 'Seanchan', 'Rogue', 'Male', 'Seandar', 17, 14, 12, 17, 19, 79],
+['2013-11-12 21:55:15', 'Seanchan', 'Rogue', 'Male', 'Seandar', 17, 14, 12, 17, 19, 79],
+['2013-11-12 21:53:35', 'Seanchan', 'Rogue', 'Male', 'Seandar', 13, 14, 12, 19, 14, 72],
+['2013-11-12 21:51:41', 'Seanchan', 'Rogue', 'Male', 'Seandar', 15, 12, 13, 19, 11, 70],
+['2013-11-12 21:46:22', 'Seanchan', 'Rogue', 'Male', 'Seandar', 15, 12, 13, 16, 14, 70],
+['2013-11-12 21:44:16', 'Seanchan', 'Rogue', 'Male', 'Seandar', 17, 16, 12, 17, 13, 75],
 ['2013-11-12 04:25:51', 'Seanchan', 'Rogue', 'Male', 'Seandar', 17, 12, 11, 17, 15, 72],
 ['2013-11-12 04:24:05', 'Seanchan', 'Rogue', 'Male', 'Seandar', 15, 11, 10, 17, 18, 71],
 ['2013-11-12 04:22:15', 'Seanchan', 'Rogue', 'Male', 'Seandar', 17, 12, 14, 17, 15, 75],
@@ -94,9 +119,9 @@ visualization.draw(data, {showRowNumber: true});
 function drawCalcsTable() {
 var data = google.visualization.arrayToDataTable([
 ['','Strength','Intelligence','Willpower','Dexterity','Constitution','Sum'],
-['Minimum', 12, 9, 10, 13, 11, 70],
+['Minimum', 12, 9, 9, 13, 11, 70],
 ['Maximum', 19, 16, 16, 19, 19, 84],
-['Average', 15.8, 15.7, 15.7, 15.8, 15.8, 16.5]
+['Average', 15.8, 15.8, 15.8, 15.8, 15.8, 16.4]
 
 ]);
 visualization = new google.visualization.Table(document.getElementById('calcs_table'));
@@ -105,18 +130,18 @@ visualization.draw(data, null);
 function drawSumsChart() {
 var data = google.visualization.arrayToDataTable([
 ['sum','sum'],
-[70,6],
-[71,4],
-[72,15],
-[73,14],
-[74,6],
-[75,7],
-[76,8],
-[77,5],
-[78,3],
-[79,5],
+[70,9],
+[71,7],
+[72,20],
+[73,17],
+[74,8],
+[75,10],
+[76,9],
+[77,6],
+[78,4],
+[79,7],
 [80,1],
-[81,2],
+[81,3],
 [82,1],
 [84,1],
 
@@ -131,15 +156,15 @@ vAxis: {title: 'number of stats'}}
 function drawPhysicalsChart() {
 var data = google.visualization.arrayToDataTable([
 ['stat','str','dex','con'],
-[11, 0, 0, 1],
+[11, 0, 0, 2],
 [12, 1, 0, 3],
-[13, 1, 1, 1],
-[14, 10, 3, 7],
-[15, 33, 3, 27],
-[16, 6, 11, 5],
-[17, 13, 30, 14],
-[18, 11, 13, 13],
-[19, 3, 17, 7],
+[13, 3, 1, 2],
+[14, 13, 3, 16],
+[15, 40, 3, 33],
+[16, 10, 15, 9],
+[17, 18, 41, 14],
+[18, 13, 15, 13],
+[19, 5, 25, 11],
 
 ]);
 new google.visualization.LineChart(document.getElementById('physicals_chart')).
@@ -152,14 +177,14 @@ vAxis: {title: 'number of stats'}}
 function drawMentalsChart() {
 var data = google.visualization.arrayToDataTable([
 ['stat','int','wil'],
-[9, 1, 0],
-[10, 5, 5],
-[11, 13, 10],
-[12, 29, 26],
-[13, 8, 8],
-[14, 11, 13],
-[15, 7, 9],
-[16, 4, 7],
+[9, 2, 1],
+[10, 5, 6],
+[11, 15, 14],
+[12, 41, 34],
+[13, 9, 14],
+[14, 17, 15],
+[15, 8, 11],
+[16, 6, 8],
 
 ]);
 new google.visualization.LineChart(document.getElementById('mentals_chart')).
@@ -186,7 +211,7 @@ td { text-align: center; }
 <td style="width: 25%; text-align: left;">
 <h1>Seanchan/Rogue/Seandar</h1>
 <p><a href="https://github.com/rascul/wotmad-stats/tree/master/csv/Seanchan/Rogue/Seandar.csv">csv data</a></p>
-<p>Out of 79 stats</p>
+<p>Out of 104 stats</p>
 </td>
 <td style="text-align: right; width: 25%;">
 <div id="physicals_chart"></div>
