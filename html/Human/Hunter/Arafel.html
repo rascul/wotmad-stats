@@ -7,6 +7,9 @@ function drawStatsTable() {
 // Create and populate the data table.
 var data = google.visualization.arrayToDataTable([
 ['Submitted', 'Faction', 'Class', 'Sex', 'Homeland', 'Strength', 'Intelligence', 'Willpower', 'Dexterity', 'Constitution', 'Sum'],
+['2014-04-14 01:13:47', 'Human', 'Hunter', 'Male', 'Arafel', 15, 15, 15, 15, 12, 72],
+['2014-04-14 01:05:34', 'Human', 'Hunter', 'Male', 'Arafel', 14, 17, 15, 14, 11, 71],
+['2014-04-14 01:02:01', 'Human', 'Hunter', 'Male', 'Arafel', 14, 15, 15, 16, 12, 72],
 ['2013-10-18 02:44:00', 'Human', 'Hunter', 'Male', 'Arafel', 17, 12, 12, 16, 14, 71],
 ['2013-10-18 02:40:30', 'Human', 'Hunter', 'Male', 'Arafel', 18, 12, 12, 15, 15, 72],
 ['2013-10-18 02:36:11', 'Human', 'Hunter', 'Male', 'Arafel', 18, 11, 12, 15, 16, 72],
@@ -6508,7 +6511,7 @@ function drawCalcsTable() {
 var data = google.visualization.arrayToDataTable([
 ['','Strength','Intelligence','Willpower','Dexterity','Constitution','Sum'],
 ['Minimum', 12, 9, 9, 11, 11, 70],
-['Maximum', 19, 16, 16, 19, 19, 82],
+['Maximum', 19, 17, 16, 19, 19, 82],
 ['Average', 16.5, 16.5, 16.5, 16.5, 16.5, 16.5]
 
 ]);
@@ -6519,8 +6522,8 @@ function drawSumsChart() {
 var data = google.visualization.arrayToDataTable([
 ['sum','sum'],
 [70,1461],
-[71,1289],
-[72,1175],
+[71,1291],
+[72,1176],
 [73,876],
 [74,673],
 [75,445],
@@ -6543,13 +6546,13 @@ vAxis: {title: 'number of stats'}}
 function drawPhysicalsChart() {
 var data = google.visualization.arrayToDataTable([
 ['stat','str','dex','con'],
-[11, 0, 13, 18],
-[12, 16, 84, 89],
+[11, 0, 13, 19],
+[12, 16, 84, 90],
 [13, 95, 405, 461],
-[14, 439, 580, 588],
+[14, 441, 581, 589],
 [15, 568, 2788, 2750],
-[16, 2702, 956, 926],
-[17, 1004, 1123, 1112],
+[16, 2702, 958, 926],
+[17, 1005, 1123, 1112],
 [18, 1185, 428, 437],
 [19, 482, 114, 110],
 
@@ -6567,11 +6570,12 @@ var data = google.visualization.arrayToDataTable([
 [9, 132, 138],
 [10, 414, 438],
 [11, 634, 592],
-[12, 2797, 2790],
+[12, 2798, 2791],
 [13, 876, 910],
 [14, 1130, 1100],
-[15, 411, 431],
+[15, 412, 433],
 [16, 97, 92],
+[17, 1, 0],
 
 ]);
 new google.visualization.LineChart(document.getElementById('mentals_chart')).
@@ -6598,7 +6602,7 @@ td { text-align: center; }
 <td style="width: 25%; text-align: left;">
 <h1>Human/Hunter/Arafel</h1>
 <p><a href="https://github.com/rascul/wotmad-stats/tree/master/csv/Human/Hunter/Arafel.csv">csv data</a></p>
-<p>Out of 6492 stats</p>
+<p>Out of 6495 stats</p>
 </td>
 <td style="text-align: right; width: 25%;">
 <div id="physicals_chart"></div>

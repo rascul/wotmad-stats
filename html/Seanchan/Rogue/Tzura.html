@@ -1,5 +1,5 @@
 
-<html><head><title>Human/Warrior/Tear</title>
+<html><head><title>Seanchan/Rogue/Tzura</title>
 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 <script type="text/javascript">google.load('visualization', '1', {packages: ['table', 'corechart']});</script>
 <script type="text/javascript">
@@ -7,23 +7,7 @@ function drawStatsTable() {
 // Create and populate the data table.
 var data = google.visualization.arrayToDataTable([
 ['Submitted', 'Faction', 'Class', 'Sex', 'Homeland', 'Strength', 'Intelligence', 'Willpower', 'Dexterity', 'Constitution', 'Sum'],
-['2014-04-17 00:07:54', 'Human', 'Warrior', 'Male', 'Tear', 16, 17, 13, 12, 17, 75],
-['2014-04-17 00:05:43', 'Human', 'Warrior', 'Male', 'Tear', 18, 16, 13, 14, 13, 74],
-['2014-04-17 00:02:15', 'Human', 'Warrior', 'Male', 'Tear', 17, 16, 12, 10, 16, 71],
-['2014-04-16 23:58:16', 'Human', 'Warrior', 'Male', 'Tear', 18, 14, 12, 12, 17, 73],
-['2014-04-16 23:56:47', 'Human', 'Warrior', 'Male', 'Tear', 17, 16, 13, 9, 16, 71],
-['2014-04-16 23:54:22', 'Human', 'Warrior', 'Male', 'Tear', 17, 11, 14, 14, 18, 74],
-['2014-04-16 23:52:27', 'Human', 'Warrior', 'Male', 'Tear', 17, 14, 12, 12, 17, 72],
-['2014-04-16 23:50:35', 'Human', 'Warrior', 'Male', 'Tear', 17, 16, 15, 12, 14, 74],
-['2014-04-16 23:47:06', 'Human', 'Warrior', 'Male', 'Tear', 17, 15, 12, 10, 18, 72],
-['2014-04-16 23:43:15', 'Human', 'Warrior', 'Male', 'Tear', 17, 12, 16, 13, 16, 74],
-['2014-04-16 23:41:19', 'Human', 'Warrior', 'Male', 'Tear', 17, 14, 13, 14, 16, 74],
-['2014-04-16 23:39:25', 'Human', 'Warrior', 'Male', 'Tear', 19, 14, 12, 16, 17, 78],
-['2014-04-16 23:37:24', 'Human', 'Warrior', 'Male', 'Tear', 19, 14, 14, 12, 15, 74],
-['2014-04-16 23:35:27', 'Human', 'Warrior', 'Male', 'Tear', 19, 16, 12, 12, 16, 75],
-['2014-04-16 23:32:46', 'Human', 'Warrior', 'Male', 'Tear', 17, 14, 13, 11, 17, 72],
-['2013-10-05 17:19:47', 'Human', 'Warrior', 'Male', 'Tear', 17, 14, 13, 13, 14, 71],
-['2013-10-05 17:15:15', 'Human', 'Warrior', 'Male', 'Tear', 18, 13, 14, 13, 14, 72],
+['2014-04-15 23:13:52', 'Seanchan', 'Rogue', 'Male', 'Tzura', 17, 11, 11, 17, 18, 74],
 
 ]);      
 visualization = new google.visualization.Table(document.getElementById('stat_table'));
@@ -32,9 +16,9 @@ visualization.draw(data, {showRowNumber: true});
 function drawCalcsTable() {
 var data = google.visualization.arrayToDataTable([
 ['','Strength','Intelligence','Willpower','Dexterity','Constitution','Sum'],
-['Minimum', 16, 11, 12, 9, 13, 71],
-['Maximum', 19, 17, 16, 16, 18, 78],
-['Average', 17.5, 17.5, 17.3, 17.2, 17.5, 20.9]
+['Minimum', 17, 11, 11, 17, 18, 74],
+['Maximum', 17, 11, 11, 17, 18, 74],
+['Average', 17.0, 11.0, 11.0, 17.0, 18.0, 74.0]
 
 ]);
 visualization = new google.visualization.Table(document.getElementById('calcs_table'));
@@ -43,12 +27,6 @@ visualization.draw(data, null);
 function drawSumsChart() {
 var data = google.visualization.arrayToDataTable([
 ['sum','sum'],
-[71,3],
-[72,4],
-[73,1],
-[74,6],
-[75,1],
-[78,1],
 
 ]);
 new google.visualization.LineChart(document.getElementById('sums_chart')).
@@ -61,17 +39,6 @@ vAxis: {title: 'number of stats'}}
 function drawPhysicalsChart() {
 var data = google.visualization.arrayToDataTable([
 ['stat','str','dex','con'],
-[9, 0, 1, 0],
-[10, 0, 2, 0],
-[11, 0, 1, 0],
-[12, 0, 5, 0],
-[13, 0, 3, 1],
-[14, 0, 3, 3],
-[15, 0, 0, 1],
-[16, 0, 1, 5],
-[17, 10, 0, 4],
-[18, 3, 0, 2],
-[19, 3, 0, 0],
 
 ]);
 new google.visualization.LineChart(document.getElementById('physicals_chart')).
@@ -84,12 +51,6 @@ vAxis: {title: 'number of stats'}}
 function drawMentalsChart() {
 var data = google.visualization.arrayToDataTable([
 ['stat','int','wil'],
-[11, 1, 0],
-[12, 1, 6],
-[13, 1, 5],
-[14, 7, 3],
-[15, 1, 1],
-[16, 5, 1],
 
 ]);
 new google.visualization.LineChart(document.getElementById('mentals_chart')).
@@ -114,9 +75,9 @@ td { text-align: center; }
 
 <table width="100%"><tr>
 <td style="width: 25%; text-align: left;">
-<h1>Human/Warrior/Tear</h1>
-<p><a href="https://github.com/rascul/wotmad-stats/tree/master/csv/Human/Warrior/Tear.csv">csv data</a></p>
-<p>Out of 17 stats</p>
+<h1>Seanchan/Rogue/Tzura</h1>
+<p><a href="https://github.com/rascul/wotmad-stats/tree/master/csv/Seanchan/Rogue/Tzura.csv">csv data</a></p>
+<p>Out of 1 stats</p>
 </td>
 <td style="text-align: right; width: 25%;">
 <div id="physicals_chart"></div>
