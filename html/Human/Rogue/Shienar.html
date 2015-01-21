@@ -7,6 +7,7 @@ function drawStatsTable() {
 // Create and populate the data table.
 var data = google.visualization.arrayToDataTable([
 ['Submitted', 'Faction', 'Class', 'Sex', 'Homeland', 'Strength', 'Intelligence', 'Willpower', 'Dexterity', 'Constitution', 'Sum'],
+['2014-06-03 18:11:35', 'Human', 'Rogue', 'Female', 'Shienar', 18, 12, 17, 18, 18, 83],
 ['2013-10-15 19:49:20', 'Human', 'Rogue', 'Male', 'Shienar', 16, 12, 12, 17, 15, 72],
 ['2013-10-15 19:40:51', 'Human', 'Rogue', 'Male', 'Shienar', 15, 16, 13, 17, 15, 76],
 
@@ -18,8 +19,8 @@ function drawCalcsTable() {
 var data = google.visualization.arrayToDataTable([
 ['','Strength','Intelligence','Willpower','Dexterity','Constitution','Sum'],
 ['Minimum', 15, 12, 12, 17, 15, 72],
-['Maximum', 16, 16, 13, 17, 15, 76],
-['Average', 15.5, 13.5, 13.5, 16.0, 15.0, 43.5]
+['Maximum', 18, 16, 17, 18, 18, 83],
+['Average', 16.3, 14.3, 16.0, 16.3, 16.3, 38.0]
 
 ]);
 visualization = new google.visualization.Table(document.getElementById('calcs_table'));
@@ -28,6 +29,7 @@ visualization.draw(data, null);
 function drawSumsChart() {
 var data = google.visualization.arrayToDataTable([
 ['sum','sum'],
+[72,1],
 [76,1],
 
 ]);
@@ -41,8 +43,9 @@ vAxis: {title: 'number of stats'}}
 function drawPhysicalsChart() {
 var data = google.visualization.arrayToDataTable([
 ['stat','str','dex','con'],
-[15, 1, 0, 1],
-[17, 0, 1, 0],
+[15, 1, 0, 2],
+[16, 1, 0, 0],
+[17, 0, 2, 0],
 
 ]);
 new google.visualization.LineChart(document.getElementById('physicals_chart')).
@@ -55,6 +58,7 @@ vAxis: {title: 'number of stats'}}
 function drawMentalsChart() {
 var data = google.visualization.arrayToDataTable([
 ['stat','int','wil'],
+[12, 1, 1],
 [13, 0, 1],
 [16, 1, 0],
 
@@ -83,7 +87,7 @@ td { text-align: center; }
 <td style="width: 25%; text-align: left;">
 <h1>Human/Rogue/Shienar</h1>
 <p><a href="https://github.com/rascul/wotmad-stats/tree/master/csv/Human/Rogue/Shienar.csv">csv data</a></p>
-<p>Out of 2 stats</p>
+<p>Out of 3 stats</p>
 </td>
 <td style="text-align: right; width: 25%;">
 <div id="physicals_chart"></div>

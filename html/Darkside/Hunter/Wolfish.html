@@ -7,6 +7,33 @@ function drawStatsTable() {
 // Create and populate the data table.
 var data = google.visualization.arrayToDataTable([
 ['Submitted', 'Faction', 'Class', 'Sex', 'Homeland', 'Strength', 'Intelligence', 'Willpower', 'Dexterity', 'Constitution', 'Sum'],
+['2014-05-13 15:07:07', 'Darkside', 'Hunter', 'Male', 'Wolfish', 17, 10, 7, 17, 18, 69],
+['2014-05-13 15:03:42', 'Darkside', 'Hunter', 'Male', 'Wolfish', 17, 7, 9, 18, 14, 65],
+['2014-05-13 15:01:05', 'Darkside', 'Hunter', 'Male', 'Wolfish', 14, 10, 8, 16, 17, 65],
+['2014-05-13 14:58:49', 'Darkside', 'Hunter', 'Male', 'Wolfish', 13, 9, 7, 19, 17, 65],
+['2014-05-13 14:54:39', 'Darkside', 'Hunter', 'Male', 'Wolfish', 17, 10, 8, 17, 16, 68],
+['2014-05-13 14:50:58', 'Darkside', 'Hunter', 'Male', 'Wolfish', 17, 11, 6, 16, 15, 65],
+['2014-05-13 14:48:26', 'Darkside', 'Hunter', 'Male', 'Wolfish', 16, 11, 9, 14, 15, 65],
+['2014-05-13 14:44:24', 'Darkside', 'Hunter', 'Male', 'Wolfish', 14, 9, 11, 17, 14, 65],
+['2014-05-13 14:41:12', 'Darkside', 'Hunter', 'Male', 'Wolfish', 16, 8, 11, 17, 17, 69],
+['2014-05-13 14:34:52', 'Darkside', 'Hunter', 'Male', 'Wolfish', 17, 10, 5, 17, 17, 66],
+['2014-05-13 14:31:37', 'Darkside', 'Hunter', 'Male', 'Wolfish', 16, 10, 8, 15, 19, 68],
+['2014-05-13 14:12:38', 'Darkside', 'Hunter', 'Male', 'Wolfish', 16, 10, 7, 16, 16, 65],
+['2014-05-13 14:09:37', 'Darkside', 'Hunter', 'Male', 'Wolfish', 18, 11, 6, 13, 17, 65],
+['2014-05-13 14:06:23', 'Darkside', 'Hunter', 'Male', 'Wolfish', 14, 11, 7, 18, 16, 66],
+['2014-05-13 14:04:42', 'Darkside', 'Hunter', 'Male', 'Wolfish', 16, 11, 11, 14, 14, 66],
+['2014-05-13 14:03:13', 'Darkside', 'Hunter', 'Male', 'Wolfish', 17, 9, 10, 16, 16, 68],
+['2014-05-13 14:01:31', 'Darkside', 'Hunter', 'Male', 'Wolfish', 17, 11, 9, 14, 18, 69],
+['2014-05-13 13:59:43', 'Darkside', 'Hunter', 'Male', 'Wolfish', 16, 12, 6, 17, 14, 65],
+['2014-05-13 13:57:43', 'Darkside', 'Hunter', 'Male', 'Wolfish', 17, 11, 8, 17, 12, 65],
+['2014-05-13 13:55:10', 'Darkside', 'Hunter', 'Male', 'Wolfish', 16, 6, 11, 17, 17, 67],
+['2014-05-13 13:52:43', 'Darkside', 'Hunter', 'Male', 'Wolfish', 16, 9, 8, 17, 16, 66],
+['2014-05-13 13:50:16', 'Darkside', 'Hunter', 'Male', 'Wolfish', 17, 12, 8, 16, 15, 68],
+['2014-05-13 13:48:16', 'Darkside', 'Hunter', 'Male', 'Wolfish', 17, 11, 6, 18, 14, 66],
+['2014-05-13 13:45:56', 'Darkside', 'Hunter', 'Male', 'Wolfish', 15, 10, 7, 17, 18, 67],
+['2014-05-13 13:43:41', 'Darkside', 'Hunter', 'Male', 'Wolfish', 15, 9, 11, 15, 15, 65],
+['2014-05-13 13:40:57', 'Darkside', 'Hunter', 'Male', 'Wolfish', 17, 10, 8, 15, 17, 67],
+['2014-05-13 13:38:33', 'Darkside', 'Hunter', 'Male', 'Wolfish', 17, 10, 8, 16, 14, 65],
 ['2013-10-13 00:08:01', 'Darkside', 'Hunter', 'Male', 'Wolfish', 19, 9, 5, 17, 19, 69],
 ['2013-10-13 00:06:13', 'Darkside', 'Hunter', 'Male', 'Wolfish', 16, 9, 11, 16, 16, 68],
 ['2013-10-13 00:01:58', 'Darkside', 'Hunter', 'Male', 'Wolfish', 14, 9, 11, 15, 16, 65],
@@ -5088,11 +5115,11 @@ visualization.draw(data, null);
 function drawSumsChart() {
 var data = google.visualization.arrayToDataTable([
 ['sum','sum'],
-[65,1575],
-[66,1258],
-[67,821],
-[68,620],
-[69,382],
+[65,1587],
+[66,1263],
+[67,824],
+[68,624],
+[69,385],
 [70,205],
 [71,122],
 [72,41],
@@ -5113,14 +5140,14 @@ function drawPhysicalsChart() {
 var data = google.visualization.arrayToDataTable([
 ['stat','str','dex','con'],
 [11, 7, 8, 8],
-[12, 32, 46, 36],
-[13, 233, 244, 255],
-[14, 572, 583, 534],
-[15, 721, 678, 711],
-[16, 1225, 1230, 1265],
-[17, 1357, 1322, 1358],
-[18, 618, 628, 605],
-[19, 296, 322, 289],
+[12, 32, 46, 37],
+[13, 234, 245, 255],
+[14, 575, 586, 540],
+[15, 723, 681, 715],
+[16, 1233, 1236, 1270],
+[17, 1368, 1332, 1365],
+[18, 619, 631, 607],
+[19, 297, 323, 291],
 
 ]);
 new google.visualization.LineChart(document.getElementById('physicals_chart')).
@@ -5135,14 +5162,14 @@ var data = google.visualization.arrayToDataTable([
 ['stat','int','wil'],
 [3, 0, 3],
 [4, 0, 45],
-[5, 8, 236],
-[6, 42, 542],
-[7, 223, 724],
-[8, 541, 1310],
-[9, 714, 1326],
-[10, 1321, 593],
-[11, 1301, 282],
-[12, 625, 0],
+[5, 8, 238],
+[6, 43, 546],
+[7, 224, 728],
+[8, 542, 1318],
+[9, 720, 1329],
+[10, 1329, 594],
+[11, 1309, 287],
+[12, 627, 0],
 [13, 286, 0],
 
 ]);
@@ -5170,7 +5197,7 @@ td { text-align: center; }
 <td style="width: 25%; text-align: left;">
 <h1>Darkside/Hunter/Wolfish</h1>
 <p><a href="https://github.com/rascul/wotmad-stats/tree/master/csv/Darkside/Hunter/Wolfish.csv">csv data</a></p>
-<p>Out of 5062 stats</p>
+<p>Out of 5089 stats</p>
 </td>
 <td style="text-align: right; width: 25%;">
 <div id="physicals_chart"></div>
