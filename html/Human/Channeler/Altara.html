@@ -7,6 +7,29 @@ function drawStatsTable() {
 // Create and populate the data table.
 var data = google.visualization.arrayToDataTable([
 ['Submitted', 'Faction', 'Class', 'Sex', 'Homeland', 'Strength', 'Intelligence', 'Willpower', 'Dexterity', 'Constitution', 'Sum'],
+['2015-02-17 04:20:56', 'Human', 'Channeler', 'Female', 'Altara', 14, 14, 18, 18, 10, 74],
+['2015-02-17 04:18:39', 'Human', 'Channeler', 'Female', 'Altara', 14, 14, 15, 17, 14, 74],
+['2015-02-17 04:15:59', 'Human', 'Channeler', 'Female', 'Altara', 15, 14, 15, 13, 14, 71],
+['2015-02-17 04:13:39', 'Human', 'Channeler', 'Female', 'Altara', 12, 14, 15, 18, 12, 71],
+['2015-02-17 04:11:50', 'Human', 'Channeler', 'Female', 'Altara', 14, 14, 15, 14, 14, 71],
+['2015-02-17 04:10:06', 'Human', 'Channeler', 'Female', 'Altara', 15, 18, 15, 14, 11, 73],
+['2015-02-17 04:07:34', 'Human', 'Channeler', 'Female', 'Altara', 12, 16, 18, 14, 10, 70],
+['2015-02-17 04:05:44', 'Human', 'Channeler', 'Female', 'Altara', 16, 14, 15, 13, 13, 71],
+['2015-02-17 03:48:00', 'Human', 'Channeler', 'Female', 'Altara', 13, 14, 17, 15, 11, 70],
+['2015-02-17 03:45:32', 'Human', 'Channeler', 'Female', 'Altara', 13, 14, 16, 18, 10, 71],
+['2015-02-17 03:42:50', 'Human', 'Channeler', 'Female', 'Altara', 16, 18, 15, 18, 14, 81],
+['2015-02-17 03:39:39', 'Human', 'Channeler', 'Female', 'Altara', 16, 14, 16, 14, 10, 70],
+['2015-02-17 03:36:51', 'Human', 'Channeler', 'Female', 'Altara', 12, 15, 16, 16, 11, 70],
+['2015-02-17 03:34:26', 'Human', 'Channeler', 'Female', 'Altara', 14, 14, 15, 17, 10, 70],
+['2015-02-17 03:32:22', 'Human', 'Channeler', 'Female', 'Altara', 12, 16, 16, 17, 12, 73],
+['2015-02-17 03:29:01', 'Human', 'Channeler', 'Female', 'Altara', 12, 14, 17, 15, 14, 72],
+['2015-02-17 03:26:44', 'Human', 'Channeler', 'Female', 'Altara', 16, 14, 14, 18, 9, 71],
+['2015-02-17 03:24:27', 'Human', 'Channeler', 'Female', 'Altara', 12, 18, 19, 14, 10, 73],
+['2015-02-17 03:22:12', 'Human', 'Channeler', 'Female', 'Altara', 14, 17, 15, 14, 10, 70],
+['2015-02-17 03:19:28', 'Human', 'Channeler', 'Female', 'Altara', 12, 18, 19, 14, 14, 77],
+['2015-02-17 03:16:57', 'Human', 'Channeler', 'Female', 'Altara', 13, 14, 18, 14, 12, 71],
+['2015-02-17 03:14:11', 'Human', 'Channeler', 'Female', 'Altara', 12, 17, 17, 17, 9, 72],
+['2015-02-17 03:11:24', 'Human', 'Channeler', 'Female', 'Altara', 16, 18, 15, 16, 10, 75],
 ['2013-11-07 17:59:00', 'Human', 'Channeler', 'Male', 'Altara', 12, 17, 19, 13, 11, 72],
 ['2013-11-07 17:55:46', 'Human', 'Channeler', 'Male', 'Altara', 12, 14, 15, 16, 13, 70],
 ['2013-11-07 17:51:44', 'Human', 'Channeler', 'Male', 'Altara', 12, 18, 13, 14, 13, 70],
@@ -3121,18 +3144,18 @@ visualization.draw(data, null);
 function drawSumsChart() {
 var data = google.visualization.arrayToDataTable([
 ['sum','sum'],
-[70,710],
-[71,636],
-[72,530],
-[73,397],
-[74,275],
-[75,211],
+[70,716],
+[71,643],
+[72,533],
+[73,400],
+[74,276],
+[75,212],
 [76,144],
-[77,90],
+[77,91],
 [78,49],
 [79,27],
 [80,17],
-[81,7],
+[81,8],
 [83,1],
 
 ]);
@@ -3146,16 +3169,16 @@ vAxis: {title: 'number of stats'}}
 function drawPhysicalsChart() {
 var data = google.visualization.arrayToDataTable([
 ['stat','str','dex','con'],
-[9, 1, 0, 242],
-[10, 83, 0, 1048],
-[11, 158, 0, 312],
-[12, 1071, 56, 369],
-[13, 342, 175, 526],
-[14, 425, 1045, 597],
-[15, 477, 308, 0],
-[16, 537, 444, 0],
-[17, 0, 502, 0],
-[18, 0, 564, 0],
+[9, 1, 0, 244],
+[10, 83, 0, 1055],
+[11, 158, 0, 316],
+[12, 1080, 56, 372],
+[13, 345, 178, 527],
+[14, 429, 1053, 603],
+[15, 479, 310, 0],
+[16, 542, 446, 0],
+[17, 0, 506, 0],
+[18, 0, 568, 0],
 
 ]);
 new google.visualization.LineChart(document.getElementById('physicals_chart')).
@@ -3170,11 +3193,11 @@ var data = google.visualization.arrayToDataTable([
 ['stat','int','wil'],
 [12, 52, 0],
 [13, 161, 53],
-[14, 1089, 184],
-[15, 317, 1126],
-[16, 420, 321],
-[17, 474, 412],
-[18, 581, 473],
+[14, 1101, 185],
+[15, 318, 1136],
+[16, 422, 325],
+[17, 477, 415],
+[18, 586, 475],
 
 ]);
 new google.visualization.LineChart(document.getElementById('mentals_chart')).
@@ -3201,7 +3224,7 @@ td { text-align: center; }
 <td style="width: 25%; text-align: left;">
 <h1>Human/Channeler/Altara</h1>
 <p><a href="https://github.com/rascul/wotmad-stats/tree/master/csv/Human/Channeler/Altara.csv">csv data</a></p>
-<p>Out of 3095 stats</p>
+<p>Out of 3118 stats</p>
 </td>
 <td style="text-align: right; width: 25%;">
 <div id="physicals_chart"></div>
