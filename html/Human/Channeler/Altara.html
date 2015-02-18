@@ -7,6 +7,8 @@ function drawStatsTable() {
 // Create and populate the data table.
 var data = google.visualization.arrayToDataTable([
 ['Submitted', 'Faction', 'Class', 'Sex', 'Homeland', 'Strength', 'Intelligence', 'Willpower', 'Dexterity', 'Constitution', 'Sum'],
+['2015-02-18 05:02:52', 'Human', 'Channeler', 'Female', 'Altara', 12, 14, 19, 17, 10, 72],
+['2015-02-18 05:00:30', 'Human', 'Channeler', 'Female', 'Altara', 12, 14, 17, 17, 10, 70],
 ['2015-02-18 04:57:37', 'Human', 'Channeler', 'Female', 'Altara', 12, 14, 17, 13, 14, 70],
 ['2015-02-18 04:55:36', 'Human', 'Channeler', 'Female', 'Altara', 16, 14, 14, 16, 10, 70],
 ['2015-02-18 04:53:52', 'Human', 'Channeler', 'Female', 'Altara', 14, 18, 15, 14, 9, 70],
@@ -3415,7 +3417,7 @@ visualization.draw(data, null);
 function drawSumsChart() {
 var data = google.visualization.arrayToDataTable([
 ['sum','sum'],
-[70,768],
+[70,770],
 [71,705],
 [72,582],
 [73,437],
@@ -3441,14 +3443,14 @@ function drawPhysicalsChart() {
 var data = google.visualization.arrayToDataTable([
 ['stat','str','dex','con'],
 [9, 1, 0, 261],
-[10, 86, 0, 1146],
+[10, 86, 0, 1147],
 [11, 175, 0, 352],
-[12, 1181, 63, 408],
-[13, 378, 192, 572],
-[14, 467, 1143, 649],
+[12, 1183, 63, 408],
+[13, 378, 193, 572],
+[14, 467, 1143, 650],
 [15, 510, 343, 0],
 [16, 590, 472, 0],
-[17, 0, 559, 0],
+[17, 0, 560, 0],
 [18, 0, 616, 0],
 
 ]);
@@ -3464,10 +3466,10 @@ var data = google.visualization.arrayToDataTable([
 ['stat','int','wil'],
 [12, 60, 0],
 [13, 174, 57],
-[14, 1198, 196],
+[14, 1200, 196],
 [15, 343, 1228],
 [16, 451, 354],
-[17, 523, 453],
+[17, 523, 455],
 [18, 639, 523],
 
 ]);
@@ -3495,7 +3497,7 @@ td { text-align: center; }
 <td style="width: 25%; text-align: left;">
 <h1>Human/Channeler/Altara</h1>
 <p><a href="https://github.com/rascul/wotmad-stats/tree/master/csv/Human/Channeler/Altara.csv">csv data</a></p>
-<p>Out of 3389 stats</p>
+<p>Out of 3391 stats</p>
 </td>
 <td style="text-align: right; width: 25%;">
 <div id="physicals_chart"></div>
