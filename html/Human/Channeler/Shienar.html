@@ -522,7 +522,6 @@ var data = google.visualization.arrayToDataTable([
 ['2013-09-29 05:54:44', 'Human', 'Channeler', 'Female', 'Shienar', 14, 18, 14, 14, 11, 71],
 ['2013-09-29 05:53:02', 'Human', 'Channeler', 'Female', 'Shienar', 15, 15, 15, 13, 15, 73],
 ['2013-09-29 05:50:54', 'Human', 'Channeler', 'Female', 'Shienar', 15, 16, 16, 13, 12, 72],
-['2013-09-29 05:49:19', 'Human', 'Channeler', 'Female', 'Shienar', 14, 18, 15, 13, 12, 72],
 ['2013-09-29 05:47:33', 'Human', 'Channeler', 'Female', 'Shienar', 14, 18, 15, 13, 12, 72],
 ['2013-09-29 05:45:56', 'Human', 'Channeler', 'Female', 'Shienar', 14, 15, 15, 14, 12, 70],
 ['2013-09-29 05:44:14', 'Human', 'Channeler', 'Female', 'Shienar', 16, 18, 15, 15, 12, 76],
@@ -530,7 +529,6 @@ var data = google.visualization.arrayToDataTable([
 ['2013-09-29 05:39:42', 'Human', 'Channeler', 'Female', 'Shienar', 14, 17, 15, 13, 12, 71],
 ['2013-09-29 05:37:16', 'Human', 'Channeler', 'Female', 'Shienar', 15, 17, 14, 15, 13, 74],
 ['2013-09-29 05:34:58', 'Human', 'Channeler', 'Female', 'Shienar', 17, 14, 15, 13, 12, 71],
-['2013-09-29 05:33:10', 'Human', 'Channeler', 'Female', 'Shienar', 14, 15, 15, 13, 13, 70],
 ['2013-09-29 05:31:02', 'Human', 'Channeler', 'Female', 'Shienar', 14, 15, 15, 13, 13, 70],
 ['2013-09-29 05:29:30', 'Human', 'Channeler', 'Female', 'Shienar', 16, 13, 17, 13, 11, 70],
 ['2013-09-29 05:26:53', 'Human', 'Channeler', 'Female', 'Shienar', 14, 13, 17, 15, 12, 71],
@@ -987,7 +985,6 @@ var data = google.visualization.arrayToDataTable([
 ['2013-09-28 05:31:00', 'Human', 'Channeler', 'Female', 'Shienar', 14, 15, 17, 14, 12, 72],
 ['2013-09-28 05:27:52', 'Human', 'Channeler', 'Female', 'Shienar', 14, 15, 14, 15, 12, 70],
 ['2013-09-28 05:25:41', 'Human', 'Channeler', 'Female', 'Shienar', 14, 17, 15, 14, 14, 74],
-['2013-09-28 05:23:00', 'Human', 'Channeler', 'Female', 'Shienar', 14, 15, 15, 13, 13, 70],
 ['2013-09-28 05:20:54', 'Human', 'Channeler', 'Female', 'Shienar', 14, 15, 15, 13, 13, 70],
 ['2013-09-28 05:18:31', 'Human', 'Channeler', 'Female', 'Shienar', 16, 15, 15, 13, 12, 71],
 ['2013-09-28 05:16:09', 'Human', 'Channeler', 'Female', 'Shienar', 14, 17, 17, 11, 14, 73],
@@ -2081,7 +2078,6 @@ var data = google.visualization.arrayToDataTable([
 ['2012-11-05 05:10:56', 'Human', 'Channeler', 'Female', 'Shienar', 14, 15, 15, 12, 15, 71],
 ['2012-11-05 05:07:42', 'Human', 'Channeler', 'Female', 'Shienar', 18, 15, 16, 12, 12, 73],
 ['2012-11-05 05:06:04', 'Human', 'Channeler', 'Female', 'Shienar', 13, 15, 18, 15, 11, 72],
-['2012-09-10 15:42:15', 'Human', 'Channeler', 'Male', 'Shienar', 17, 17, 17, 17, 14, 82],
 ['2012-09-10 15:36:42', 'Human', 'Channeler', 'Male', 'Shienar', 17, 17, 17, 17, 14, 82],
 ['2012-09-10 15:35:01', 'Human', 'Channeler', 'Male', 'Shienar', 14, 15, 17, 14, 15, 75],
 ['2012-09-10 15:31:50', 'Human', 'Channeler', 'Male', 'Shienar', 16, 15, 17, 13, 11, 72],
@@ -2213,9 +2209,9 @@ visualization.draw(data, null);
 function drawSumsChart() {
 var data = google.visualization.arrayToDataTable([
 ['sum','sum'],
-[70,592],
+[70,590],
 [71,477],
-[72,402],
+[72,401],
 [73,282],
 [74,190],
 [75,109],
@@ -2225,7 +2221,7 @@ var data = google.visualization.arrayToDataTable([
 [79,5],
 [80,1],
 [81,1],
-[82,2],
+[82,1],
 
 ]);
 new google.visualization.LineChart(document.getElementById('sums_chart')).
@@ -2241,12 +2237,12 @@ var data = google.visualization.arrayToDataTable([
 [9, 0, 7, 16],
 [10, 5, 23, 110],
 [11, 22, 115, 194],
-[12, 119, 185, 911],
-[13, 174, 902, 337],
-[14, 913, 334, 396],
+[12, 119, 185, 910],
+[13, 174, 899, 335],
+[14, 910, 334, 395],
 [15, 320, 416, 181],
 [16, 423, 160, 41],
-[17, 169, 43, 0],
+[17, 168, 42, 0],
 [18, 41, 1, 0],
 
 ]);
@@ -2264,10 +2260,10 @@ var data = google.visualization.arrayToDataTable([
 [12, 20, 27],
 [13, 129, 117],
 [14, 192, 201],
-[15, 923, 879],
+[15, 921, 876],
 [16, 332, 349],
-[17, 389, 412],
-[18, 161, 155],
+[17, 388, 411],
+[18, 160, 155],
 
 ]);
 new google.visualization.LineChart(document.getElementById('mentals_chart')).
@@ -2294,7 +2290,7 @@ td { text-align: center; }
 <td style="width: 25%; text-align: left;">
 <h1>Human/Channeler/Shienar</h1>
 <p><a href="https://github.com/rascul/wotmad-stats/tree/master/csv/Human/Channeler/Shienar.csv">csv data</a></p>
-<p>Out of 2187 stats</p>
+<p>Out of 2183 stats</p>
 </td>
 <td style="text-align: right; width: 25%;">
 <div id="physicals_chart"></div>

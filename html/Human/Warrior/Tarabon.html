@@ -7,7 +7,6 @@ function drawStatsTable() {
 // Create and populate the data table.
 var data = google.visualization.arrayToDataTable([
 ['Submitted', 'Faction', 'Class', 'Sex', 'Homeland', 'Strength', 'Intelligence', 'Willpower', 'Dexterity', 'Constitution', 'Sum'],
-['2014-05-01 15:50:44', 'Human', 'Warrior', 'Male', 'Tarabon', 19, 11, 11, 15, 19, 75],
 ['2014-05-01 15:47:53', 'Human', 'Warrior', 'Male', 'Tarabon', 19, 11, 11, 15, 19, 75],
 ['2014-05-01 15:45:51', 'Human', 'Warrior', 'Male', 'Tarabon', 19, 11, 11, 14, 15, 70],
 ['2014-05-01 15:41:55', 'Human', 'Warrior', 'Male', 'Tarabon', 18, 11, 11, 16, 15, 71],
@@ -141,7 +140,6 @@ var data = google.visualization.arrayToDataTable([
 ['2014-01-27 22:17:14', 'Human', 'Warrior', 'Male', 'Tarabon', 19, 11, 11, 16, 14, 71],
 ['2014-01-27 22:15:27', 'Human', 'Warrior', 'Male', 'Tarabon', 16, 15, 11, 16, 15, 73],
 ['2014-01-27 22:12:40', 'Human', 'Warrior', 'Male', 'Tarabon', 16, 12, 14, 15, 18, 75],
-['2014-01-27 22:10:30', 'Human', 'Warrior', 'Male', 'Tarabon', 16, 11, 13, 18, 15, 73],
 ['2014-01-27 22:10:29', 'Human', 'Warrior', 'Male', 'Tarabon', 16, 11, 13, 18, 15, 73],
 ['2013-09-19 19:06:10', 'Human', 'Warrior', 'Male', 'Tarabon', 19, 10, 11, 18, 19, 77],
 ['2013-09-19 19:06:09', 'Human', 'Warrior', 'Male', 'Tarabon', 16, 11, 11, 15, 19, 72],
@@ -329,7 +327,6 @@ var data = google.visualization.arrayToDataTable([
 ['2013-09-19 17:47:25', 'Human', 'Warrior', 'Male', 'Tarabon', 16, 12, 13, 17, 14, 72],
 ['2013-09-19 17:47:24', 'Human', 'Warrior', 'Male', 'Tarabon', 16, 11, 10, 19, 18, 74],
 ['2013-09-19 17:47:23', 'Human', 'Warrior', 'Male', 'Tarabon', 19, 12, 13, 14, 14, 72],
-['2013-09-19 17:47:23', 'Human', 'Warrior', 'Male', 'Tarabon', 16, 11, 14, 16, 14, 71],
 ['2013-09-19 17:47:23', 'Human', 'Warrior', 'Male', 'Tarabon', 16, 11, 14, 16, 14, 71],
 ['2013-09-19 17:47:22', 'Human', 'Warrior', 'Male', 'Tarabon', 16, 11, 14, 14, 15, 70],
 ['2013-09-19 17:47:21', 'Human', 'Warrior', 'Male', 'Tarabon', 16, 14, 13, 15, 14, 72],
@@ -874,11 +871,11 @@ function drawSumsChart() {
 var data = google.visualization.arrayToDataTable([
 ['sum','sum'],
 [70,110],
-[71,126],
+[71,125],
 [72,120],
-[73,115],
+[73,114],
 [74,114],
-[75,75],
+[75,74],
 [76,68],
 [77,46],
 [78,27],
@@ -899,12 +896,12 @@ vAxis: {title: 'number of stats'}}
 function drawPhysicalsChart() {
 var data = google.visualization.arrayToDataTable([
 ['stat','str','dex','con'],
-[14, 0, 78, 101],
-[15, 90, 334, 351],
-[16, 372, 99, 79],
+[14, 0, 78, 100],
+[15, 90, 333, 350],
+[16, 370, 98, 79],
 [17, 80, 123, 104],
-[18, 88, 100, 116],
-[19, 216, 112, 95],
+[18, 88, 99, 116],
+[19, 215, 112, 94],
 
 ]);
 new google.visualization.LineChart(document.getElementById('physicals_chart')).
@@ -918,10 +915,10 @@ function drawMentalsChart() {
 var data = google.visualization.arrayToDataTable([
 ['stat','int','wil'],
 [10, 86, 96],
-[11, 350, 351],
+[11, 347, 350],
 [12, 90, 90],
-[13, 107, 91],
-[14, 116, 114],
+[13, 107, 90],
+[14, 116, 113],
 [15, 97, 104],
 
 ]);
@@ -949,7 +946,7 @@ td { text-align: center; }
 <td style="width: 25%; text-align: left;">
 <h1>Human/Warrior/Tarabon</h1>
 <p><a href="https://github.com/rascul/wotmad-stats/tree/master/csv/Human/Warrior/Tarabon.csv">csv data</a></p>
-<p>Out of 847 stats</p>
+<p>Out of 844 stats</p>
 </td>
 <td style="text-align: right; width: 25%;">
 <div id="physicals_chart"></div>

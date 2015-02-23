@@ -181,7 +181,6 @@ var data = google.visualization.arrayToDataTable([
 ['2013-10-12 15:29:57', 'Darkside', 'Hunter', 'Male', 'Wolfish', 14, 13, 7, 16, 16, 66],
 ['2013-10-12 15:28:42', 'Darkside', 'Hunter', 'Male', 'Wolfish', 14, 13, 6, 14, 18, 65],
 ['2013-10-12 15:26:38', 'Darkside', 'Hunter', 'Male', 'Wolfish', 14, 10, 10, 14, 18, 66],
-['2013-10-12 15:24:39', 'Darkside', 'Hunter', 'Male', 'Wolfish', 16, 10, 9, 14, 16, 65],
 ['2013-10-12 10:10:55', 'Darkside', 'Hunter', 'Male', 'Wolfish', 16, 10, 9, 14, 16, 65],
 ['2013-10-12 09:56:32', 'Darkside', 'Hunter', 'Male', 'Wolfish', 16, 8, 10, 17, 16, 67],
 ['2013-10-12 09:44:56', 'Darkside', 'Hunter', 'Male', 'Wolfish', 15, 11, 8, 17, 18, 69],
@@ -1224,7 +1223,6 @@ var data = google.visualization.arrayToDataTable([
 ['2013-09-19 18:43:21', 'Darkside', 'Hunter', 'Male', 'Wolfish', 18, 10, 10, 14, 16, 68],
 ['2013-09-19 18:43:20', 'Darkside', 'Hunter', 'Male', 'Wolfish', 13, 10, 7, 17, 18, 65],
 ['2013-09-19 18:43:19', 'Darkside', 'Hunter', 'Male', 'Wolfish', 17, 9, 8, 16, 15, 65],
-['2013-09-19 18:43:19', 'Darkside', 'Hunter', 'Male', 'Wolfish', 18, 9, 6, 17, 19, 69],
 ['2013-09-19 18:43:18', 'Darkside', 'Hunter', 'Male', 'Wolfish', 18, 9, 6, 17, 19, 69],
 ['2013-09-19 18:43:18', 'Darkside', 'Hunter', 'Male', 'Wolfish', 17, 11, 9, 14, 16, 67],
 ['2013-09-19 18:43:17', 'Darkside', 'Hunter', 'Male', 'Wolfish', 14, 13, 8, 15, 17, 67],
@@ -3018,7 +3016,6 @@ var data = google.visualization.arrayToDataTable([
 ['2013-03-13 18:55:21', 'Darkside', 'Hunter', 'Male', 'Wolfish', 13, 13, 9, 15, 15, 65],
 ['2013-03-13 18:53:58', 'Darkside', 'Hunter', 'Male', 'Wolfish', 15, 13, 7, 18, 18, 71],
 ['2013-03-13 18:52:13', 'Darkside', 'Hunter', 'Male', 'Wolfish', 15, 10, 8, 16, 16, 65],
-['2013-03-13 18:50:20', 'Darkside', 'Hunter', 'Male', 'Wolfish', 18, 8, 5, 18, 16, 65],
 ['2013-03-13 18:50:15', 'Darkside', 'Hunter', 'Male', 'Wolfish', 18, 8, 5, 18, 16, 65],
 ['2013-03-13 18:41:07', 'Darkside', 'Hunter', 'Male', 'Wolfish', 17, 11, 8, 16, 13, 65],
 ['2013-03-13 18:34:42', 'Darkside', 'Hunter', 'Male', 'Wolfish', 11, 12, 9, 16, 18, 66],
@@ -4502,7 +4499,6 @@ var data = google.visualization.arrayToDataTable([
 ['2013-03-11 02:14:45', 'Darkside', 'Hunter', 'Male', 'Wolfish', 18, 8, 5, 19, 16, 66],
 ['2013-03-11 02:12:59', 'Darkside', 'Hunter', 'Male', 'Wolfish', 16, 11, 7, 16, 17, 67],
 ['2013-03-11 02:10:50', 'Darkside', 'Hunter', 'Male', 'Wolfish', 16, 10, 9, 18, 17, 70],
-['2013-03-11 02:10:50', 'Darkside', 'Hunter', 'Male', 'Wolfish', 16, 10, 9, 18, 17, 70],
 ['2013-03-11 02:09:13', 'Darkside', 'Hunter', 'Male', 'Wolfish', 14, 11, 8, 18, 14, 65],
 ['2013-03-11 02:06:56', 'Darkside', 'Hunter', 'Male', 'Wolfish', 19, 9, 9, 15, 15, 67],
 ['2013-03-11 02:04:44', 'Darkside', 'Hunter', 'Male', 'Wolfish', 17, 12, 9, 15, 13, 66],
@@ -5115,12 +5111,12 @@ visualization.draw(data, null);
 function drawSumsChart() {
 var data = google.visualization.arrayToDataTable([
 ['sum','sum'],
-[65,1587],
+[65,1585],
 [66,1263],
 [67,824],
 [68,624],
-[69,385],
-[70,205],
+[69,384],
+[70,204],
 [71,122],
 [72,41],
 [73,22],
@@ -5142,12 +5138,12 @@ var data = google.visualization.arrayToDataTable([
 [11, 7, 8, 8],
 [12, 32, 46, 37],
 [13, 234, 245, 255],
-[14, 575, 586, 540],
+[14, 575, 585, 540],
 [15, 723, 681, 715],
-[16, 1233, 1236, 1270],
-[17, 1368, 1332, 1365],
-[18, 619, 631, 607],
-[19, 297, 323, 291],
+[16, 1231, 1236, 1268],
+[17, 1368, 1331, 1364],
+[18, 617, 629, 607],
+[19, 297, 323, 290],
 
 ]);
 new google.visualization.LineChart(document.getElementById('physicals_chart')).
@@ -5162,12 +5158,12 @@ var data = google.visualization.arrayToDataTable([
 ['stat','int','wil'],
 [3, 0, 3],
 [4, 0, 45],
-[5, 8, 238],
-[6, 43, 546],
+[5, 8, 237],
+[6, 43, 545],
 [7, 224, 728],
-[8, 542, 1318],
-[9, 720, 1329],
-[10, 1329, 594],
+[8, 541, 1318],
+[9, 719, 1327],
+[10, 1327, 594],
 [11, 1309, 287],
 [12, 627, 0],
 [13, 286, 0],
@@ -5197,7 +5193,7 @@ td { text-align: center; }
 <td style="width: 25%; text-align: left;">
 <h1>Darkside/Hunter/Wolfish</h1>
 <p><a href="https://github.com/rascul/wotmad-stats/tree/master/csv/Darkside/Hunter/Wolfish.csv">csv data</a></p>
-<p>Out of 5089 stats</p>
+<p>Out of 5085 stats</p>
 </td>
 <td style="text-align: right; width: 25%;">
 <div id="physicals_chart"></div>
