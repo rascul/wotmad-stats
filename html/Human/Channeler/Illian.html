@@ -7,6 +7,10 @@ function drawStatsTable() {
 // Create and populate the data table.
 var data = google.visualization.arrayToDataTable([
 ['Submitted', 'Faction', 'Class', 'Sex', 'Homeland', 'Strength', 'Intelligence', 'Willpower', 'Dexterity', 'Constitution', 'Sum'],
+['2015-02-24 16:58:38', 'Human', 'Channeler', 'Male', 'Illian', 11, 17, 17, 14, 11, 70],
+['2015-02-24 16:56:36', 'Human', 'Channeler', 'Male', 'Illian', 9, 17, 17, 18, 11, 72],
+['2015-02-24 16:53:11', 'Human', 'Channeler', 'Male', 'Illian', 9, 15, 17, 18, 11, 70],
+['2015-02-24 16:50:53', 'Human', 'Channeler', 'Male', 'Illian', 12, 16, 17, 14, 11, 70],
 ['2015-02-19 23:23:37', 'Human', 'Channeler', 'Female', 'Illian', 14, 17, 17, 17, 15, 80],
 ['2015-02-19 23:21:27', 'Human', 'Channeler', 'Female', 'Illian', 11, 19, 17, 18, 12, 77],
 ['2015-02-19 23:17:16', 'Human', 'Channeler', 'Female', 'Illian', 9, 18, 19, 17, 11, 74],
@@ -14319,9 +14323,9 @@ visualization.draw(data, null);
 function drawSumsChart() {
 var data = google.visualization.arrayToDataTable([
 ['sum','sum'],
-[70,2088],
+[70,2090],
 [71,2077],
-[72,2229],
+[72,2230],
 [73,1957],
 [74,1796],
 [75,1419],
@@ -14329,7 +14333,7 @@ var data = google.visualization.arrayToDataTable([
 [77,692],
 [78,470],
 [79,274],
-[80,131],
+[80,132],
 [81,61],
 [82,40],
 [83,11],
@@ -14347,16 +14351,16 @@ vAxis: {title: 'number of stats'}}
 function drawPhysicalsChart() {
 var data = google.visualization.arrayToDataTable([
 ['stat','str','dex','con'],
-[9, 1116, 0, 1189],
+[9, 1118, 0, 1189],
 [10, 991, 196, 880],
-[11, 6132, 261, 6192],
-[12, 1601, 378, 1588],
+[11, 6132, 261, 6195],
+[12, 1602, 378, 1588],
 [13, 1679, 923, 1646],
-[14, 1783, 6465, 1817],
-[15, 970, 1616, 946],
+[14, 1784, 6466, 1817],
+[15, 970, 1616, 947],
 [16, 8, 1706, 23],
-[17, 6, 1773, 11],
-[18, 6, 968, 0],
+[17, 6, 1774, 11],
+[18, 6, 970, 0],
 [19, 0, 6, 0],
 
 ]);
@@ -14375,9 +14379,9 @@ var data = google.visualization.arrayToDataTable([
 [12, 1, 7],
 [13, 218, 214],
 [14, 322, 295],
-[15, 403, 378],
-[16, 931, 1003],
-[17, 6405, 6484],
+[15, 404, 378],
+[16, 932, 1003],
+[17, 6407, 6488],
 [18, 1661, 1477],
 
 ]);
@@ -14405,7 +14409,7 @@ td { text-align: center; }
 <td style="width: 25%; text-align: left;">
 <h1>Human/Channeler/Illian</h1>
 <p><a href="https://github.com/rascul/wotmad-stats/tree/master/csv/Human/Channeler/Illian.csv">csv data</a></p>
-<p>Out of 14293 stats</p>
+<p>Out of 14297 stats</p>
 </td>
 <td style="text-align: right; width: 25%;">
 <div id="physicals_chart"></div>
