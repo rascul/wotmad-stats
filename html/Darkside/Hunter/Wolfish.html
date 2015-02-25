@@ -7,6 +7,13 @@ function drawStatsTable() {
 // Create and populate the data table.
 var data = google.visualization.arrayToDataTable([
 ['Submitted', 'Faction', 'Class', 'Sex', 'Homeland', 'Strength', 'Intelligence', 'Willpower', 'Dexterity', 'Constitution', 'Sum'],
+['2015-02-25 10:58:33', 'Darkside', 'Hunter', 'Male', 'Wolfish', 15, 11, 9, 17, 14, 66],
+['2015-02-25 10:56:39', 'Darkside', 'Hunter', 'Male', 'Wolfish', 17, 11, 7, 16, 15, 66],
+['2015-02-25 10:54:57', 'Darkside', 'Hunter', 'Male', 'Wolfish', 17, 8, 5, 19, 16, 65],
+['2015-02-25 10:53:13', 'Darkside', 'Hunter', 'Male', 'Wolfish', 13, 11, 7, 17, 18, 66],
+['2015-02-25 10:51:16', 'Darkside', 'Hunter', 'Male', 'Wolfish', 15, 10, 8, 18, 14, 65],
+['2015-02-25 10:49:20', 'Darkside', 'Hunter', 'Male', 'Wolfish', 13, 11, 5, 18, 18, 65],
+['2015-02-25 10:47:44', 'Darkside', 'Hunter', 'Male', 'Wolfish', 16, 11, 9, 15, 16, 67],
 ['2014-05-13 15:07:07', 'Darkside', 'Hunter', 'Male', 'Wolfish', 17, 10, 7, 17, 18, 69],
 ['2014-05-13 15:03:42', 'Darkside', 'Hunter', 'Male', 'Wolfish', 17, 7, 9, 18, 14, 65],
 ['2014-05-13 15:01:05', 'Darkside', 'Hunter', 'Male', 'Wolfish', 14, 10, 8, 16, 17, 65],
@@ -5111,11 +5118,11 @@ visualization.draw(data, null);
 function drawSumsChart() {
 var data = google.visualization.arrayToDataTable([
 ['sum','sum'],
-[65,1585],
-[66,1263],
-[67,824],
+[65,1588],
+[66,1265],
+[67,825],
 [68,624],
-[69,384],
+[69,385],
 [70,204],
 [71,122],
 [72,41],
@@ -5137,13 +5144,13 @@ var data = google.visualization.arrayToDataTable([
 ['stat','str','dex','con'],
 [11, 7, 8, 8],
 [12, 32, 46, 37],
-[13, 234, 245, 255],
-[14, 575, 585, 540],
-[15, 723, 681, 715],
-[16, 1231, 1236, 1268],
-[17, 1368, 1331, 1364],
-[18, 617, 629, 607],
-[19, 297, 323, 290],
+[13, 236, 245, 255],
+[14, 575, 585, 541],
+[15, 724, 682, 716],
+[16, 1232, 1237, 1270],
+[17, 1371, 1333, 1364],
+[18, 617, 631, 610],
+[19, 297, 324, 290],
 
 ]);
 new google.visualization.LineChart(document.getElementById('physicals_chart')).
@@ -5158,13 +5165,13 @@ var data = google.visualization.arrayToDataTable([
 ['stat','int','wil'],
 [3, 0, 3],
 [4, 0, 45],
-[5, 8, 237],
+[5, 8, 239],
 [6, 43, 545],
-[7, 224, 728],
-[8, 541, 1318],
-[9, 719, 1327],
-[10, 1327, 594],
-[11, 1309, 287],
+[7, 224, 731],
+[8, 542, 1319],
+[9, 719, 1328],
+[10, 1329, 594],
+[11, 1313, 287],
 [12, 627, 0],
 [13, 286, 0],
 
@@ -5193,7 +5200,7 @@ td { text-align: center; }
 <td style="width: 25%; text-align: left;">
 <h1>Darkside/Hunter/Wolfish</h1>
 <p><a href="https://github.com/rascul/wotmad-stats/tree/master/csv/Darkside/Hunter/Wolfish.csv">csv data</a></p>
-<p>Out of 5085 stats</p>
+<p>Out of 5092 stats</p>
 </td>
 <td style="text-align: right; width: 25%;">
 <div id="physicals_chart"></div>
