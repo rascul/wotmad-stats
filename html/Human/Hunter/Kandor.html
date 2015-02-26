@@ -7,6 +7,15 @@ function drawStatsTable() {
 // Create and populate the data table.
 var data = google.visualization.arrayToDataTable([
 ['Submitted', 'Faction', 'Class', 'Sex', 'Homeland', 'Strength', 'Intelligence', 'Willpower', 'Dexterity', 'Constitution', 'Sum'],
+['2015-02-26 21:38:00', 'Human', 'Hunter', 'Male', 'Kandor', 18, 16, 12, 12, 18, 76],
+['2015-02-26 21:36:04', 'Human', 'Hunter', 'Male', 'Kandor', 16, 15, 12, 16, 15, 74],
+['2015-02-26 21:34:21', 'Human', 'Hunter', 'Male', 'Kandor', 18, 11, 11, 15, 16, 71],
+['2015-02-26 21:32:30', 'Human', 'Hunter', 'Male', 'Kandor', 18, 12, 14, 15, 18, 77],
+['2015-02-26 21:31:08', 'Human', 'Hunter', 'Male', 'Kandor', 16, 12, 14, 17, 15, 74],
+['2015-02-26 21:29:21', 'Human', 'Hunter', 'Male', 'Kandor', 16, 11, 14, 14, 15, 70],
+['2015-02-26 21:26:34', 'Human', 'Hunter', 'Male', 'Kandor', 18, 12, 12, 16, 16, 74],
+['2015-02-26 21:24:15', 'Human', 'Hunter', 'Male', 'Kandor', 17, 11, 14, 15, 17, 74],
+['2015-02-26 21:21:13', 'Human', 'Hunter', 'Male', 'Kandor', 17, 13, 13, 15, 14, 72],
 ['2015-02-26 11:28:55', 'Human', 'Hunter', 'Male', 'Kandor', 16, 12, 9, 18, 15, 70],
 ['2015-02-26 11:26:41', 'Human', 'Hunter', 'Male', 'Kandor', 18, 13, 12, 14, 16, 73],
 ['2015-02-26 11:24:56', 'Human', 'Hunter', 'Male', 'Kandor', 15, 12, 14, 16, 13, 70],
@@ -30435,14 +30444,14 @@ visualization.draw(data, null);
 function drawSumsChart() {
 var data = google.visualization.arrayToDataTable([
 ['sum','sum'],
-[70,6519],
-[71,6105],
-[72,5451],
+[70,6521],
+[71,6106],
+[72,5452],
 [73,4364],
-[74,3159],
+[74,3163],
 [75,2079],
 [76,1341],
-[77,732],
+[77,733],
 [78,369],
 [79,175],
 [80,74],
@@ -30464,11 +30473,11 @@ var data = google.visualization.arrayToDataTable([
 [11, 0, 66, 75],
 [12, 62, 448, 484],
 [13, 413, 1899, 1979],
-[14, 2044, 2824, 2722],
-[15, 2814, 13062, 12723],
-[16, 12839, 4497, 4667],
-[17, 4591, 5169, 5263],
-[18, 5219, 1942, 1934],
+[14, 2044, 2825, 2723],
+[15, 2814, 13066, 12727],
+[16, 12843, 4499, 4669],
+[17, 4593, 5170, 5264],
+[18, 5222, 1943, 1935],
 [19, 2426, 501, 561],
 
 ]);
@@ -30483,13 +30492,13 @@ function drawMentalsChart() {
 var data = google.visualization.arrayToDataTable([
 ['stat','int','wil'],
 [8, 0, 1],
-[9, 558, 517],
+[9, 558, 518],
 [10, 2001, 1978],
-[11, 2821, 2844],
-[12, 12901, 12817],
-[13, 4481, 4521],
-[14, 5236, 5250],
-[15, 1892, 1930],
+[11, 2824, 2845],
+[12, 12905, 12819],
+[13, 4482, 4522],
+[14, 5236, 5254],
+[15, 1893, 1930],
 [16, 518, 549],
 [18, 0, 1],
 
@@ -30518,7 +30527,7 @@ td { text-align: center; }
 <td style="width: 25%; text-align: left;">
 <h1>Human/Hunter/Kandor</h1>
 <p><a href="https://github.com/rascul/wotmad-stats/tree/master/csv/Human/Hunter/Kandor.csv">csv data</a></p>
-<p>Out of 30409 stats</p>
+<p>Out of 30418 stats</p>
 </td>
 <td style="text-align: right; width: 25%;">
 <div id="physicals_chart"></div>
