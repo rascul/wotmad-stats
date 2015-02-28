@@ -7,6 +7,28 @@ function drawStatsTable() {
 // Create and populate the data table.
 var data = google.visualization.arrayToDataTable([
 ['Submitted', 'Faction', 'Class', 'Sex', 'Homeland', 'Strength', 'Intelligence', 'Willpower', 'Dexterity', 'Constitution', 'Sum'],
+['2015-02-28 16:59:46', 'Human', 'Hunter', 'Male', 'Kandor', 19, 13, 12, 16, 13, 73],
+['2015-02-28 16:56:56', 'Human', 'Hunter', 'Male', 'Kandor', 16, 15, 12, 15, 15, 73],
+['2015-02-28 16:54:31', 'Human', 'Hunter', 'Male', 'Kandor', 16, 13, 14, 15, 14, 72],
+['2015-02-28 16:52:33', 'Human', 'Hunter', 'Male', 'Kandor', 18, 14, 11, 15, 18, 76],
+['2015-02-28 16:50:32', 'Human', 'Hunter', 'Male', 'Kandor', 18, 12, 12, 17, 17, 76],
+['2015-02-28 16:47:30', 'Human', 'Hunter', 'Male', 'Kandor', 16, 13, 12, 15, 14, 70],
+['2015-02-28 16:45:27', 'Human', 'Hunter', 'Male', 'Kandor', 16, 13, 11, 16, 15, 71],
+['2015-02-28 16:42:58', 'Human', 'Hunter', 'Male', 'Kandor', 15, 13, 12, 15, 16, 71],
+['2015-02-28 16:40:27', 'Human', 'Hunter', 'Male', 'Kandor', 16, 15, 13, 13, 15, 72],
+['2015-02-28 16:38:16', 'Human', 'Hunter', 'Male', 'Kandor', 15, 15, 14, 17, 17, 78],
+['2015-02-28 16:36:20', 'Human', 'Hunter', 'Male', 'Kandor', 16, 12, 14, 15, 13, 70],
+['2015-02-28 16:34:37', 'Human', 'Hunter', 'Male', 'Kandor', 16, 14, 12, 15, 13, 70],
+['2015-02-28 16:32:42', 'Human', 'Hunter', 'Male', 'Kandor', 17, 11, 13, 15, 15, 71],
+['2015-02-28 16:30:30', 'Human', 'Hunter', 'Male', 'Kandor', 15, 12, 14, 14, 15, 70],
+['2015-02-28 16:28:25', 'Human', 'Hunter', 'Male', 'Kandor', 18, 12, 14, 15, 14, 73],
+['2015-02-28 16:26:06', 'Human', 'Hunter', 'Male', 'Kandor', 18, 12, 10, 16, 16, 72],
+['2015-02-28 16:23:25', 'Human', 'Hunter', 'Male', 'Kandor', 14, 12, 15, 16, 18, 75],
+['2015-02-28 16:22:00', 'Human', 'Hunter', 'Male', 'Kandor', 19, 11, 12, 15, 15, 72],
+['2015-02-28 16:20:10', 'Human', 'Hunter', 'Male', 'Kandor', 17, 13, 12, 17, 15, 74],
+['2015-02-28 16:17:39', 'Human', 'Hunter', 'Male', 'Kandor', 19, 16, 10, 14, 15, 74],
+['2015-02-28 16:15:24', 'Human', 'Hunter', 'Male', 'Kandor', 18, 13, 12, 18, 15, 76],
+['2015-02-28 16:13:33', 'Human', 'Hunter', 'Male', 'Kandor', 16, 13, 12, 16, 16, 73],
 ['2015-02-28 09:51:36', 'Human', 'Hunter', 'Male', 'Kandor', 14, 10, 12, 17, 17, 70],
 ['2015-02-28 09:49:00', 'Human', 'Hunter', 'Male', 'Kandor', 16, 12, 12, 16, 15, 71],
 ['2015-02-28 09:46:21', 'Human', 'Hunter', 'Male', 'Kandor', 16, 12, 12, 14, 17, 71],
@@ -30976,15 +30998,15 @@ visualization.draw(data, null);
 function drawSumsChart() {
 var data = google.visualization.arrayToDataTable([
 ['sum','sum'],
-[70,6635],
-[71,6215],
-[72,5555],
-[73,4429],
-[74,3219],
-[75,2122],
-[76,1364],
+[70,6640],
+[71,6218],
+[72,5559],
+[73,4432],
+[74,3221],
+[75,2123],
+[76,1367],
 [77,742],
-[78,376],
+[78,377],
 [79,178],
 [80,74],
 [81,28],
@@ -31004,13 +31026,13 @@ var data = google.visualization.arrayToDataTable([
 ['stat','str','dex','con'],
 [11, 0, 68, 75],
 [12, 62, 461, 491],
-[13, 423, 1936, 2020],
-[14, 2082, 2878, 2767],
-[15, 2872, 13290, 12934],
-[16, 13043, 4574, 4750],
-[17, 4680, 5247, 5355],
-[18, 5318, 1983, 1987],
-[19, 2469, 512, 570],
+[13, 423, 1937, 2022],
+[14, 2084, 2880, 2770],
+[15, 2875, 13300, 12943],
+[16, 13051, 4578, 4753],
+[17, 4682, 5251, 5358],
+[18, 5323, 1984, 1989],
+[19, 2471, 512, 570],
 
 ]);
 new google.visualization.LineChart(document.getElementById('physicals_chart')).
@@ -31025,13 +31047,13 @@ var data = google.visualization.arrayToDataTable([
 ['stat','int','wil'],
 [8, 0, 1],
 [9, 570, 527],
-[10, 2034, 2017],
-[11, 2863, 2893],
-[12, 13148, 13047],
-[13, 4559, 4600],
-[14, 5323, 5350],
-[15, 1928, 1960],
-[16, 524, 553],
+[10, 2035, 2019],
+[11, 2865, 2895],
+[12, 13154, 13057],
+[13, 4566, 4602],
+[14, 5325, 5355],
+[15, 1931, 1961],
+[16, 525, 553],
 [18, 0, 1],
 
 ]);
@@ -31059,7 +31081,7 @@ td { text-align: center; }
 <td style="width: 25%; text-align: left;">
 <h1>Human/Hunter/Kandor</h1>
 <p><a href="https://github.com/rascul/wotmad-stats/tree/master/csv/Human/Hunter/Kandor.csv">csv data</a></p>
-<p>Out of 30950 stats</p>
+<p>Out of 30972 stats</p>
 </td>
 <td style="text-align: right; width: 25%;">
 <div id="physicals_chart"></div>
