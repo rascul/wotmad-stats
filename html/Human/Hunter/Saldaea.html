@@ -7,6 +7,53 @@ function drawStatsTable() {
 // Create and populate the data table.
 var data = google.visualization.arrayToDataTable([
 ['Submitted', 'Faction', 'Class', 'Sex', 'Homeland', 'Strength', 'Intelligence', 'Willpower', 'Dexterity', 'Constitution', 'Sum'],
+['2015-03-02 16:58:40', 'Human', 'Hunter', 'Male', 'Saldaea', 16, 12, 11, 15, 17, 71],
+['2015-03-02 16:57:05', 'Human', 'Hunter', 'Male', 'Saldaea', 16, 14, 15, 13, 15, 73],
+['2015-03-02 16:54:25', 'Human', 'Hunter', 'Male', 'Saldaea', 17, 10, 9, 15, 19, 70],
+['2015-03-02 16:51:41', 'Human', 'Hunter', 'Male', 'Saldaea', 16, 12, 12, 15, 15, 70],
+['2015-03-02 16:50:09', 'Human', 'Hunter', 'Male', 'Saldaea', 16, 12, 10, 15, 17, 70],
+['2015-03-02 16:48:19', 'Human', 'Hunter', 'Male', 'Saldaea', 16, 11, 15, 13, 15, 70],
+['2015-03-02 16:46:05', 'Human', 'Hunter', 'Male', 'Saldaea', 15, 12, 11, 17, 15, 70],
+['2015-03-02 16:44:18', 'Human', 'Hunter', 'Male', 'Saldaea', 13, 12, 12, 17, 17, 71],
+['2015-03-02 16:42:14', 'Human', 'Hunter', 'Male', 'Saldaea', 17, 13, 13, 14, 15, 72],
+['2015-03-02 16:39:37', 'Human', 'Hunter', 'Male', 'Saldaea', 17, 10, 12, 17, 15, 71],
+['2015-03-02 16:38:01', 'Human', 'Hunter', 'Male', 'Saldaea', 18, 10, 15, 15, 14, 72],
+['2015-03-02 16:35:51', 'Human', 'Hunter', 'Male', 'Saldaea', 15, 11, 12, 15, 17, 70],
+['2015-03-02 16:33:28', 'Human', 'Hunter', 'Male', 'Saldaea', 17, 12, 14, 14, 15, 72],
+['2015-03-02 16:30:59', 'Human', 'Hunter', 'Male', 'Saldaea', 18, 13, 12, 12, 15, 70],
+['2015-03-02 16:28:48', 'Human', 'Hunter', 'Male', 'Saldaea', 18, 9, 13, 17, 15, 72],
+['2015-03-02 16:27:28', 'Human', 'Hunter', 'Male', 'Saldaea', 14, 12, 12, 17, 15, 70],
+['2015-03-02 16:26:01', 'Human', 'Hunter', 'Male', 'Saldaea', 19, 11, 12, 17, 15, 74],
+['2015-03-02 16:23:26', 'Human', 'Hunter', 'Male', 'Saldaea', 14, 12, 12, 17, 16, 71],
+['2015-03-02 16:20:31', 'Human', 'Hunter', 'Male', 'Saldaea', 16, 12, 13, 15, 15, 71],
+['2015-03-02 16:18:39', 'Human', 'Hunter', 'Male', 'Saldaea', 18, 12, 12, 15, 15, 72],
+['2015-03-02 16:16:10', 'Human', 'Hunter', 'Male', 'Saldaea', 15, 14, 14, 15, 15, 73],
+['2015-03-02 16:13:32', 'Human', 'Hunter', 'Male', 'Saldaea', 16, 12, 13, 15, 15, 71],
+['2015-03-02 15:57:12', 'Human', 'Hunter', 'Male', 'Saldaea', 14, 14, 13, 17, 13, 71],
+['2015-03-02 15:54:35', 'Human', 'Hunter', 'Male', 'Saldaea', 16, 14, 13, 15, 15, 73],
+['2015-03-02 15:52:39', 'Human', 'Hunter', 'Male', 'Saldaea', 16, 11, 13, 15, 15, 70],
+['2015-03-02 15:50:46', 'Human', 'Hunter', 'Male', 'Saldaea', 18, 11, 12, 15, 15, 71],
+['2015-03-02 15:48:30', 'Human', 'Hunter', 'Male', 'Saldaea', 16, 9, 12, 16, 17, 70],
+['2015-03-02 15:47:03', 'Human', 'Hunter', 'Male', 'Saldaea', 17, 15, 12, 15, 14, 73],
+['2015-03-02 15:44:09', 'Human', 'Hunter', 'Male', 'Saldaea', 18, 12, 13, 18, 15, 76],
+['2015-03-02 15:42:24', 'Human', 'Hunter', 'Male', 'Saldaea', 19, 12, 10, 17, 14, 72],
+['2015-03-02 15:40:26', 'Human', 'Hunter', 'Male', 'Saldaea', 16, 14, 12, 17, 15, 74],
+['2015-03-02 15:38:04', 'Human', 'Hunter', 'Male', 'Saldaea', 16, 13, 13, 14, 15, 71],
+['2015-03-02 15:35:56', 'Human', 'Hunter', 'Male', 'Saldaea', 14, 13, 11, 15, 17, 70],
+['2015-03-02 15:32:58', 'Human', 'Hunter', 'Male', 'Saldaea', 15, 12, 15, 15, 15, 72],
+['2015-03-02 15:31:28', 'Human', 'Hunter', 'Male', 'Saldaea', 17, 12, 15, 15, 14, 73],
+['2015-03-02 15:29:36', 'Human', 'Hunter', 'Male', 'Saldaea', 14, 13, 14, 15, 14, 70],
+['2015-03-02 15:28:00', 'Human', 'Hunter', 'Male', 'Saldaea', 18, 11, 14, 15, 15, 73],
+['2015-03-02 15:26:36', 'Human', 'Hunter', 'Male', 'Saldaea', 17, 10, 14, 17, 15, 73],
+['2015-03-02 15:25:08', 'Human', 'Hunter', 'Male', 'Saldaea', 16, 14, 14, 16, 11, 71],
+['2015-03-02 15:23:35', 'Human', 'Hunter', 'Male', 'Saldaea', 16, 11, 13, 15, 16, 71],
+['2015-03-02 15:20:51', 'Human', 'Hunter', 'Male', 'Saldaea', 16, 12, 12, 15, 16, 71],
+['2015-03-02 15:19:00', 'Human', 'Hunter', 'Male', 'Saldaea', 16, 12, 12, 15, 15, 70],
+['2015-03-02 15:16:56', 'Human', 'Hunter', 'Male', 'Saldaea', 17, 12, 12, 18, 12, 71],
+['2015-03-02 15:15:10', 'Human', 'Hunter', 'Male', 'Saldaea', 17, 13, 14, 13, 17, 74],
+['2015-03-02 15:13:35', 'Human', 'Hunter', 'Male', 'Saldaea', 16, 12, 12, 17, 14, 71],
+['2015-03-02 15:11:00', 'Human', 'Hunter', 'Male', 'Saldaea', 16, 11, 11, 17, 15, 70],
+['2015-03-02 15:09:13', 'Human', 'Hunter', 'Male', 'Saldaea', 18, 9, 11, 18, 17, 73],
 ['2015-03-02 05:29:02', 'Human', 'Hunter', 'Male', 'Saldaea', 19, 11, 12, 15, 13, 70],
 ['2015-03-02 05:27:17', 'Human', 'Hunter', 'Male', 'Saldaea', 16, 14, 12, 14, 14, 70],
 ['2015-03-02 05:25:32', 'Human', 'Hunter', 'Male', 'Saldaea', 19, 15, 14, 17, 15, 80],
@@ -14029,13 +14076,13 @@ visualization.draw(data, null);
 function drawSumsChart() {
 var data = google.visualization.arrayToDataTable([
 ['sum','sum'],
-[70,3015],
-[71,2807],
-[72,2562],
-[73,1948],
-[74,1521],
+[70,3030],
+[71,2820],
+[72,2569],
+[73,1956],
+[74,1524],
 [75,933],
-[76,586],
+[76,587],
 [77,330],
 [78,163],
 [79,85],
@@ -14055,15 +14102,15 @@ vAxis: {title: 'number of stats'}}
 function drawPhysicalsChart() {
 var data = google.visualization.arrayToDataTable([
 ['stat','str','dex','con'],
-[11, 0, 24, 36],
-[12, 17, 204, 200],
-[13, 180, 933, 956],
-[14, 919, 1336, 1322],
-[15, 1333, 5891, 5866],
-[16, 6036, 2030, 2084],
-[17, 2022, 2483, 2368],
-[18, 2347, 866, 923],
-[19, 1148, 235, 247],
+[11, 0, 24, 37],
+[12, 17, 205, 201],
+[13, 181, 936, 958],
+[14, 924, 1339, 1328],
+[15, 1337, 5913, 5892],
+[16, 6053, 2032, 2087],
+[17, 2031, 2496, 2375],
+[18, 2355, 869, 923],
+[19, 1151, 235, 248],
 
 ]);
 new google.visualization.LineChart(document.getElementById('physicals_chart')).
@@ -14076,13 +14123,13 @@ vAxis: {title: 'number of stats'}}
 function drawMentalsChart() {
 var data = google.visualization.arrayToDataTable([
 ['stat','int','wil'],
-[9, 213, 243],
-[10, 961, 933],
-[11, 1279, 1319],
-[12, 5868, 5926],
-[13, 2091, 2053],
-[14, 2470, 2395],
-[15, 872, 903],
+[9, 216, 244],
+[10, 965, 935],
+[11, 1288, 1323],
+[12, 5886, 5944],
+[13, 2097, 2063],
+[14, 2476, 2402],
+[15, 873, 908],
 [16, 248, 230],
 
 ]);
@@ -14110,7 +14157,7 @@ td { text-align: center; }
 <td style="width: 25%; text-align: left;">
 <h1>Human/Hunter/Saldaea</h1>
 <p><a href="https://github.com/rascul/wotmad-stats/tree/master/csv/Human/Hunter/Saldaea.csv">csv data</a></p>
-<p>Out of 14003 stats</p>
+<p>Out of 14050 stats</p>
 </td>
 <td style="text-align: right; width: 25%;">
 <div id="physicals_chart"></div>
