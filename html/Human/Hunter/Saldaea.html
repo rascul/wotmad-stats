@@ -7,6 +7,13 @@ function drawStatsTable() {
 // Create and populate the data table.
 var data = google.visualization.arrayToDataTable([
 ['Submitted', 'Faction', 'Class', 'Sex', 'Homeland', 'Strength', 'Intelligence', 'Willpower', 'Dexterity', 'Constitution', 'Sum'],
+['2015-03-02 05:29:02', 'Human', 'Hunter', 'Male', 'Saldaea', 19, 11, 12, 15, 13, 70],
+['2015-03-02 05:27:17', 'Human', 'Hunter', 'Male', 'Saldaea', 16, 14, 12, 14, 14, 70],
+['2015-03-02 05:25:32', 'Human', 'Hunter', 'Male', 'Saldaea', 19, 15, 14, 17, 15, 80],
+['2015-03-02 05:22:48', 'Human', 'Hunter', 'Male', 'Saldaea', 17, 10, 12, 16, 17, 72],
+['2015-03-02 05:20:52', 'Human', 'Hunter', 'Male', 'Saldaea', 16, 10, 14, 15, 15, 70],
+['2015-03-02 05:19:06', 'Human', 'Hunter', 'Male', 'Saldaea', 17, 15, 14, 15, 11, 72],
+['2015-03-02 05:16:54', 'Human', 'Hunter', 'Male', 'Saldaea', 16, 12, 12, 16, 17, 73],
 ['2015-03-02 00:10:22', 'Human', 'Hunter', 'Male', 'Saldaea', 14, 15, 12, 17, 13, 71],
 ['2015-03-02 00:08:34', 'Human', 'Hunter', 'Male', 'Saldaea', 13, 14, 13, 15, 15, 70],
 ['2015-03-02 00:05:55', 'Human', 'Hunter', 'Male', 'Saldaea', 14, 12, 13, 17, 14, 70],
@@ -14022,17 +14029,17 @@ visualization.draw(data, null);
 function drawSumsChart() {
 var data = google.visualization.arrayToDataTable([
 ['sum','sum'],
-[70,3013],
-[71,2806],
-[72,2560],
-[73,1947],
+[70,3015],
+[71,2807],
+[72,2562],
+[73,1948],
 [74,1521],
 [75,933],
 [76,586],
 [77,330],
 [78,163],
 [79,85],
-[80,36],
+[80,37],
 [81,10],
 [82,4],
 [84,1],
@@ -14048,15 +14055,15 @@ vAxis: {title: 'number of stats'}}
 function drawPhysicalsChart() {
 var data = google.visualization.arrayToDataTable([
 ['stat','str','dex','con'],
-[11, 0, 24, 35],
+[11, 0, 24, 36],
 [12, 17, 204, 200],
-[13, 180, 933, 955],
-[14, 918, 1335, 1321],
-[15, 1333, 5889, 5864],
-[16, 6033, 2028, 2084],
-[17, 2020, 2481, 2366],
+[13, 180, 933, 956],
+[14, 919, 1336, 1322],
+[15, 1333, 5891, 5866],
+[16, 6036, 2030, 2084],
+[17, 2022, 2483, 2368],
 [18, 2347, 866, 923],
-[19, 1147, 235, 247],
+[19, 1148, 235, 247],
 
 ]);
 new google.visualization.LineChart(document.getElementById('physicals_chart')).
@@ -14070,12 +14077,12 @@ function drawMentalsChart() {
 var data = google.visualization.arrayToDataTable([
 ['stat','int','wil'],
 [9, 213, 243],
-[10, 959, 933],
+[10, 961, 933],
 [11, 1279, 1319],
-[12, 5867, 5922],
+[12, 5868, 5926],
 [13, 2091, 2053],
-[14, 2469, 2392],
-[15, 869, 903],
+[14, 2470, 2395],
+[15, 872, 903],
 [16, 248, 230],
 
 ]);
@@ -14103,7 +14110,7 @@ td { text-align: center; }
 <td style="width: 25%; text-align: left;">
 <h1>Human/Hunter/Saldaea</h1>
 <p><a href="https://github.com/rascul/wotmad-stats/tree/master/csv/Human/Hunter/Saldaea.csv">csv data</a></p>
-<p>Out of 13996 stats</p>
+<p>Out of 14003 stats</p>
 </td>
 <td style="text-align: right; width: 25%;">
 <div id="physicals_chart"></div>
