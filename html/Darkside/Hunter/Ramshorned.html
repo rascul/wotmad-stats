@@ -7,6 +7,21 @@ function drawStatsTable() {
 // Create and populate the data table.
 var data = google.visualization.arrayToDataTable([
 ['Submitted', 'Faction', 'Class', 'Sex', 'Homeland', 'Strength', 'Intelligence', 'Willpower', 'Dexterity', 'Constitution', 'Sum'],
+['2015-03-08 04:59:15', 'Darkside', 'Hunter', 'Male', 'Ramshorned', 16, 11, 8, 13, 17, 65],
+['2015-03-08 04:56:20', 'Darkside', 'Hunter', 'Male', 'Ramshorned', 16, 8, 9, 17, 17, 67],
+['2015-03-08 04:54:22', 'Darkside', 'Hunter', 'Male', 'Ramshorned', 16, 10, 7, 17, 15, 65],
+['2015-03-08 04:51:22', 'Darkside', 'Hunter', 'Male', 'Ramshorned', 16, 11, 7, 14, 17, 65],
+['2015-03-08 04:49:31', 'Darkside', 'Hunter', 'Male', 'Ramshorned', 15, 11, 11, 14, 15, 66],
+['2015-03-08 04:47:16', 'Darkside', 'Hunter', 'Male', 'Ramshorned', 16, 6, 9, 18, 16, 65],
+['2015-03-08 04:33:20', 'Darkside', 'Hunter', 'Male', 'Ramshorned', 19, 10, 11, 15, 15, 70],
+['2015-03-08 04:29:34', 'Darkside', 'Hunter', 'Male', 'Ramshorned', 16, 11, 11, 12, 17, 67],
+['2015-03-08 04:27:56', 'Darkside', 'Hunter', 'Male', 'Ramshorned', 18, 4, 12, 17, 17, 68],
+['2015-03-08 04:25:11', 'Darkside', 'Hunter', 'Male', 'Ramshorned', 16, 9, 10, 14, 18, 67],
+['2015-03-08 04:23:05', 'Darkside', 'Hunter', 'Male', 'Ramshorned', 18, 7, 11, 16, 15, 67],
+['2015-03-08 04:20:44', 'Darkside', 'Hunter', 'Male', 'Ramshorned', 17, 8, 9, 15, 17, 66],
+['2015-03-08 04:18:14', 'Darkside', 'Hunter', 'Male', 'Ramshorned', 14, 8, 11, 16, 17, 66],
+['2015-03-08 04:16:31', 'Darkside', 'Hunter', 'Male', 'Ramshorned', 18, 9, 7, 14, 17, 65],
+['2015-03-08 04:14:44', 'Darkside', 'Hunter', 'Male', 'Ramshorned', 19, 9, 7, 16, 16, 67],
 ['2015-03-06 19:08:45', 'Darkside', 'Hunter', 'Male', 'Ramshorned', 13, 9, 10, 16, 19, 67],
 ['2015-03-06 19:07:32', 'Darkside', 'Hunter', 'Male', 'Ramshorned', 14, 8, 12, 16, 16, 66],
 ['2015-03-06 19:05:21', 'Darkside', 'Hunter', 'Male', 'Ramshorned', 12, 10, 11, 17, 17, 67],
@@ -11141,12 +11156,12 @@ visualization.draw(data, null);
 function drawSumsChart() {
 var data = google.visualization.arrayToDataTable([
 ['sum','sum'],
-[65,3593],
-[66,2740],
-[67,1977],
-[68,1221],
+[65,3597],
+[66,2743],
+[67,1983],
+[68,1222],
 [69,744],
-[70,446],
+[70,447],
 [71,218],
 [72,97],
 [73,47],
@@ -11168,14 +11183,14 @@ var data = google.visualization.arrayToDataTable([
 ['stat','str','dex','con'],
 [10, 0, 17, 0],
 [11, 23, 83, 0],
-[12, 92, 537, 18],
-[13, 546, 1147, 105],
-[14, 1174, 1588, 509],
-[15, 1510, 2755, 1140],
-[16, 2855, 3011, 1523],
-[17, 2929, 1318, 2915],
-[18, 1312, 658, 3073],
-[19, 673, 0, 1831],
+[12, 92, 538, 18],
+[13, 547, 1147, 105],
+[14, 1175, 1592, 509],
+[15, 1511, 2757, 1144],
+[16, 2861, 3015, 1525],
+[17, 2930, 1321, 2922],
+[18, 1315, 659, 3074],
+[19, 675, 0, 1832],
 
 ]);
 new google.visualization.LineChart(document.getElementById('physicals_chart')).
@@ -11189,15 +11204,15 @@ function drawMentalsChart() {
 var data = google.visualization.arrayToDataTable([
 ['stat','int','wil'],
 [3, 18, 0],
-[4, 99, 0],
+[4, 100, 0],
 [5, 567, 17],
-[6, 1273, 111],
-[7, 1522, 495],
-[8, 2756, 1150],
-[9, 2953, 1532],
-[10, 1320, 2849],
-[11, 606, 2961],
-[12, 0, 1368],
+[6, 1274, 111],
+[7, 1523, 499],
+[8, 2759, 1150],
+[9, 2957, 1535],
+[10, 1322, 2851],
+[11, 609, 2966],
+[12, 0, 1369],
 [13, 0, 631],
 
 ]);
@@ -11225,7 +11240,7 @@ td { text-align: center; }
 <td style="width: 25%; text-align: left;">
 <h1>Darkside/Hunter/Ramshorned</h1>
 <p><a href="https://github.com/rascul/wotmad-stats/tree/master/csv/Darkside/Hunter/Ramshorned.csv">csv data</a></p>
-<p>Out of 11115 stats</p>
+<p>Out of 11130 stats</p>
 </td>
 <td style="text-align: right; width: 25%;">
 <div id="physicals_chart"></div>

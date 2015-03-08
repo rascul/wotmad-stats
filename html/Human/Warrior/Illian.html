@@ -7,6 +7,24 @@ function drawStatsTable() {
 // Create and populate the data table.
 var data = google.visualization.arrayToDataTable([
 ['Submitted', 'Faction', 'Class', 'Sex', 'Homeland', 'Strength', 'Intelligence', 'Willpower', 'Dexterity', 'Constitution', 'Sum'],
+['2015-03-07 23:57:51', 'Human', 'Warrior', 'Male', 'Illian', 14, 14, 13, 17, 16, 74],
+['2015-03-07 23:54:43', 'Human', 'Warrior', 'Male', 'Illian', 15, 14, 13, 18, 15, 75],
+['2015-03-07 23:51:41', 'Human', 'Warrior', 'Male', 'Illian', 17, 14, 10, 15, 16, 72],
+['2015-03-07 23:47:57', 'Human', 'Warrior', 'Male', 'Illian', 15, 14, 13, 14, 16, 72],
+['2015-03-07 23:44:47', 'Human', 'Warrior', 'Male', 'Illian', 15, 11, 13, 15, 16, 70],
+['2015-03-07 23:42:12', 'Human', 'Warrior', 'Male', 'Illian', 17, 14, 12, 14, 16, 73],
+['2015-03-07 23:39:00', 'Human', 'Warrior', 'Male', 'Illian', 14, 14, 12, 19, 14, 73],
+['2015-03-07 23:36:19', 'Human', 'Warrior', 'Male', 'Illian', 17, 17, 12, 17, 19, 82],
+['2015-03-07 23:32:38', 'Human', 'Warrior', 'Male', 'Illian', 15, 15, 15, 15, 17, 77],
+['2015-03-07 23:29:23', 'Human', 'Warrior', 'Male', 'Illian', 19, 14, 13, 15, 12, 73],
+['2015-03-07 23:25:42', 'Human', 'Warrior', 'Male', 'Illian', 15, 14, 13, 14, 16, 72],
+['2015-03-07 23:22:34', 'Human', 'Warrior', 'Male', 'Illian', 15, 14, 13, 15, 16, 73],
+['2015-03-07 23:19:47', 'Human', 'Warrior', 'Male', 'Illian', 15, 10, 17, 15, 13, 70],
+['2015-03-07 23:16:48', 'Human', 'Warrior', 'Male', 'Illian', 15, 14, 13, 15, 19, 76],
+['2015-03-07 23:13:18', 'Human', 'Warrior', 'Male', 'Illian', 15, 11, 16, 15, 13, 70],
+['2015-03-07 23:09:56', 'Human', 'Warrior', 'Male', 'Illian', 18, 14, 13, 14, 16, 75],
+['2015-03-07 23:06:13', 'Human', 'Warrior', 'Male', 'Illian', 15, 14, 13, 15, 15, 72],
+['2015-03-07 23:02:35', 'Human', 'Warrior', 'Male', 'Illian', 15, 14, 13, 19, 15, 76],
 ['2015-03-07 22:59:17', 'Human', 'Warrior', 'Male', 'Illian', 17, 15, 15, 18, 16, 81],
 ['2015-03-07 22:57:14', 'Human', 'Warrior', 'Male', 'Illian', 18, 15, 13, 18, 16, 80],
 ['2015-03-07 22:54:05', 'Human', 'Warrior', 'Male', 'Illian', 15, 14, 9, 18, 15, 71],
@@ -3745,19 +3763,19 @@ visualization.draw(data, null);
 function drawSumsChart() {
 var data = google.visualization.arrayToDataTable([
 ['sum','sum'],
-[70,186],
+[70,189],
 [71,252],
-[72,280],
-[73,400],
+[72,284],
+[73,404],
 [74,394],
-[75,397],
-[76,395],
-[77,361],
+[75,399],
+[76,397],
+[77,362],
 [78,308],
 [79,234],
 [80,190],
-[81,113],
-[82,89],
+[81,114],
+[82,90],
 [83,61],
 [84,26],
 [85,16],
@@ -3777,14 +3795,14 @@ function drawPhysicalsChart() {
 var data = google.visualization.arrayToDataTable([
 ['stat','str','dex','con'],
 [11, 95, 94, 0],
-[12, 132, 113, 93],
-[13, 140, 113, 127],
-[14, 265, 271, 130],
-[15, 1685, 1673, 273],
-[16, 387, 395, 1698],
-[17, 360, 413, 391],
-[18, 433, 444, 373],
-[19, 221, 202, 633],
+[12, 132, 113, 94],
+[13, 140, 113, 129],
+[14, 266, 275, 131],
+[15, 1696, 1682, 276],
+[16, 387, 395, 1706],
+[17, 364, 414, 392],
+[18, 434, 446, 373],
+[19, 222, 204, 635],
 
 ]);
 new google.visualization.LineChart(document.getElementById('physicals_chart')).
@@ -3798,14 +3816,14 @@ function drawMentalsChart() {
 var data = google.visualization.arrayToDataTable([
 ['stat','int','wil'],
 [9, 0, 97],
-[10, 116, 115],
-[11, 129, 121],
-[12, 134, 263],
-[13, 296, 1694],
-[14, 1682, 382],
-[15, 355, 388],
-[16, 396, 432],
-[17, 400, 225],
+[10, 117, 116],
+[11, 131, 121],
+[12, 134, 266],
+[13, 296, 1704],
+[14, 1694, 382],
+[15, 357, 390],
+[16, 396, 433],
+[17, 401, 226],
 [18, 210, 1],
 
 ]);
@@ -3833,7 +3851,7 @@ td { text-align: center; }
 <td style="width: 25%; text-align: left;">
 <h1>Human/Warrior/Illian</h1>
 <p><a href="https://github.com/rascul/wotmad-stats/tree/master/csv/Human/Warrior/Illian.csv">csv data</a></p>
-<p>Out of 3719 stats</p>
+<p>Out of 3737 stats</p>
 </td>
 <td style="text-align: right; width: 25%;">
 <div id="physicals_chart"></div>
