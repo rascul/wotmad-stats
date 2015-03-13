@@ -7,6 +7,15 @@ function drawStatsTable() {
 // Create and populate the data table.
 var data = google.visualization.arrayToDataTable([
 ['Submitted', 'Faction', 'Class', 'Sex', 'Homeland', 'Strength', 'Intelligence', 'Willpower', 'Dexterity', 'Constitution', 'Sum'],
+['2015-03-13 03:20:07', 'Human', 'Hunter', 'Female', 'Borderlands', 19, 14, 15, 14, 15, 77],
+['2015-03-13 03:11:36', 'Human', 'Hunter', 'Female', 'Borderlands', 16, 14, 13, 15, 15, 73],
+['2015-03-13 03:01:38', 'Human', 'Hunter', 'Female', 'Borderlands', 16, 14, 14, 16, 15, 75],
+['2015-03-13 02:54:38', 'Human', 'Hunter', 'Female', 'Borderlands', 16, 10, 11, 18, 16, 71],
+['2015-03-13 02:45:49', 'Human', 'Hunter', 'Female', 'Borderlands', 15, 12, 13, 15, 15, 70],
+['2015-03-13 02:36:06', 'Human', 'Hunter', 'Female', 'Borderlands', 17, 13, 12, 15, 15, 72],
+['2015-03-13 02:32:52', 'Human', 'Hunter', 'Female', 'Borderlands', 16, 13, 12, 16, 15, 72],
+['2015-03-13 02:21:50', 'Human', 'Hunter', 'Female', 'Borderlands', 18, 14, 12, 15, 15, 74],
+['2015-03-13 02:18:39', 'Human', 'Hunter', 'Female', 'Borderlands', 12, 13, 15, 15, 17, 72],
 ['2015-03-12 19:19:57', 'Human', 'Hunter', 'Female', 'Borderlands', 15, 12, 13, 15, 16, 71],
 ['2015-03-12 19:15:37', 'Human', 'Hunter', 'Female', 'Borderlands', 19, 13, 15, 13, 13, 73],
 ['2015-03-12 19:09:35', 'Human', 'Hunter', 'Female', 'Borderlands', 18, 15, 14, 15, 17, 79],
@@ -19427,12 +19436,12 @@ visualization.draw(data, null);
 function drawSumsChart() {
 var data = google.visualization.arrayToDataTable([
 ['sum','sum'],
-[70,4160],
-[71,3923],
-[72,3541],
-[73,2738],
-[74,2014],
-[75,1382],
+[70,4161],
+[71,3925],
+[72,3544],
+[73,2739],
+[74,2015],
+[75,1383],
 [76,755],
 [77,464],
 [78,230],
@@ -19455,13 +19464,13 @@ var data = google.visualization.arrayToDataTable([
 ['stat','str','dex','con'],
 [9, 0, 0, 1],
 [11, 0, 37, 34],
-[12, 36, 269, 282],
+[12, 37, 269, 282],
 [13, 241, 1249, 1310],
 [14, 1251, 1882, 1737],
-[15, 1784, 8291, 8309],
-[16, 8247, 2915, 2861],
-[17, 2988, 3219, 3317],
-[18, 3299, 1213, 1234],
+[15, 1786, 8297, 8315],
+[16, 8251, 2917, 2863],
+[17, 2989, 3219, 3318],
+[18, 3300, 1214, 1234],
 [19, 1554, 325, 315],
 
 ]);
@@ -19476,12 +19485,12 @@ function drawMentalsChart() {
 var data = google.visualization.arrayToDataTable([
 ['stat','int','wil'],
 [9, 320, 338],
-[10, 1233, 1233],
-[11, 1806, 1732],
-[12, 8344, 8309],
-[13, 2846, 2932],
-[14, 3294, 3330],
-[15, 1261, 1184],
+[10, 1234, 1233],
+[11, 1806, 1733],
+[12, 8346, 8312],
+[13, 2849, 2935],
+[14, 3297, 3331],
+[15, 1261, 1185],
 [16, 294, 341],
 [17, 1, 0],
 
@@ -19510,7 +19519,7 @@ td { text-align: center; }
 <td style="width: 25%; text-align: left;">
 <h1>Human/Hunter/Borderlands</h1>
 <p><a href="https://github.com/rascul/wotmad-stats/tree/master/csv/Human/Hunter/Borderlands.csv">csv data</a></p>
-<p>Out of 19401 stats</p>
+<p>Out of 19410 stats</p>
 </td>
 <td style="text-align: right; width: 25%;">
 <div id="physicals_chart"></div>
