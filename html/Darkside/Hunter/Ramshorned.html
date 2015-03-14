@@ -7,6 +7,11 @@ function drawStatsTable() {
 // Create and populate the data table.
 var data = google.visualization.arrayToDataTable([
 ['Submitted', 'Faction', 'Class', 'Sex', 'Homeland', 'Strength', 'Intelligence', 'Willpower', 'Dexterity', 'Constitution', 'Sum'],
+['2015-03-13 23:13:19', 'Darkside', 'Hunter', 'Male', 'Ramshorned', 17, 6, 10, 15, 19, 67],
+['2015-03-13 23:11:00', 'Darkside', 'Hunter', 'Male', 'Ramshorned', 18, 8, 9, 14, 18, 67],
+['2015-03-13 23:09:57', 'Darkside', 'Hunter', 'Male', 'Ramshorned', 19, 10, 8, 18, 14, 69],
+['2015-03-13 23:07:57', 'Darkside', 'Hunter', 'Male', 'Ramshorned', 17, 9, 8, 13, 18, 65],
+['2015-03-13 23:06:36', 'Darkside', 'Hunter', 'Male', 'Ramshorned', 15, 6, 11, 16, 19, 67],
 ['2015-03-13 20:53:28', 'Darkside', 'Hunter', 'Male', 'Ramshorned', 17, 10, 7, 16, 17, 67],
 ['2015-03-13 20:52:12', 'Darkside', 'Hunter', 'Male', 'Ramshorned', 15, 8, 11, 15, 16, 65],
 ['2015-03-13 20:50:16', 'Darkside', 'Hunter', 'Male', 'Ramshorned', 14, 9, 11, 13, 19, 66],
@@ -12636,11 +12641,11 @@ visualization.draw(data, null);
 function drawSumsChart() {
 var data = google.visualization.arrayToDataTable([
 ['sum','sum'],
-[65,4109],
+[65,4110],
 [66,3105],
-[67,2214],
+[67,2217],
 [68,1380],
-[69,842],
+[69,843],
 [70,515],
 [71,249],
 [72,110],
@@ -12664,13 +12669,13 @@ var data = google.visualization.arrayToDataTable([
 [10, 0, 20, 0],
 [11, 23, 95, 0],
 [12, 104, 603, 22],
-[13, 622, 1321, 119],
-[14, 1328, 1796, 586],
-[15, 1739, 3130, 1315],
-[16, 3234, 3402, 1733],
-[17, 3294, 1476, 3297],
-[18, 1494, 766, 3457],
-[19, 771, 0, 2080],
+[13, 622, 1322, 119],
+[14, 1328, 1797, 587],
+[15, 1740, 3130, 1315],
+[16, 3234, 3404, 1733],
+[17, 3296, 1476, 3298],
+[18, 1495, 767, 3459],
+[19, 772, 0, 2081],
 
 ]);
 new google.visualization.LineChart(document.getElementById('physicals_chart')).
@@ -12686,12 +12691,12 @@ var data = google.visualization.arrayToDataTable([
 [3, 20, 0],
 [4, 114, 0],
 [5, 635, 18],
-[6, 1434, 123],
-[7, 1733, 559],
-[8, 3128, 1315],
-[9, 3358, 1741],
-[10, 1495, 3222],
-[11, 692, 3362],
+[6, 1435, 123],
+[7, 1733, 560],
+[8, 3129, 1317],
+[9, 3359, 1742],
+[10, 1497, 3222],
+[11, 692, 3363],
 [12, 0, 1546],
 [13, 0, 723],
 
@@ -12720,7 +12725,7 @@ td { text-align: center; }
 <td style="width: 25%; text-align: left;">
 <h1>Darkside/Hunter/Ramshorned</h1>
 <p><a href="https://github.com/rascul/wotmad-stats/tree/master/csv/Darkside/Hunter/Ramshorned.csv">csv data</a></p>
-<p>Out of 12610 stats</p>
+<p>Out of 12615 stats</p>
 </td>
 <td style="text-align: right; width: 25%;">
 <div id="physicals_chart"></div>
