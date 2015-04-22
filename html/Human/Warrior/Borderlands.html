@@ -7,6 +7,7 @@ function drawStatsTable() {
 // Create and populate the data table.
 var data = google.visualization.arrayToDataTable([
 ['Submitted', 'Faction', 'Class', 'Sex', 'Homeland', 'Strength', 'Intelligence', 'Willpower', 'Dexterity', 'Constitution', 'Sum'],
+['2015-04-11 21:03:17', 'Human', 'Warrior', 'Male', 'Borderlands', 19, 13, 13, 19, 18, 82],
 ['2013-11-24 19:13:42', 'Human', 'Warrior', 'Male', 'Borderlands', 15, 14, 12, 16, 13, 70],
 ['2013-10-05 17:35:53', 'Human', 'Warrior', 'Male', 'Borderlands', 16, 12, 12, 15, 16, 71],
 ['2012-04-15 22:16:00', 'Human', 'Warrior', 'Male', 'Borderlands', 17, 9, 11, 18, 16, 71],
@@ -22,8 +23,8 @@ function drawCalcsTable() {
 var data = google.visualization.arrayToDataTable([
 ['','Strength','Intelligence','Willpower','Dexterity','Constitution','Sum'],
 ['Minimum', 15, 9, 11, 10, 13, 70],
-['Maximum', 19, 14, 13, 18, 17, 73],
-['Average', 16.8, 16.7, 16.3, 17.0, 16.5, 26.0]
+['Maximum', 19, 14, 13, 19, 18, 82],
+['Average', 17.1, 16.3, 16.3, 17.1, 17.0, 26.1]
 
 ]);
 visualization = new google.visualization.Table(document.getElementById('calcs_table'));
@@ -32,7 +33,7 @@ visualization.draw(data, null);
 function drawSumsChart() {
 var data = google.visualization.arrayToDataTable([
 ['sum','sum'],
-[70,1],
+[70,2],
 [71,3],
 [73,1],
 
@@ -48,9 +49,10 @@ function drawPhysicalsChart() {
 var data = google.visualization.arrayToDataTable([
 ['stat','str','dex','con'],
 [10, 0, 1, 0],
+[13, 0, 0, 1],
 [14, 0, 2, 0],
-[15, 0, 1, 0],
-[16, 2, 0, 2],
+[15, 1, 1, 0],
+[16, 2, 1, 2],
 [17, 1, 0, 3],
 [18, 1, 1, 0],
 [19, 1, 0, 0],
@@ -68,8 +70,9 @@ var data = google.visualization.arrayToDataTable([
 ['stat','int','wil'],
 [9, 1, 0],
 [11, 1, 2],
-[12, 3, 1],
+[12, 3, 2],
 [13, 0, 2],
+[14, 1, 0],
 
 ]);
 new google.visualization.LineChart(document.getElementById('mentals_chart')).
@@ -96,7 +99,7 @@ td { text-align: center; }
 <td style="width: 25%; text-align: left;">
 <h1>Human/Warrior/Borderlands</h1>
 <p><a href="https://github.com/rascul/wotmad-stats/tree/master/csv/Human/Warrior/Borderlands.csv">csv data</a></p>
-<p>Out of 6 stats</p>
+<p>Out of 7 stats</p>
 </td>
 <td style="text-align: right; width: 25%;">
 <div id="physicals_chart"></div>
