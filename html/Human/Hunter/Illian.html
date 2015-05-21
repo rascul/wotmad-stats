@@ -7,6 +7,7 @@ function drawStatsTable() {
 // Create and populate the data table.
 var data = google.visualization.arrayToDataTable([
 ['Submitted', 'Faction', 'Class', 'Sex', 'Homeland', 'Strength', 'Intelligence', 'Willpower', 'Dexterity', 'Constitution', 'Sum'],
+['2015-05-12 17:57:12', 'Human', 'Hunter', 'Female', 'Illian', 19, 10, 14, 16, 19, 78],
 ['2014-06-15 01:13:53', 'Human', 'Hunter', 'Male', 'Illian', 19, 12, 12, 18, 16, 77],
 ['2014-05-11 17:02:49', 'Human', 'Hunter', 'Male', 'Illian', 11, 17, 19, 13, 14, 74],
 ['2014-04-13 18:23:17', 'Human', 'Hunter', 'Male', 'Illian', 17, 13, 13, 15, 14, 72],
@@ -1384,7 +1385,7 @@ var data = google.visualization.arrayToDataTable([
 [74,157],
 [75,162],
 [76,123],
-[77,91],
+[77,92],
 [78,73],
 [79,55],
 [80,54],
@@ -1411,10 +1412,10 @@ var data = google.visualization.arrayToDataTable([
 [13, 576, 29, 85],
 [14, 140, 41, 607],
 [15, 162, 95, 137],
-[16, 162, 602, 170],
+[16, 162, 602, 171],
 [17, 89, 130, 163],
-[18, 0, 162, 85],
-[19, 1, 265, 1],
+[18, 0, 163, 85],
+[19, 2, 265, 1],
 
 ]);
 new google.visualization.LineChart(document.getElementById('physicals_chart')).
@@ -1429,7 +1430,7 @@ var data = google.visualization.arrayToDataTable([
 ['stat','int','wil'],
 [10, 30, 24],
 [11, 23, 20],
-[12, 40, 49],
+[12, 41, 50],
 [13, 95, 114],
 [14, 612, 596],
 [15, 143, 155],
@@ -1462,7 +1463,7 @@ td { text-align: center; }
 <td style="width: 25%; text-align: left;">
 <h1>Human/Hunter/Illian</h1>
 <p><a href="https://github.com/rascul/wotmad-stats/tree/master/csv/Human/Hunter/Illian.csv">csv data</a></p>
-<p>Out of 1351 stats</p>
+<p>Out of 1352 stats</p>
 </td>
 <td style="text-align: right; width: 25%;">
 <div id="physicals_chart"></div>
